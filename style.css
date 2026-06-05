@@ -135,10 +135,12 @@ body {
 .nomes {
   font-family: 'Serifada', serif;
   font-size: 70px;
-  color: #5f7157;
+  color: #513e34;
   margin-top: 40px;
   margin-bottom: 0;
   text-transform: uppercase;
+        font-weight: light;
+
 }
 
 .ampersand {
@@ -146,6 +148,8 @@ body {
   font-size: 1.1em; /* ajuste conforme necessário */
   display: inline-block;
   margin: 0 0.05em;
+        font-weight: light;
+
 }
 
 /* data */
