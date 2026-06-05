@@ -1,219 +1,258 @@
-
-STYLE CSS  /* ================================
-   COMPORTAMENTO E FONTES
+/* ================================
+   RESET E FONTES
 ==================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Fontes personalizadas */
 @font-face {
   font-family: 'Serifada';
   src: url('Serifada.woff2') format('woff2');
-     font-weight: light;
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Conqueror';
   src: url('Conqueror.woff2') format('woff2');
-     font-weight: light;
+  font-weight: 300;
+  font-style: normal;
 }
+
 @font-face {
   font-family: 'Montserrat';
   src: url('Montserrat.woff2') format('woff2'),
        url('Montserrat.woff') format('woff'),
        url('Montserrat.ttf') format('truetype');
-  font-weight: light;
+  font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'RetroSignature';
   src: url('RetroSignature.woff2') format('woff2'),
        url('RetroSignature.woff') format('woff'),
        url('RetroSignature.ttf') format('truetype');
-  font-weight: light;
+  font-weight: 300;
   font-style: normal;
 }
 
-
-
 body {
   text-align: center;
-  background-color: #fffcf6;
-  background-repeat: no-repeat;           /* não repete a imagem */
-  background-size: cover;                 /* cobre toda a tela */
-  background-position: center;            /* centraliza a imagem */
-  background-attachment: fixed;           /* mantém a imagem fixa ao rolar */
+  background-color: #e9e5d9;
+  color: #4f5148;
 }
 
 /* ================================
    MENU E CABEÇALHO
 ==================================*/
+
 .menu {
-  background-image: url('fundo.png');
-  padding: 10px 0px 20px 0px; /* diminui o padding de baixo */
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+
+  background: transparent;
+  padding: 0 32px;
+
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  position: relative; /* importante pro ::after */
+}
+
+.menu::after {
+  display: none;
 }
 
 .logo-container {
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .logo {
-  height: 50px;
+  height: 36px;
   object-fit: contain;
+  opacity: 0.75;
 }
 
 .nav-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .menu-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 8px;
   padding: 0;
   margin: 0;
-
-
 }
 
 .menu-list li a {
+  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  color: #5f7157;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-  font-family: 'Montserrat', serif;
- align-items: center;
+  color: #f7f4ec;
 
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  background: rgba(82, 88, 74, 0.35);
+  backdrop-filter: blur(6px);
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  transition: all 0.3s ease;
 }
 
 .menu-list li a:hover {
-  color: #a55b4a;
-}
-
-.menu::after {
-  content: "";
-  position: absolute;
-  bottom: 0; /* se necessário, use bottom: -1px ou -2px */
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  margin-top: 10px; /* tira espaço extra */
-  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+  background: rgba(82, 88, 74, 0.6);
 }
 
 /* ================================
-   FOTO PRINCIPAL E INFORMAÇÕES
+   HERO / FOTO PRINCIPAL
 ==================================*/
 
-
 .convite {
+  position: relative;
+  width: calc(100% - 40px);
+  margin: 20px auto 0;
+  padding: 0;
+
+  border-radius: 28px;
+  overflow: hidden;
   text-align: center;
-  padding: -10px 10px;
-  margin-top: 0; /* tira espaço extra */
 }
 
-.foto-principal { 
-  width: 100%; 
-  height: auto; 
-  display: block; 
-  margin: 0;  
+.foto-principal {
+  width: 100%;
+  height: 78vh;
+  object-fit: cover;
+  display: block;
+}
+
+.convite::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(54, 60, 49, 0.18);
+  z-index: 1;
 }
 
 .nomes {
-  font-family: 'Serifada';
-  font-size: 55px;
-  color: #513e34;
-  margin-top: 40px;
-  margin-bottom: 0;
-  text-transform: uppercase;
-font-weight: 300;
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  font-family: 'Serifada', serif;
+  font-size: clamp(58px, 14vw, 180px);
+  font-weight: 300;
+  line-height: 0.85;
+  color: rgba(76, 82, 68, 0.78);
+
+  text-transform: none;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .ampersand {
   font-family: 'Conqueror', serif;
-  font-size: 1.1em; /* ajuste conforme necessário */
+  font-size: 0.9em;
+  font-weight: 300;
   display: inline-block;
-  margin: 0 0.05em;
-font-weight: 300;
+  margin: 0 0.03em;
 }
 
-/* data */
-.data {
-  font-family: "Montserrat", serif;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #5f7157;
-  margin-bottom: 10px; /* respiro para o local */
-}
-
-/* local */
+.data,
 .local {
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #5f7157;
-  margin-bottom: 60px; /* respiro para o local */
+  letter-spacing: 2px;
+  color: #f7f4ec;
 
+  margin: 0;
+}
 
-}   
-    .icon-embauba {
-      margin-top: 10px;  
-      height: 30px;
-      margin-bottom: 10px;
-    }
+.data {
+  bottom: 108px;
+}
+
+.local {
+  bottom: 84px;
+}
+
+.icon-embauba {
+  position: absolute;
+  bottom: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  height: 30px;
+  opacity: 0.9;
+}
+
 /* ================================
    TEXTO DE BOAS-VINDAS
 ==================================*/
+
 .texto-boas-vindas {
   width: 100%;
-  background-image: url('fundo.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  padding: 60px 0;
+  background-color: #e9e5d9;
+  padding: 90px 20px 70px;
 }
 
 .texto-boas-vindas-conteudo {
-  font-family: 'Montserrat', serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #5f7157;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.9;
   letter-spacing: 1.5px;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  padding: 20px 40px;
+  max-width: 820px;
+  margin: 0 auto;
 }
 
 /* ================================
    CONTAGEM REGRESSIVA
 ==================================*/
+
 .contagem-regressiva {
-  padding: 60px 20px;
-  background-color: #c3af8e;
+  padding: 70px 20px;
+  background-color: #6f7866;
   text-align: center;
+  border-radius: 26px;
+  width: calc(100% - 40px);
+  margin: 40px auto;
 }
 
 .titulo-contagem {
-  font-family: "RetroSignature", cursive;
-  font-size: 80px;
-  color: #ffffff;
+  font-family: 'RetroSignature', cursive;
+  font-size: clamp(56px, 10vw, 100px);
+  color: #f7f4ec;
   margin-bottom: 40px;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 .contador {
@@ -231,111 +270,112 @@ font-weight: 300;
 }
 
 .bloco span {
-  font-family: 'Chopard', serif;
+  font-family: 'Serifada', serif;
   font-size: 48px;
-  color: #ffffff;
+  color: #f7f4ec;
+  font-weight: 300;
 }
 
 .bloco p {
-  font-family: 'Chopard', serif;
-  font-size: 8px;
-  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: #f7f4ec;
   text-transform: uppercase;
   margin-top: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .dois-pontos {
   font-size: 48px;
-  color: #ffffff;
-  font-family: 'Chopard', serif;
+  color: #f7f4ec;
+  font-family: 'Serifada', serif;
 }
 
 /* ================================
    SEÇÃO: O CASAMENTO
 ==================================*/
+
 .sessao-como-chegar {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .titulo-sessao {
-  font-family: "RetroSignature", cursive;
-  font-size: 80px;
-  color: #9c8a73;
+  font-family: 'RetroSignature', cursive;
+  font-size: clamp(56px, 10vw, 100px);
+  color: #6f7866;
   margin-bottom: 20px;
-  font-weight: normal;
+  font-weight: 300;
 }
 
-.data-sessao {
-font-family: "Montserrat", serif;
-  font-size: 13px;
+.data-sessao,
+.local-sessao {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #5f7157;
-  margin-bottom: 10px; /* respiro para o local */
+  margin-bottom: 10px;
+  font-weight: 400;
 }
-
 
 .local-sessao {
-  font-family: 'Chopard', serif;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #5f7157;
-  margin-bottom: 30px; /* respiro para o local */
-  transform: scaleY(0.8);     /* 0.8 = 80% da altura */
-
-
+  margin-bottom: 35px;
 }
 
 .botao-como-chegar {
-  font-family: 'Montserrat', serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: #c3af8e; /* cor do texto */
+  color: #f7f4ec;
+  background: #4f5548;
+
   font-size: 11px;
   letter-spacing: 1px;
-  text-decoration: none; /* tira o sublinhado padrão */
-  border-bottom: 2px solid #c3af8e; /* linha embaixo do texto */
-  padding-bottom: 2px; /* espaçamento entre texto e linha */
+  text-decoration: none;
+
+  padding: 16px 46px;
+  border-radius: 999px;
+  border: none;
+
   display: inline-block;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .botao-como-chegar:hover {
-  border-color: #8f7150; /* muda a cor da linha ao passar o mouse */
+  background: #6f7866;
 }
 
 .imagem-flor {
   width: 60px;
-  margin-bottom: 10px; /* respiro para o local */
+  margin-bottom: 10px;
 }
 
-/* ========= TRAJE ========= */
+/* ================================
+   TRAJE
+==================================*/
+
 .traje-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .titulo-traje {
-  font-family: 'Chopard', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #5f7157;
-  margin-bottom: 10px; /* respiro para o local */
-  transform: scaleY(0.8);     /* 0.8 = 80% da altura */
- font-weight: 100;
-
+  margin-bottom: 12px;
+  font-weight: 400;
 }
 
 .detalhe-traje {
-font-family: "Montserrat", serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #5f7157;
-  margin-bottom: 10px; /* respiro para o local */
+  margin-bottom: 10px;
 }
 
 .dress-img {
@@ -345,51 +385,134 @@ font-family: "Montserrat", serif;
   height: auto;
 }
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Slider principal */
+/* ================================
+   SLIDER
+==================================*/
+
 .slider {
-  overflow: hidden;         /* Esconde o que estiver fora do contêiner */
-  width: 100%;
-  background: #fff;         /* fundo clean */
+  overflow: hidden;
+  width: calc(100% - 40px);
+  margin: 40px auto;
+  background: transparent;
+  border-radius: 26px;
 }
 
-/* Faixa de slides */
 .slider-track {
   display: flex;
-  width: calc(6 * 33.3333%); /* 6 slides x 33.3333% cada */
-  animation: scroll 20s linear infinite; /* movimento suave e contínuo */
+  width: calc(6 * 33.3333%);
+  animation: scroll 20s linear infinite;
 }
 
-/* Cada slide */
 .slide {
-  flex: 0 0 33.3333%;       /* cada slide ocupa 1/3 do espaço visível */
+  flex: 0 0 33.3333%;
 }
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 420px;
   display: block;
   object-fit: cover;
-  border-radius: 0;         /* sem bordas arredondadas */
-  transition: transform 0.3s ease; /* efeito suave ao hover (opcional) */
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
-/* efeito opcional ao passar o mouse */
 .slide img:hover {
-  transform: scale(1.05);   /* leve zoom chique */
+  transform: scale(1.04);
 }
 
-/* Animação contínua */
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+/* ================================
+   RESPONSIVO
+==================================*/
+
+@media (max-width: 768px) {
+  .menu {
+    top: 16px;
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .menu-list {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .menu-list li a {
+    font-size: 9px;
+    padding: 7px 11px;
+  }
+
+  .convite {
+    width: calc(100% - 24px);
+    margin-top: 12px;
+    border-radius: 22px;
+  }
+
+  .foto-principal {
+    height: 72vh;
+  }
+
+  .nomes {
+    top: 32%;
+    font-size: clamp(48px, 18vw, 90px);
+  }
+
+  .data,
+  .local {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    width: 90%;
+  }
+
+  .data {
+    bottom: 104px;
+  }
+
+  .local {
+    bottom: 82px;
+  }
+
+  .texto-boas-vindas {
+    padding: 70px 24px 50px;
+  }
+
+  .texto-boas-vindas-conteudo {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .contagem-regressiva {
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+
+  .contador {
+    gap: 18px;
+  }
+
+  .bloco span,
+  .dois-pontos {
+    font-size: 34px;
+  }
+
+  .slide img {
+    height: 260px;
+  }
+}
 
 /* ======================
       SESSÃO DICAS
