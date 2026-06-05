@@ -137,8 +137,7 @@ body {
   margin-top: 40px;
   margin-bottom: 0;
   text-transform: uppercase;
-        font-weight: light;
-
+font-weight: 300;
 }
 
 .ampersand {
@@ -146,8 +145,7 @@ body {
   font-size: 1.1em; /* ajuste conforme necessário */
   display: inline-block;
   margin: 0 0.05em;
-        font-weight: light;
-
+font-weight: 300;
 }
 
 /* data */
