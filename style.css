@@ -8,10 +8,9 @@ html {
 
 /* Fontes personalizadas */
 @font-face {
-  font-family: 'Chopard';
-  src: url('Chopard.woff2') format('woff2'),
-       url('Chopard.woff') format('woff'),
-       url('Chopard.ttf') format('truetype');
+  font-family: 'Serifada';
+  src: url('Serifada.woff2') format('woff2'),
+       url('Serifada.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
