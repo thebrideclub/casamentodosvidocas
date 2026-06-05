@@ -11,14 +11,12 @@ html {
   font-family: 'Serifada';
   src: url('Serifada.woff2') format('woff2');
      font-weight: light;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'Conqueror';
   src: url('Conqueror.woff2') format('woff2');
      font-weight: light;
-  font-style: normal;
 }
 @font-face {
   font-family: 'Montserrat';
@@ -133,8 +131,8 @@ body {
 }
 
 .nomes {
-  font-family: 'Serifada', serif;
-  font-size: 70px;
+  font-family: 'Serifada';
+  font-size: 55px;
   color: #513e34;
   margin-top: 40px;
   margin-bottom: 0;
