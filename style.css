@@ -206,6 +206,8 @@ font-size: 1em;
 .contagem-regressiva {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
+    font-family: "Serifada", serif;
+
   padding: 60px 20px;
   text-align: center;
   background: var(--creme);
@@ -233,7 +235,7 @@ font-size: 1em;
 
 .bloco span {
   display: block;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Serifada", serif;
   font-size: 24px;
   font-weight: 300;
 }
