@@ -100,8 +100,8 @@ body {
 
 
 .foto-principal {
-  width: min(640px, calc(80% - 28px));
-  height: 420px;
+  width: min(940px, calc(80% - 28px));
+  height: 664px;
   display: block;
   margin: 0 auto;
   object-fit: cover;
