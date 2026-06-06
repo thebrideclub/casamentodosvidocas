@@ -118,6 +118,54 @@
       <button type="submit">ENVIAR</button>
     </form>
   </div>
+<script>
+  const grupos = [
+    ["Maria Eduarda Felix", "Matheus Oliveira"],
+    ["João Silva", "Ana Silva", "Pedro Silva"]
+  ];
+
+  function encontrarGrupo(nome) {
+    return grupos.find(grupo =>
+      grupo.some(pessoa =>
+        pessoa.toLowerCase().trim() === nome.toLowerCase().trim()
+      )
+    );
+  }
+
+  const form = document.getElementById('rsvpForm');
+
+  const campoNome = document.querySelector('input[name="nome"]');
+  const campoAcompanhantes = document.querySelector('textarea[name="acompanhantes"]');
+
+  campoNome.addEventListener('input', () => {
+    const grupo = encontrarGrupo(campoNome.value);
+
+    if (grupo) {
+      campoAcompanhantes.value = grupo.join('\n');
+    } else {
+      campoAcompanhantes.value = '';
+    }
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch('https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.result === 'success') {
+        alert('RSVP enviado com sucesso!');
+        form.reset();
+      } else {
+        alert('Ocorreu um erro, tente novamente.');
+      }
+    })
+    .catch(err => alert('Erro: ' + err));
+  });
+</script>
 
 </section>
 
