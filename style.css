@@ -171,16 +171,14 @@ font-size: 1em;
 
 .vidoca {
   font-family: "Providence", cursive;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--marrom);
 
   text-align: center;
-
-  margin-top: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 
   line-height: 1.8;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 
   opacity: 0.85;
 }
