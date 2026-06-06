@@ -39,7 +39,7 @@ body {
 /* MENU */
 
 .menu {
-  position: sticky;
+position: relative;
   top: 0;
   z-index: 1000;
 
