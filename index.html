@@ -115,11 +115,7 @@
       <label>Nome acompanhante</label>
       <textarea name="acompanhantes"></textarea>
 
-      <!-- Campo do chinelo escondido por padrão -->
-      <div id="campo-chinelo" style="display: none;">
-        <label>Mulheres: preencha sua numeração de chinelo</label>
-        <textarea name="mensagem"></textarea>
-      </div>
+
 
       <button type="submit">ENVIAR</button>
     </form>
@@ -141,7 +137,7 @@
 <script>
   function copiarPix(e) {
     e.preventDefault(); // evita recarregar a página
-    const numero = "(21) 98872-1170";
+    const numero = "(11) 95135-6389";
     navigator.clipboard.writeText(numero).then(() => {
       alert("Chave PIX copiada: " + numero);
     });
