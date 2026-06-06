@@ -320,10 +320,9 @@ font-size: 1em;
 }
 
 .imagem-casa {
-  width: 62px;
+  width: 100px;
   margin: 20px auto;
   display: block;
-  opacity: 0.72;
 }
 
 /* BOTÕES */
