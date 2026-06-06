@@ -42,13 +42,18 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  max-width: 940px;
+
+  width: min(940px, calc(100% - 28px));
+
   margin: 18px auto 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  padding: 14px 16px;
+
+  background: var(--creme);
+
+  border: 1px solid var(--linha);
+  border-radius: 22px 22px 0 0;
+
+  box-shadow: 0 12px 30px rgba(81, 62, 52, 0.06);
 }
 
 .logo-container {
