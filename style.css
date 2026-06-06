@@ -11,12 +11,13 @@
 }
 
 :root {
-  --fundo: #f4eee6;
-  --creme: #fffaf3;
+  --fundo: #f5ecdf;
+  --creme: #fff8ea;
   --marrom: #513e34;
-  --caramelo: #b78b63;
-  --verde: #6f7b63;
-  --linha: rgba(81, 62, 52, 0.16);
+  --marrom-escuro: #3b2b24;
+  --amarelo: #f4d86b;
+  --amarelo-claro: #ffeaa0;
+  --linha: rgba(81, 62, 52, 0.22);
 }
 
 * {
@@ -41,10 +42,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(244, 238, 230, 0.88);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--linha);
-  padding: 15px 20px;
+  max-width: 940px;
+  margin: 18px auto 0;
+  padding: 14px 18px;
+  background: var(--creme);
+  border: 1px solid var(--linha);
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 18px 40px rgba(81, 62, 52, 0.09);
 }
 
 .menu-list {
@@ -53,51 +57,47 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .menu-list a {
-  text-decoration: none;
   color: var(--marrom);
-  font-size: 10px;
-  letter-spacing: 1.8px;
+  text-decoration: none;
   text-transform: uppercase;
-  position: relative;
+  font-size: 10px;
+  letter-spacing: 1.5px;
 }
 
-.menu-list a::after {
-  content: "";
-  width: 0;
-  height: 1px;
-  background: var(--marrom);
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: 0.3s;
-}
-
-.menu-list a:hover::after {
-  width: 100%;
+.menu-list a:hover {
+  color: var(--marrom-escuro);
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 /* FOTO PRINCIPAL */
 
 .foto-principal {
-  width: calc(100% - 48px);
-  height: 78vh;
+  width: min(940px, calc(100% - 28px));
+  height: 560px;
   object-fit: cover;
   display: block;
-  margin: 22px auto 0;
-  border-radius: 26px;
-  filter: saturate(0.88) contrast(0.96);
+  margin: 0 auto;
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+  filter: saturate(0.9) contrast(0.96);
 }
 
 /* CONVITE */
 
 .convite {
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
   text-align: center;
-  padding: 54px 20px 64px;
+  padding: 52px 20px 56px;
+  background: var(--amarelo);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
 }
 
 .nomes {
@@ -105,15 +105,15 @@ body {
   font-size: clamp(38px, 5vw, 64px);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   line-height: 1;
   margin: 0;
+  color: var(--marrom-escuro);
 }
 
 .ampersand {
   font-family: "Conqueror", serif;
   font-size: 0.55em;
-  color: var(--caramelo);
   font-style: italic;
   margin: 0 8px;
 }
@@ -122,33 +122,33 @@ body {
 .local {
   margin: 12px 0 0;
   font-size: 11px;
-  letter-spacing: 2.2px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.local {
-  color: var(--verde);
-}
-
-/* TEXTO BOAS-VINDAS */
+/* BOAS-VINDAS */
 
 .texto-boas-vindas {
-  padding: 72px 20px;
-  background: var(--marrom);
-  color: var(--creme);
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 70px 26px;
+  background: var(--creme);
+  border: 1px solid var(--linha);
+  border-top: none;
 }
 
 .texto-boas-vindas-conteudo {
-  max-width: 690px;
+  max-width: 620px;
   margin: auto;
   text-align: center;
 }
 
 .texto-boas-vindas p {
+  margin: 0;
   font-size: 12px;
   line-height: 2;
-  letter-spacing: 1.2px;
-  margin: 0;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
 }
 
 /* TÍTULOS */
@@ -160,35 +160,46 @@ body {
 .msg-section h2,
 .titulo-contato {
   font-family: "Serifada", Georgia, serif;
-  font-size: clamp(26px, 3.4vw, 42px);
+  font-size: clamp(28px, 3.4vw, 44px);
   font-weight: 300;
-  margin: 0 0 30px;
+  margin: 0 0 28px;
+  color: var(--marrom-escuro);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 }
 
 /* CONTAGEM */
 
 .contagem-regressiva {
-  padding: 76px 20px;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 64px 20px;
   text-align: center;
+  background: var(--marrom);
+  color: var(--creme);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+.contagem-regressiva .titulo-contagem {
+  color: var(--creme);
 }
 
 .contador {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .bloco {
   min-width: 92px;
-  padding: 20px 14px;
+  padding: 18px 14px;
   background: var(--creme);
-  border: 1px solid var(--linha);
-  border-radius: 22px;
-  box-shadow: 0 14px 34px rgba(81, 62, 52, 0.07);
+  color: var(--marrom);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 248, 234, 0.5);
 }
 
 .bloco span {
@@ -197,38 +208,51 @@ body {
 }
 
 .bloco p {
-  margin: 7px 0 0;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  margin: 6px 0 0;
   font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .dois-pontos {
-  font-size: 24px;
-  color: var(--caramelo);
+  color: var(--amarelo);
+  font-size: 22px;
 }
 
 /* CASAMENTO */
 
 .sessao-como-chegar {
-  padding: 82px 20px;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 70px 24px;
   text-align: center;
-  background: var(--creme);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--creme) 0,
+      var(--creme) 42px,
+      #f1dfc6 42px,
+      #f1dfc6 84px
+    );
+  border: 1px solid var(--linha);
 }
 
 .data-sessao,
 .local-sessao {
   font-size: 11px;
   line-height: 1.9;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.7px;
   text-transform: uppercase;
 }
 
 .imagem-flor {
   width: 72px;
-  margin: 24px auto;
-  opacity: 0.75;
+  margin: 22px auto;
+  display: block;
+  opacity: 0.78;
 }
+
+/* BOTÕES */
 
 .botao-como-chegar,
 .botao,
@@ -237,14 +261,14 @@ button {
   border: 1px solid var(--marrom);
   background: var(--marrom);
   color: var(--creme);
-  padding: 13px 26px;
+  padding: 12px 24px;
   border-radius: 999px;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.7px;
   font-size: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
   font-family: inherit;
 }
 
@@ -255,23 +279,28 @@ button:hover {
   color: var(--marrom);
 }
 
-/* RSVP E MENSAGEM */
+/* RSVP */
 
-.rsvp-section,
-.msg-section {
-  padding: 82px 20px;
+.rsvp-section {
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 70px 24px;
+  background: var(--amarelo-claro);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
 }
 
-.retangulo,
-.retangulo_msg {
-  max-width: 680px;
+.retangulo {
+  max-width: 620px;
   margin: auto;
-  background: rgba(255, 250, 243, 0.78);
+  padding: 42px;
+  background: var(--creme);
   border: 1px solid var(--linha);
-  border-radius: 30px;
-  padding: 44px;
-  box-shadow: 0 20px 50px rgba(81, 62, 52, 0.08);
+  border-radius: 26px;
+  box-shadow: 12px 12px 0 rgba(81, 62, 52, 0.12);
 }
+
+/* FORM */
 
 form {
   display: flex;
@@ -280,10 +309,10 @@ form {
 }
 
 label {
-  text-transform: uppercase;
+  margin-top: 8px;
   font-size: 9px;
-  letter-spacing: 1.8px;
-  margin-top: 10px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
 }
 
 input,
@@ -300,26 +329,26 @@ textarea {
 }
 
 textarea {
-  min-height: 92px;
+  min-height: 90px;
   resize: vertical;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(81, 62, 52, 0.45);
+  color: rgba(81, 62, 52, 0.5);
 }
 
 .radio-group {
   display: flex;
   gap: 24px;
-  margin: 8px 0 10px;
+  margin: 6px 0 10px;
 }
 
 .radio-group label {
-  margin: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
+  margin: 0;
 }
 
 .radio-group input {
@@ -329,16 +358,24 @@ textarea::placeholder {
 /* PRESENTES */
 
 .lista-presentes {
-  padding: 82px 20px;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 70px 24px;
   text-align: center;
   background: var(--marrom);
+  color: var(--creme);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+.lista-presentes h2 {
   color: var(--creme);
 }
 
 .presente-img,
 .mensagem-img {
   width: 72px;
-  margin: 0 auto 26px;
+  margin: 0 auto 24px;
   display: block;
   opacity: 0.9;
 }
@@ -346,14 +383,14 @@ textarea::placeholder {
 .botoes-container {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .lista-presentes .botao {
-  border-color: var(--creme);
   background: var(--creme);
   color: var(--marrom);
+  border-color: var(--creme);
 }
 
 .lista-presentes .botao:hover {
@@ -361,18 +398,42 @@ textarea::placeholder {
   color: var(--creme);
 }
 
+/* MENSAGEM */
+
+.msg-section {
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 70px 24px;
+  background: var(--creme);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+.retangulo_msg {
+  max-width: 620px;
+  margin: auto;
+  padding: 42px;
+  background: var(--fundo);
+  border: 1px solid var(--linha);
+  border-radius: 26px;
+  box-shadow: -12px 12px 0 rgba(244, 216, 107, 0.75);
+}
+
 /* CONTATO */
 
 .contato-section {
-  padding: 76px 20px;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 68px 24px;
   text-align: center;
-  background: var(--creme);
+  background: var(--amarelo);
+  border: 1px solid var(--linha);
 }
 
 .texto-contato {
   font-size: 11px;
   line-height: 1.8;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
@@ -382,7 +443,7 @@ textarea::placeholder {
   gap: 9px;
   color: var(--marrom);
   text-decoration: none;
-  margin-top: 16px;
+  margin-top: 14px;
   font-size: 13px;
 }
 
@@ -393,24 +454,35 @@ textarea::placeholder {
 /* SLIDER */
 
 .slider {
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
   overflow: hidden;
-  padding: 62px 0;
-  background: var(--fundo);
+  padding: 34px 0;
+  background: var(--creme);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
 }
 
 .slider-track {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   width: max-content;
   animation: deslizar 30s linear infinite;
 }
 
 .slide img {
-  width: 310px;
-  height: 420px;
+  width: 260px;
+  height: 340px;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 18px;
+  border: 8px solid var(--fundo);
+  box-shadow: 0 8px 20px rgba(81, 62, 52, 0.12);
+  transform: rotate(-1deg);
   filter: saturate(0.9);
+}
+
+.slide:nth-child(even) img {
+  transform: rotate(1deg);
 }
 
 @keyframes deslizar {
@@ -426,13 +498,16 @@ textarea::placeholder {
 /* RODAPÉ */
 
 .rodape-site {
-  padding: 30px 20px;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto 28px;
+  padding: 28px 20px;
   text-align: center;
-  border-top: 1px solid var(--linha);
+  background: var(--marrom-escuro);
+  border-radius: 0 0 22px 22px;
 }
 
 .rodape-site a {
-  color: var(--marrom);
+  color: var(--creme);
   text-decoration: none;
   font-size: 10px;
   letter-spacing: 1.8px;
@@ -442,42 +517,47 @@ textarea::placeholder {
 
 @media (max-width: 768px) {
   .menu {
-    padding: 13px 10px;
+    margin-top: 10px;
+    padding: 12px 10px;
+    border-radius: 18px 18px 0 0;
   }
 
   .menu-list {
-    gap: 13px;
+    gap: 12px;
   }
 
   .menu-list a {
     font-size: 9px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
   }
 
   .foto-principal {
-    width: calc(100% - 24px);
-    height: 58vh;
-    border-radius: 20px;
-    margin-top: 14px;
+    height: 430px;
   }
 
   .convite {
-    padding: 44px 16px 52px;
+    padding: 42px 16px 46px;
   }
 
   .nomes {
-    font-size: 36px;
+    font-size: 34px;
     letter-spacing: 2px;
   }
 
   .data,
   .local {
     font-size: 10px;
-    letter-spacing: 1.7px;
+    letter-spacing: 1.5px;
   }
 
-  .texto-boas-vindas {
-    padding: 58px 18px;
+  .texto-boas-vindas,
+  .contagem-regressiva,
+  .sessao-como-chegar,
+  .rsvp-section,
+  .lista-presentes,
+  .msg-section,
+  .contato-section {
+    padding: 56px 18px;
   }
 
   .texto-boas-vindas p {
@@ -495,27 +575,17 @@ textarea::placeholder {
     margin-bottom: 24px;
   }
 
-  .contagem-regressiva,
-  .sessao-como-chegar,
-  .rsvp-section,
-  .lista-presentes,
-  .msg-section,
-  .contato-section {
-    padding: 62px 18px;
-  }
-
   .contador {
-    gap: 10px;
+    gap: 8px;
   }
 
   .bloco {
-    min-width: 76px;
-    padding: 17px 10px;
-    border-radius: 18px;
+    min-width: 72px;
+    padding: 16px 9px;
   }
 
   .bloco span {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .bloco p {
@@ -529,7 +599,8 @@ textarea::placeholder {
   .retangulo,
   .retangulo_msg {
     padding: 30px 22px;
-    border-radius: 24px;
+    border-radius: 22px;
+    box-shadow: none;
   }
 
   input,
@@ -546,12 +617,16 @@ textarea::placeholder {
   .botao-como-chegar,
   button {
     font-size: 9px;
-    padding: 12px 22px;
+    padding: 11px 20px;
   }
 
   .slide img {
-    width: 240px;
-    height: 330px;
-    border-radius: 20px;
+    width: 210px;
+    height: 285px;
+    border-width: 6px;
+  }
+
+  .rodape-site {
+    margin-bottom: 14px;
   }
 }
