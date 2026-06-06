@@ -102,11 +102,11 @@ body {
 }
 
 .nomes {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(34px, 4.5vw, 56px);
+  font-family: "Serifada", serif;
+  font-size: clamp(30px, 4vw, 48px);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 2.6px;
+  letter-spacing: 2px;
   line-height: 1.05;
   margin: 0;
   color: var(--marrom-escuro);
