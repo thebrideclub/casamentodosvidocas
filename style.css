@@ -98,12 +98,11 @@ body {
 }
 /* FOTO PRINCIPAL */
 
-.foto-principal {
-  width: min(940px, calc(100% - 28px));
-  height: 940px;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
+.foto-principal { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0;  
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
   filter: saturate(0.88) contrast(0.96);
