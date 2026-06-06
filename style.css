@@ -168,15 +168,21 @@ font-size: 1em;
 .local {
   color: var(--marrom);
 }
+
 .vidoca {
   font-family: "Providence", cursive;
-  font-size: 22px;
+  font-size: 14px;
   color: var(--marrom);
-  margin-top: 0px;
-  margin-bottom: 0;
+
   text-align: center;
-  line-height: 1;
-  opacity: 0.9;
+
+  margin-top: 12px;
+  margin-bottom: 18px;
+
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+
+  opacity: 0.85;
 }
 
 /* BOAS-VINDAS */
