@@ -559,6 +559,7 @@ textarea::placeholder {
 }
 
 /* RESPONSIVO */
+
 @media (max-width: 768px) {
   .menu {
     margin-top: 10px;
@@ -586,8 +587,13 @@ textarea::placeholder {
     font-size: 8px;
     letter-spacing: 1.2px;
   }
-}
 
+  .foto-principal {
+    width: min(940px, calc(100% - 28px));
+    height: 300px;
+    object-fit: cover;
+    object-position: center 55%;
+  }
 
   .convite {
     padding: 38px 16px 42px;
