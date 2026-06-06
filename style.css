@@ -96,10 +96,10 @@ position: relative;
 .menu-list a {
   color: var(--marrom);
   text-decoration: none;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 1.8px;
+  font-weight: 300;
+  letter-spacing: 2px;
   text-transform: uppercase;
   transition: 0.25s;
 }
@@ -156,7 +156,7 @@ font-size: 1em;
 }
 .vidoca {
   font-family: "Providence", cursive;
-  font-size: 12px;
+  font-size: 9px;
     color: var(--marrom);
 
   text-align: center;
