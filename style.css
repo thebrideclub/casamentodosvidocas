@@ -296,7 +296,7 @@ font-size: 1em;
 .sessao-como-chegar {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 62px 24px;
+padding: 32px 20px;
   text-align: center;
   background:
     repeating-linear-gradient(
@@ -311,7 +311,7 @@ font-size: 1em;
 
 .data-sessao,
 .local-sessao {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Serifada", Arial, sans-serif;
   font-size: 9px;
   font-weight: 400;
   line-height: 1.9;
