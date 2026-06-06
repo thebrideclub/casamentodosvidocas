@@ -98,10 +98,11 @@ body {
 }
 /* FOTO PRINCIPAL */
 
-.foto-principal { 
-  width: 100%; 
-  height: auto; 
-  display: block; 
+.foto-principal {
+  width: min(1100px, calc(100% - 28px));
+  height: 420px;
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 /* CONVITE */
