@@ -103,21 +103,22 @@ body {
 
 .nomes {
   font-family: "Serifada", serif;
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1.05;
+  letter-spacing: 3px;
+  line-height: 1;
   margin: 0;
-  color: var(--marrom-escuro);
 }
 
 .ampersand {
-  font-family: "Serifada", Georgia, serif;
-  font-size: 1em;
+  font-family: "Conqueror" !important;
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
-  color: var(--marrom);
+  text-transform: none;
+  color: var(--caramelo);
+  font-size: 0.7em;
+  vertical-align: middle;
   margin: 0 8px;
 }
 
