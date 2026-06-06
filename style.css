@@ -16,6 +16,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --fundo: #f5ecdf;
   --creme: #fffaf4;
@@ -156,7 +162,7 @@ font-size: 1em;
 }
 .vidoca {
   font-family: "Providence", cursive;
-  font-size: 9px;
+  font-size: 7px;
     color: var(--marrom);
 
   text-align: center;
@@ -206,8 +212,9 @@ font-size: 1em;
 }
 
 .texto-boas-vindas p {
+    font-family: "Montserrat", sans-serif;
   margin: 0;
-  font-size: 11px;
+  font-size: 9px;
   line-height: 2;
   letter-spacing: 1px;
   text-transform: uppercase;
