@@ -97,14 +97,7 @@ body {
   opacity: 0.55;
 }
 /* FOTO PRINCIPAL */
-
-.foto-principal {
-  width: min(1100px, calc(100% - 28px));
-  height: 420px;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
+width: min(940px, calc(100% - 28px)); height: 540px; display: block; margin: 0 auto; object-fit: cover; border-left: 1px solid var(--linha); border-right: 1px solid var(--linha); filter: saturate(0.88) contrast(0.96); }
 /* CONVITE */
 
 .convite {
@@ -583,9 +576,6 @@ textarea::placeholder {
   }
 }
 
-  .foto-principal {
-    height: 410px;
-  }
 
   .convite {
     padding: 38px 16px 42px;
