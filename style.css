@@ -12,12 +12,12 @@
 
 :root {
   --fundo: #f5ecdf;
-  --creme: #fff8ea;
+  --creme: #fffaf4;
+  --bege: #efe5d7;
+  --bege-escuro: #dfcfba;
   --marrom: #513e34;
   --marrom-escuro: #3b2b24;
-  --amarelo: #f4d86b;
-  --amarelo-claro: #ffeaa0;
-  --linha: rgba(81, 62, 52, 0.22);
+  --linha: rgba(81, 62, 52, 0.15);
 }
 
 * {
@@ -44,11 +44,11 @@ body {
   z-index: 1000;
   max-width: 940px;
   margin: 18px auto 0;
-  padding: 14px 18px;
+  padding: 14px 16px;
   background: var(--creme);
   border: 1px solid var(--linha);
   border-radius: 22px 22px 0 0;
-  box-shadow: 0 18px 40px rgba(81, 62, 52, 0.09);
+  box-shadow: 0 12px 30px rgba(81, 62, 52, 0.06);
 }
 
 .menu-list {
@@ -57,35 +57,36 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
 .menu-list a {
   color: var(--marrom);
   text-decoration: none;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  transition: 0.25s;
 }
 
 .menu-list a:hover {
-  color: var(--marrom-escuro);
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  opacity: 0.55;
 }
 
 /* FOTO PRINCIPAL */
 
 .foto-principal {
   width: min(940px, calc(100% - 28px));
-  height: 560px;
-  object-fit: cover;
+  height: 540px;
   display: block;
   margin: 0 auto;
+  object-fit: cover;
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
-  filter: saturate(0.9) contrast(0.96);
+  filter: saturate(0.88) contrast(0.96);
 }
 
 /* CONVITE */
@@ -94,36 +95,44 @@ body {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
   text-align: center;
-  padding: 52px 20px 56px;
-  background: var(--amarelo);
+  padding: 52px 20px;
+  background: var(--bege);
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
 }
 
 .nomes {
-  font-family: "Serifada", Georgia, serif;
-  font-size: clamp(38px, 5vw, 64px);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(34px, 4.5vw, 56px);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  line-height: 1;
+  letter-spacing: 2.6px;
+  line-height: 1.05;
   margin: 0;
   color: var(--marrom-escuro);
 }
 
 .ampersand {
-  font-family: "Conqueror", serif;
-  font-size: 0.55em;
-  font-style: italic;
+  font-family: "Serifada", Georgia, serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 300;
+  color: var(--marrom);
   margin: 0 8px;
 }
 
 .data,
 .local {
-  margin: 12px 0 0;
-  font-size: 11px;
-  letter-spacing: 2px;
+  margin: 11px 0 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
+}
+
+.local {
+  color: var(--marrom);
 }
 
 /* BOAS-VINDAS */
@@ -131,23 +140,24 @@ body {
 .texto-boas-vindas {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 70px 26px;
-  background: var(--creme);
-  border: 1px solid var(--linha);
-  border-top: none;
+  padding: 66px 24px;
+  background: var(--marrom);
+  color: var(--creme);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
 }
 
 .texto-boas-vindas-conteudo {
-  max-width: 620px;
+  max-width: 610px;
   margin: auto;
   text-align: center;
 }
 
 .texto-boas-vindas p {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 2;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -159,10 +169,10 @@ body {
 .lista-presentes h2,
 .msg-section h2,
 .titulo-contato {
-  font-family: "Serifada", Georgia, serif;
-  font-size: clamp(28px, 3.4vw, 44px);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
   font-weight: 300;
-  margin: 0 0 28px;
+  margin: 0 0 26px;
   color: var(--marrom-escuro);
   text-transform: uppercase;
   letter-spacing: 1.8px;
@@ -175,48 +185,48 @@ body {
   margin: 0 auto;
   padding: 64px 20px;
   text-align: center;
-  background: var(--marrom);
-  color: var(--creme);
+  background: var(--creme);
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
-}
-
-.contagem-regressiva .titulo-contagem {
-  color: var(--creme);
 }
 
 .contador {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   flex-wrap: wrap;
 }
 
 .bloco {
-  min-width: 92px;
-  padding: 18px 14px;
-  background: var(--creme);
+  min-width: 84px;
+  padding: 17px 12px;
+  background: #ffffff;
   color: var(--marrom);
-  border-radius: 18px;
-  border: 1px solid rgba(255, 248, 234, 0.5);
+  border: 1px solid var(--linha);
+  border-radius: 17px;
+  box-shadow: 0 10px 24px rgba(81, 62, 52, 0.05);
 }
 
 .bloco span {
   display: block;
-  font-size: 28px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 300;
 }
 
 .bloco p {
   margin: 6px 0 0;
-  font-size: 9px;
-  letter-spacing: 1.5px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .dois-pontos {
-  color: var(--amarelo);
-  font-size: 22px;
+  color: var(--marrom);
+  font-size: 20px;
 }
 
 /* CASAMENTO */
@@ -224,32 +234,34 @@ body {
 .sessao-como-chegar {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 70px 24px;
+  padding: 66px 24px;
   text-align: center;
   background:
     repeating-linear-gradient(
       90deg,
       var(--creme) 0,
       var(--creme) 42px,
-      #f1dfc6 42px,
-      #f1dfc6 84px
+      var(--bege) 42px,
+      var(--bege) 84px
     );
   border: 1px solid var(--linha);
 }
 
 .data-sessao,
 .local-sessao {
-  font-size: 11px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
   line-height: 1.9;
-  letter-spacing: 1.7px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
 }
 
 .imagem-flor {
-  width: 72px;
+  width: 66px;
   margin: 22px auto;
   display: block;
-  opacity: 0.78;
+  opacity: 0.72;
 }
 
 /* BOTÕES */
@@ -261,15 +273,16 @@ button {
   border: 1px solid var(--marrom);
   background: var(--marrom);
   color: var(--creme);
-  padding: 12px 24px;
+  padding: 11px 22px;
   border-radius: 999px;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1.7px;
-  font-size: 10px;
+  letter-spacing: 1.6px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.25s;
-  font-family: inherit;
 }
 
 .botao-como-chegar:hover,
@@ -284,20 +297,20 @@ button:hover {
 .rsvp-section {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 70px 24px;
-  background: var(--amarelo-claro);
+  padding: 66px 24px;
+  background: var(--bege);
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
 }
 
 .retangulo {
-  max-width: 620px;
+  max-width: 610px;
   margin: auto;
-  padding: 42px;
+  padding: 38px;
   background: var(--creme);
   border: 1px solid var(--linha);
-  border-radius: 26px;
-  box-shadow: 12px 12px 0 rgba(81, 62, 52, 0.12);
+  border-radius: 24px;
+  box-shadow: 10px 10px 0 rgba(81, 62, 52, 0.08);
 }
 
 /* FORM */
@@ -305,13 +318,15 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
 label {
   margin-top: 8px;
-  font-size: 9px;
-  letter-spacing: 1.7px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
 }
 
@@ -321,27 +336,27 @@ textarea {
   border: none;
   border-bottom: 1px solid var(--linha);
   background: transparent;
-  padding: 12px 2px;
+  padding: 11px 2px;
   color: var(--marrom);
-  font-family: inherit;
-  font-size: 14px;
+  font-family: "Conqueror", Georgia, serif;
+  font-size: 13px;
   outline: none;
 }
 
 textarea {
-  min-height: 90px;
+  min-height: 88px;
   resize: vertical;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(81, 62, 52, 0.5);
+  color: rgba(81, 62, 52, 0.48);
 }
 
 .radio-group {
   display: flex;
-  gap: 24px;
-  margin: 6px 0 10px;
+  gap: 22px;
+  margin: 5px 0 9px;
 }
 
 .radio-group label {
@@ -360,7 +375,7 @@ textarea::placeholder {
 .lista-presentes {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 70px 24px;
+  padding: 66px 24px;
   text-align: center;
   background: var(--marrom);
   color: var(--creme);
@@ -374,10 +389,10 @@ textarea::placeholder {
 
 .presente-img,
 .mensagem-img {
-  width: 72px;
-  margin: 0 auto 24px;
+  width: 66px;
+  margin: 0 auto 22px;
   display: block;
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
 .botoes-container {
@@ -403,20 +418,20 @@ textarea::placeholder {
 .msg-section {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 70px 24px;
+  padding: 66px 24px;
   background: var(--creme);
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
 }
 
 .retangulo_msg {
-  max-width: 620px;
+  max-width: 610px;
   margin: auto;
-  padding: 42px;
+  padding: 38px;
   background: var(--fundo);
   border: 1px solid var(--linha);
-  border-radius: 26px;
-  box-shadow: -12px 12px 0 rgba(244, 216, 107, 0.75);
+  border-radius: 24px;
+  box-shadow: -10px 10px 0 rgba(81, 62, 52, 0.08);
 }
 
 /* CONTATO */
@@ -424,14 +439,16 @@ textarea::placeholder {
 .contato-section {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 68px 24px;
+  padding: 64px 24px;
   text-align: center;
-  background: var(--amarelo);
+  background: var(--bege);
   border: 1px solid var(--linha);
 }
 
 .texto-contato {
-  font-size: 11px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
   line-height: 1.8;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -444,11 +461,12 @@ textarea::placeholder {
   color: var(--marrom);
   text-decoration: none;
   margin-top: 14px;
-  font-size: 13px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 12px;
 }
 
 .icone-whatsapp {
-  width: 18px;
+  width: 17px;
 }
 
 /* SLIDER */
@@ -471,12 +489,12 @@ textarea::placeholder {
 }
 
 .slide img {
-  width: 260px;
-  height: 340px;
+  width: 250px;
+  height: 330px;
   object-fit: cover;
   border-radius: 18px;
   border: 8px solid var(--fundo);
-  box-shadow: 0 8px 20px rgba(81, 62, 52, 0.12);
+  box-shadow: 0 8px 18px rgba(81, 62, 52, 0.11);
   transform: rotate(-1deg);
   filter: saturate(0.9);
 }
@@ -500,7 +518,7 @@ textarea::placeholder {
 .rodape-site {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto 28px;
-  padding: 28px 20px;
+  padding: 26px 20px;
   text-align: center;
   background: var(--marrom-escuro);
   border-radius: 0 0 22px 22px;
@@ -509,8 +527,9 @@ textarea::placeholder {
 .rodape-site a {
   color: var(--creme);
   text-decoration: none;
-  font-size: 10px;
-  letter-spacing: 1.8px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.7px;
 }
 
 /* RESPONSIVO */
@@ -523,31 +542,36 @@ textarea::placeholder {
   }
 
   .menu-list {
-    gap: 12px;
+    gap: 11px;
   }
 
   .menu-list a {
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 1.2px;
   }
 
   .foto-principal {
-    height: 430px;
+    height: 410px;
   }
 
   .convite {
-    padding: 42px 16px 46px;
+    padding: 40px 16px 44px;
   }
 
   .nomes {
-    font-size: 34px;
-    letter-spacing: 2px;
+    font-size: 30px;
+    letter-spacing: 1.8px;
+  }
+
+  .ampersand {
+    font-size: 1em;
+    margin: 0 5px;
   }
 
   .data,
   .local {
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
   }
 
   .texto-boas-vindas,
@@ -557,11 +581,11 @@ textarea::placeholder {
   .lista-presentes,
   .msg-section,
   .contato-section {
-    padding: 56px 18px;
+    padding: 54px 18px;
   }
 
   .texto-boas-vindas p {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.9;
   }
 
@@ -571,8 +595,9 @@ textarea::placeholder {
   .lista-presentes h2,
   .msg-section h2,
   .titulo-contato {
-    font-size: 28px;
-    margin-bottom: 24px;
+    font-size: 24px;
+    margin-bottom: 22px;
+    letter-spacing: 1.5px;
   }
 
   .contador {
@@ -580,16 +605,17 @@ textarea::placeholder {
   }
 
   .bloco {
-    min-width: 72px;
-    padding: 16px 9px;
+    min-width: 68px;
+    padding: 15px 8px;
+    border-radius: 16px;
   }
 
   .bloco span {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .bloco p {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   .dois-pontos {
@@ -598,14 +624,14 @@ textarea::placeholder {
 
   .retangulo,
   .retangulo_msg {
-    padding: 30px 22px;
+    padding: 28px 20px;
     border-radius: 22px;
     box-shadow: none;
   }
 
   input,
   textarea {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .botoes-container {
@@ -616,13 +642,13 @@ textarea::placeholder {
   .botao,
   .botao-como-chegar,
   button {
-    font-size: 9px;
-    padding: 11px 20px;
+    font-size: 8px;
+    padding: 10px 18px;
   }
 
   .slide img {
-    width: 210px;
-    height: 285px;
+    width: 200px;
+    height: 275px;
     border-width: 6px;
   }
 
