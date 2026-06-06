@@ -97,7 +97,19 @@ body {
   opacity: 0.55;
 }
 /* FOTO PRINCIPAL */
-width: min(940px, calc(100% - 28px)); height: 540px; display: block; margin: 0 auto; object-fit: cover; border-left: 1px solid var(--linha); border-right: 1px solid var(--linha); filter: saturate(0.88) contrast(0.96); }
+
+
+.foto-principal {
+  width: min(940px, calc(100% - 28px));
+  height: 420px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center 35%;
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+  filter: saturate(0.88) contrast(0.96);
+}
 /* CONVITE */
 
 .convite {
