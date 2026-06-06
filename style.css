@@ -139,7 +139,7 @@ position: relative;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2.2px;
-  line-height: 1.05;
+  line-height: 0.85;
   margin: 0;
   color: var(--marrom-escuro);
 }
@@ -169,20 +169,21 @@ font-size: 1em;
   color: var(--marrom);
 }
 
+
+
 .vidoca {
   font-family: "Providence", cursive;
   font-size: 12px;
-  color: var(--marrom);
+    color: var(--marrom);
 
   text-align: center;
-  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-bottom: 8px;
 
-  line-height: 1.8;
   letter-spacing: 2px;
+    opacity: 0.85;
 
-  opacity: 0.85;
 }
-
 /* BOAS-VINDAS */
 
 .texto-boas-vindas {
