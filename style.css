@@ -292,37 +292,78 @@ font-size: 1em;
 }
 
 /* CASAMENTO */
-
 .sessao-como-chegar {
+
   width: min(940px, calc(100% - 28px));
+
   margin: 0 auto;
-padding: 32px 20px;
+
+  padding: 70px 20px 50px; /* mais espaço em cima */
+
   text-align: center;
+
+
+
   background:
+
     repeating-linear-gradient(
+
       90deg,
+
       var(--creme) 0,
+
       var(--creme) 42px,
+
       var(--bege) 42px,
+
       var(--bege) 84px
+
     );
+
+
+
   border: 1px solid var(--linha);
+
 }
 
-.data-sessao,
-.local-sessao {
-  font-family: "Serifada", Arial, sans-serif;
-  font-size: 9px;
-  font-weight: 400;
-  line-height: 1.9;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.sessao-como-chegar .titulo-sessao {
+
+  margin-top: 20px;
+
+  margin-bottom: 35px;
+
+  font-size: 58px;
+
+  letter-spacing: 1px;
+
+  line-height: 0.95;
+
 }
+
+.data-sessao {
+
+  margin-bottom: 70px;
+
+}
+
+
 
 .imagem-casa {
+
   width: 160px;
-  margin: 20px auto;
+
+  margin: 0 auto 70px;
+
   display: block;
+
+}
+
+
+
+.local-sessao {
+
+  margin-bottom: 28px;
+
 }
 
 /* BOTÕES */
