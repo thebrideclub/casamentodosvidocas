@@ -9,6 +9,12 @@
   src: url("Conqueror.woff2") format("woff2");
   font-weight: 300;
 }
+@font-face {
+  font-family: "Providence";
+  src: url("providence.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --fundo: #f5ecdf;
@@ -161,6 +167,16 @@ font-size: 1em;
 
 .local {
   color: var(--marrom);
+}
+.vidoca {
+  font-family: "Providence", cursive;
+  font-size: 22px;
+  color: var(--marrom);
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1;
+  opacity: 0.9;
 }
 
 /* BOAS-VINDAS */
