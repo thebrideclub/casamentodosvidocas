@@ -105,7 +105,7 @@ body {
   display: block;
   margin: 0 auto;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 65%;
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
   filter: saturate(0.88) contrast(0.96);
