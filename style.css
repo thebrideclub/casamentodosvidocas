@@ -593,18 +593,16 @@ textarea::placeholder {
   margin: 0 auto;
   padding: 80px 40px;
 
-  background:
-repeating-linear-gradient(
-  90deg,
-  #fffdf9 0px,
-  #fffdf9 28px,
-  rgba(244, 229, 170, 0.08) 28px,
-  rgba(244, 229, 170, 0.08) 31px
-);
-
-  border-left: 1px solid var(--linha);
-  border-right: 1px solid var(--linha);
-  text-align: center;
+ background-color: #fffdf4;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(244, 216, 112, 0.22) 0px,
+    rgba(244, 216, 112, 0.22) 5px,
+    rgba(255, 253, 244, 0.95) 5px,
+    rgba(255, 253, 244, 0.95) 18px
+  );
+  border-radius: 90px;
+  overflow: hidden;
 }
 
 .cha-container {
