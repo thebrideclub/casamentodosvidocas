@@ -588,7 +588,7 @@ textarea::placeholder {
 
 /* CHÁ DE COZINHA */
 
-cha-section {
+.cha-section {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
   padding: 80px 40px;
@@ -609,8 +609,6 @@ cha-section {
   max-width: 980px;
   margin: 0 auto;
 }
-
-/* LOGO */
 
 .cha-logo {
   width: 200px;
@@ -654,7 +652,7 @@ cha-section {
 }
 
 .cha-card {
-  background: var(--creme);
+  background: rgba(255, 250, 244, 0.88);
   border: 1px solid var(--linha);
   border-radius: 28px;
   padding: 38px 28px;
@@ -724,21 +722,14 @@ cha-section {
   color: var(--marrom-escuro);
 }
 
-/* RESPONSIVO */
-
 @media (max-width: 849px) {
-
   .cha-section {
     width: min(940px, calc(100% - 28px));
     padding: 50px 18px;
   }
 
-  .cha-container {
-    max-width: 760px;
-  }
-
   .cha-logo {
-    width: 45px;
+    width: 120px;
     margin-bottom: 18px;
   }
 
@@ -769,7 +760,5 @@ cha-section {
   .cha-card p {
     max-width: 420px;
   }
-
-
 }
 }
