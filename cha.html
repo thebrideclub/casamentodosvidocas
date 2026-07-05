@@ -77,7 +77,6 @@
   </footer>
 
   <script>
-    <script>
 const URL_SCRIPT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
 let presenteAtualId = null;
@@ -85,13 +84,16 @@ let presenteAtualId = null;
 async function sortearPresente() {
   const nome = document.getElementById("nome").value.trim();
   const resultado = document.getElementById("resultadoSorteio");
+  const botao = document.getElementById("botaoSortear");
 
   if (!nome) {
     alert("preencha seu nome primeiro");
     return;
   }
 
-  resultado.innerHTML = "sorteando...";
+  botao.innerText = "sorteando presente...";
+  botao.disabled = true;
+  resultado.innerHTML = "";
 
   const resposta = await fetch(URL_SCRIPT, {
     method: "POST",
@@ -103,6 +105,9 @@ async function sortearPresente() {
   });
 
   const dados = await resposta.json();
+
+  botao.innerText = "sortear presente";
+  botao.disabled = false;
 
   if (!dados.sucesso) {
     resultado.innerHTML = `<p>${dados.mensagem}</p>`;
