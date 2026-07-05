@@ -884,4 +884,19 @@ textarea::placeholder {
   .cha-card p {
     max-width: 420px;
   }
+  .cha-logo{
+    width:220px;
+    max-width:70%;
+    display:block;
+    margin:0 auto 42px;
+}
+
+@media (max-width:849px){
+
+    .cha-logo{
+        width:170px;
+        margin-bottom:30px;
+    }
+
+}
 }
