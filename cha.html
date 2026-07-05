@@ -1,167 +1,240 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Chá de Cozinha | Vidocas</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="casinha.png" type="image/png" />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="casinha.png" type="image/png">
 </head>
 
 <body>
 
-  <!-- Cabeçalho -->
-  <header class="menu">
-    <div class="logo-container">
-      <img src="casinha.png" alt="Logo" class="logo" />
-    </div>
+<header class="menu">
 
-    <nav class="nav-container">
-      <ul class="menu-list">
-          <li><a href="cha-de-cozinha.html">CHÁ DE COZINHA</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="logo-container">
+    <img src="casinha.png" class="logo" alt="Logo">
+  </div>
 
-  <!-- Lista Chá de Cozinha -->
-  <section class="cha-section">
-    <div class="cha-container">
+  <nav class="nav-container">
+    <ul class="menu-list">
+      <li><a href="cha.html">CHÁ DE COZINHA</a></li>
+    </ul>
+  </nav>
 
-      <p class="cha-subtitulo">lista de presentes</p>
+</header>
 
-      <h1>Chá de cozinha</h1>
 
-      <p class="cha-texto">
-        estamos muito felizes em reunir vocês para celebrar mais uma etapa antes do nosso grande dia.
-        para facilitar, você pode escolher uma das opções abaixo:
-      </p>
+<section class="cha-section">
 
-      <div class="cha-opcoes">
+<div class="cha-container">
 
-        <a href="#" target="_blank" class="cha-card">
-          <span>01</span>
-          <h2>site camicado</h2>
-          <p>acesse nossa lista virtual e escolha um presente por lá.</p>
-          <button>acessar lista</button>
-        </a>
+<p class="cha-subtitulo">lista de presentes</p>
 
-        <a href="#" target="_blank" class="cha-card">
-          <span>02</span>
-          <h2>site preçolândia</h2>
-          <p>também deixamos algumas opções especiais nesse site.</p>
-          <button>acessar lista</button>
-        </a>
+<h1>chá de cozinha</h1>
 
-        <div class="cha-card sorteio-card">
-          <span>03</span>
-          <h2>quero levar pessoalmente</h2>
-          <p>
-            clique abaixo para sortear um presente da nossa lista.
-            assim que ele for sorteado, ficará reservado para você.
-          </p>
+<p class="cha-texto">
+estamos muito felizes em reunir vocês para celebrar mais uma etapa antes do nosso grande dia.
+para facilitar, vocês podem escolher uma das opções abaixo.
+</p>
 
-          <input type="text" id="nome" placeholder="seu nome" />
-          <input type="tel" id="whatsapp" placeholder="whatsapp" />
 
-          <button onclick="sortearPresente()">sortear presente</button>
+<div class="cha-opcoes">
 
-          <div id="resultadoSorteio" class="resultado-sorteio"></div>
-        </div>
 
-      </div>
-    </div>
-  </section>
+<div class="cha-card">
 
-  <footer class="rodape-site">
-    <a href="https://instagram.com/___thebrideclub" target="_blank">@___THEBRIDECLUB</a>
-  </footer>
+<span>01</span>
 
-  <script>
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwk15mVk0IBpOGSTwmXbdGWnzhUVO3jfLjSyCfYGquIW_seQ8FM3DOVaqhkhDPPkeT-QA/exec";
+<h2>site camicado</h2>
+
+<p>
+escolha um presente diretamente pela nossa lista.
+</p>
+
+<a href="#" class="botao" target="_blank">
+acessar lista
+</a>
+
+</div>
+
+
+
+<div class="cha-card">
+
+<span>02</span>
+
+<h2>site preçolândia</h2>
+
+<p>
+também deixamos uma lista por lá.
+</p>
+
+<a href="#" class="botao" target="_blank">
+acessar lista
+</a>
+
+</div>
+
+
+
+<div class="cha-card sorteio-card">
+
+<span>03</span>
+
+<h2>quero levar pessoalmente</h2>
+
+<p>
+digite seu nome e sorteie um presente da nossa lista.
+</p>
+
+
+<input
+type="text"
+id="nome"
+placeholder="seu nome">
+
+
+<button
+id="botaoSortear"
+onclick="sortearPresente()">
+sortear presente
+</button>
+
+
+<div id="resultadoSorteio" class="resultado-sorteio"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer class="rodape-site">
+<a href="https://instagram.com/___thebrideclub" target="_blank">
+@___THEBRIDECLUB
+</a>
+</footer>
+
+
+
+<script>
+
+const URL_SCRIPT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
 let presenteAtualId = null;
 
-async function sortearPresente() {
-  const nome = document.getElementById("nome").value.trim();
-  const resultado = document.getElementById("resultadoSorteio");
-  const botao = document.getElementById("botaoSortear");
 
-  if (!nome) {
-    alert("preencha seu nome primeiro");
-    return;
-  }
 
-  botao.innerText = "sorteando presente...";
-  botao.disabled = true;
-  resultado.innerHTML = "";
+async function sortearPresente(){
 
-  const resposta = await fetch(URL_SCRIPT, {
-    method: "POST",
-    body: JSON.stringify({
-      acao: "sortear",
-      nome: nome,
-      presenteAnteriorId: presenteAtualId
-    })
-  });
+const nome = document.getElementById("nome").value.trim();
+const resultado = document.getElementById("resultadoSorteio");
+const botao = document.getElementById("botaoSortear");
 
-  const dados = await resposta.json();
-
-  botao.innerText = "sortear presente";
-  botao.disabled = false;
-
-  if (!dados.sucesso) {
-    resultado.innerHTML = `<p>${dados.mensagem}</p>`;
-    return;
-  }
-
-  presenteAtualId = dados.id;
-
-  resultado.innerHTML = `
-    <p>seu presente sorteado foi:</p>
-    <h2>${dados.presente}</h2>
-
-    <button onclick="confirmarPresente()">
-      quero levar esse
-    </button>
-
-    <button onclick="sortearPresente()">
-      sortear novamente
-    </button>
-  `;
+if(nome===""){
+alert("Digite seu nome.");
+return;
 }
 
-async function confirmarPresente() {
-  const nome = document.getElementById("nome").value.trim();
-  const resultado = document.getElementById("resultadoSorteio");
+botao.disabled = true;
+botao.innerText = "sorteando...";
 
-  if (!presenteAtualId) {
-    alert("sorteie um presente primeiro");
-    return;
-  }
+resultado.innerHTML="";
 
-  resultado.innerHTML = "reservando seu presente...";
+try{
 
-  const resposta = await fetch(URL_SCRIPT, {
-    method: "POST",
-    body: JSON.stringify({
-      acao: "confirmar",
-      id: presenteAtualId,
-      nome: nome
-    })
-  });
+const resposta = await fetch(URL_SCRIPT,{
+method:"POST",
+body:JSON.stringify({
+acao:"sortear",
+nome:nome,
+presenteAnteriorId:presenteAtualId
+})
+});
 
-  const dados = await resposta.json();
+const dados = await resposta.json();
 
-  if (dados.sucesso) {
-    resultado.innerHTML = `
-      <h2>presente reservado 💛</h2>
-      <p>${dados.presente}</p>
-      <p>obrigada por fazer parte desse momento!</p>
-    `;
-  } else {
-    resultado.innerHTML = `<p>${dados.mensagem}</p>`;
-  }
+botao.disabled=false;
+botao.innerText="sortear presente";
+
+if(!dados.sucesso){
+resultado.innerHTML=dados.mensagem;
+return;
 }
+
+presenteAtualId=dados.id;
+
+resultado.innerHTML=`
+
+<p>🎁 seu presente foi:</p>
+
+<h2>${dados.presente}</h2>
+
+<button onclick="confirmarPresente()">
+quero levar esse
+</button>
+
+<button onclick="sortearPresente()">
+sortear novamente
+</button>
+
+`;
+
+}catch(e){
+
+botao.disabled=false;
+botao.innerText="sortear presente";
+
+resultado.innerHTML="erro ao conectar com o servidor.";
+
+}
+
+}
+
+
+
+async function confirmarPresente(){
+
+const nome=document.getElementById("nome").value.trim();
+
+const resposta=await fetch(URL_SCRIPT,{
+method:"POST",
+body:JSON.stringify({
+acao:"confirmar",
+id:presenteAtualId,
+nome:nome
+})
+});
+
+const dados=await resposta.json();
+
+if(dados.sucesso){
+
+document.getElementById("resultadoSorteio").innerHTML=`
+
+<h2>💛 presente reservado!</h2>
+
+<p>${dados.presente}</p>
+
+<p>
+muito obrigada por fazer parte desse momento.
+</p>
+
+`;
+
+}else{
+
+alert(dados.mensagem);
+
+}
+
+}
+
 </script>
 
 </body>
