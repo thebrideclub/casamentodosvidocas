@@ -18,10 +18,7 @@
 
     <nav class="nav-container">
       <ul class="menu-list">
-        <li><a href="index.html">NOSSO DIA</a></li>
-        <li><a href="dicas.html">DICAS</a></li>
-        <li><a href="index.html#rsvp">R.S.V.P</a></li>
-        <li><a href="cha-de-cozinha.html">CHÁ DE COZINHA</a></li>
+          <li><a href="cha-de-cozinha.html">CHÁ DE COZINHA</a></li>
       </ul>
     </nav>
   </header>
@@ -80,13 +77,87 @@
   </footer>
 
   <script>
-    function sortearPresente() {
-      const resultado = document.getElementById("resultadoSorteio");
-      resultado.innerHTML = "sorteando seu presente...";
+    <script>
+const URL_SCRIPT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
-      // depois vamos ligar aqui com a planilha do Google
-    }
-  </script>
+let presenteAtualId = null;
+
+async function sortearPresente() {
+  const nome = document.getElementById("nome").value.trim();
+  const resultado = document.getElementById("resultadoSorteio");
+
+  if (!nome) {
+    alert("preencha seu nome primeiro");
+    return;
+  }
+
+  resultado.innerHTML = "sorteando...";
+
+  const resposta = await fetch(URL_SCRIPT, {
+    method: "POST",
+    body: JSON.stringify({
+      acao: "sortear",
+      nome: nome,
+      presenteAnteriorId: presenteAtualId
+    })
+  });
+
+  const dados = await resposta.json();
+
+  if (!dados.sucesso) {
+    resultado.innerHTML = `<p>${dados.mensagem}</p>`;
+    return;
+  }
+
+  presenteAtualId = dados.id;
+
+  resultado.innerHTML = `
+    <p>seu presente sorteado foi:</p>
+    <h2>${dados.presente}</h2>
+
+    <button onclick="confirmarPresente()">
+      quero levar esse
+    </button>
+
+    <button onclick="sortearPresente()">
+      sortear novamente
+    </button>
+  `;
+}
+
+async function confirmarPresente() {
+  const nome = document.getElementById("nome").value.trim();
+  const resultado = document.getElementById("resultadoSorteio");
+
+  if (!presenteAtualId) {
+    alert("sorteie um presente primeiro");
+    return;
+  }
+
+  resultado.innerHTML = "reservando seu presente...";
+
+  const resposta = await fetch(URL_SCRIPT, {
+    method: "POST",
+    body: JSON.stringify({
+      acao: "confirmar",
+      id: presenteAtualId,
+      nome: nome
+    })
+  });
+
+  const dados = await resposta.json();
+
+  if (dados.sucesso) {
+    resultado.innerHTML = `
+      <h2>presente reservado 💛</h2>
+      <p>${dados.presente}</p>
+      <p>obrigada por fazer parte desse momento!</p>
+    `;
+  } else {
+    resultado.innerHTML = `<p>${dados.mensagem}</p>`;
+  }
+}
+</script>
 
 </body>
 </html>
