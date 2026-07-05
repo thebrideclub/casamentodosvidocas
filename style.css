@@ -592,7 +592,16 @@ textarea::placeholder {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
   padding: 80px 40px;
-  background: var(--bege);
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 251, 246, 1) 0px,
+      rgba(255, 251, 246, 1) 36px,
+      rgba(244, 230, 176, 0.35) 36px,
+      rgba(244, 230, 176, 0.35) 72px
+    );
+
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
   text-align: center;
