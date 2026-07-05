@@ -588,21 +588,21 @@ textarea::placeholder {
 
 /* CHÁ DE COZINHA */
 
-.cha-section {
+cha-section {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
   padding: 80px 40px;
-
- background-color: #fffdf4;
+  background-color: #fffdf4;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(244, 216, 112, 0.22) 0px,
-    rgba(244, 216, 112, 0.22) 5px,
-    rgba(255, 253, 244, 0.95) 5px,
-    rgba(255, 253, 244, 0.95) 18px
+    rgba(244, 216, 112, 0.10) 0px,
+    rgba(244, 216, 112, 0.10) 3px,
+    rgba(255, 253, 244, 0.95) 3px,
+    rgba(255, 253, 244, 0.95) 16px
   );
-  border-radius: 90px;
-  overflow: hidden;
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+  text-align: center;
 }
 
 .cha-container {
