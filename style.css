@@ -9,6 +9,7 @@
   src: url("Conqueror.woff2") format("woff2");
   font-weight: 300;
 }
+
 @font-face {
   font-family: "Providence";
   src: url("providence.woff2") format("woff2");
@@ -22,6 +23,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   --fundo: #f5ecdf;
   --creme: #fffaf4;
@@ -51,20 +53,15 @@ body {
 /* MENU */
 
 .menu {
-position: relative;
+  position: relative;
   top: 0;
   z-index: 1000;
-
   width: min(940px, calc(100% - 28px));
-
   margin: 18px auto 0;
   padding: 14px 16px;
-
   background: var(--creme);
-
   border: 1px solid var(--linha);
   border-radius: 22px 22px 0 0;
-
   box-shadow: 0 12px 30px rgba(81, 62, 52, 0.06);
 }
 
@@ -77,7 +74,6 @@ position: relative;
 .logo {
   width: 60px;
   height: auto;
-  opacity: 100;
   display: block;
 }
 
@@ -113,8 +109,8 @@ position: relative;
 .menu-list a:hover {
   opacity: 0.55;
 }
-/* FOTO PRINCIPAL */
 
+/* FOTO PRINCIPAL */
 
 .foto-principal {
   width: min(940px, calc(80% - 28px));
@@ -127,6 +123,7 @@ position: relative;
   border-right: 1px solid var(--linha);
   filter: saturate(0.88) contrast(0.96);
 }
+
 /* CONVITE */
 
 .convite {
@@ -152,36 +149,31 @@ position: relative;
 
 .ampersand {
   font-family: "Conqueror", Georgia, serif;
-font-size: 1em;
+  font-size: 1em;
   font-weight: 300;
-  font-style: normal;
   text-transform: none;
   color: var(--marrom-escuro);
-  vertical-align: baseline;
   margin: 0 6px;
 }
+
 .vidoca {
   font-family: "Providence", cursive;
   font-size: 7px;
-    color: var(--marrom);
-
+  color: var(--marrom);
   text-align: center;
   margin-top: 2px;
   margin-bottom: 8px;
-
   letter-spacing: 4px;
-    opacity: 0.85;
-
-
+  opacity: 0.85;
 }
+
 .data,
 .local {
   margin: 10px 0 0;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 9px;
   font-weight: 400;
-      line-height: 3.5;
-
+  line-height: 3.5;
   letter-spacing: 1.7px;
   text-transform: uppercase;
 }
@@ -189,9 +181,6 @@ font-size: 1em;
 .local {
   color: var(--marrom);
 }
-
-
-
 
 /* BOAS-VINDAS */
 
@@ -212,7 +201,7 @@ font-size: 1em;
 }
 
 .texto-boas-vindas p {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   font-size: 6px;
   line-height: 2;
@@ -243,8 +232,7 @@ font-size: 1em;
 .contagem-regressiva {
   width: min(940px, calc(100% - 28px));
   margin: 0 auto;
-    font-family: "Serifada", serif;
-
+  font-family: "Serifada", serif;
   padding: 60px 20px;
   text-align: center;
   background: var(--creme);
@@ -292,78 +280,42 @@ font-size: 1em;
 }
 
 /* CASAMENTO */
+
 .sessao-como-chegar {
-
   width: min(940px, calc(100% - 28px));
-
   margin: 0 auto;
-
-  padding: 70px 20px 50px; /* mais espaço em cima */
-
+  padding: 70px 20px 50px;
   text-align: center;
-
-
-
-  background:
-
-    repeating-linear-gradient(
-
-      90deg,
-
-      var(--creme) 0,
-
-      var(--creme) 42px,
-
-      var(--bege) 42px,
-
-      var(--bege) 84px
-
-    );
-
-
-
+  background: repeating-linear-gradient(
+    90deg,
+    var(--creme) 0,
+    var(--creme) 42px,
+    var(--bege) 42px,
+    var(--bege) 84px
+  );
   border: 1px solid var(--linha);
-
 }
 
 .sessao-como-chegar .titulo-sessao {
-
   margin-top: 20px;
-
   margin-bottom: 35px;
-
   font-size: 58px;
-
   letter-spacing: 1px;
-
   line-height: 0.95;
-
 }
 
 .data-sessao {
-
   margin-bottom: 70px;
-
 }
-
-
 
 .imagem-casa {
-
   width: 160px;
-
   margin: 0 auto 70px;
-
   display: block;
-
 }
 
-
-
 .local-sessao {
-
   margin-bottom: 28px;
-
 }
 
 /* BOTÕES */
@@ -634,9 +586,132 @@ textarea::placeholder {
   letter-spacing: 1.6px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
+/* CHÁ DE COZINHA */
 
+.cha-section {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 80px 40px;
+  background: var(--bege);
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+  text-align: center;
+}
+
+.cha-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cha-subtitulo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cha-container h1 {
+  font-family: "Serifada", serif;
+  font-size: clamp(42px, 4vw, 64px);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--marrom-escuro);
+  margin: 0 0 24px;
+}
+
+.cha-texto {
+  max-width: 640px;
+  margin: 0 auto 52px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cha-opcoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.cha-card {
+  background: var(--creme);
+  border: 1px solid var(--linha);
+  border-radius: 28px;
+  padding: 38px 28px;
+  text-decoration: none;
+  color: var(--marrom);
+  box-shadow: 10px 10px 0 rgba(81, 62, 52, 0.06);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cha-card span {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.cha-card h2 {
+  font-family: "Serifada", serif;
+  font-size: clamp(28px, 2.4vw, 36px);
+  line-height: 1.1;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--marrom-escuro);
+}
+
+.cha-card p {
+  max-width: 300px;
+  margin: 0 auto 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  line-height: 2;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sorteio-card input {
+  max-width: 310px;
+  width: 100%;
+  margin: 0 auto 12px;
+  display: block;
+  text-align: center;
+}
+
+.resultado-sorteio {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: var(--marrom-escuro);
+}
+
+.resultado-sorteio strong {
+  display: block;
+  margin-top: 12px;
+  font-family: "Serifada", serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--marrom-escuro);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 849px) {
   .menu {
     width: calc(100% - 28px);
     padding: 10px 8px;
@@ -651,7 +726,6 @@ textarea::placeholder {
     letter-spacing: 1px;
   }
 
-
   .logo {
     width: 28px;
   }
@@ -664,8 +738,6 @@ textarea::placeholder {
     padding: 12px 10px;
     border-radius: 18px 18px 0 0;
   }
-
-
 
   .foto-principal {
     width: min(940px, calc(100% - 28px));
@@ -775,324 +847,41 @@ textarea::placeholder {
   .rodape-site {
     margin-bottom: 14px;
   }
- /* CHÁ DE COZINHA */
-
-
-
-.cha-section {
-
-  width: min(1100px, calc(100% - 32px));
-
-  margin: 0 auto;
-
-  padding: 80px 40px;
-
-  background: var(--bege);
-
-  border-left: 1px solid var(--linha);
-
-  border-right: 1px solid var(--linha);
-
-  text-align: center;
-
-}
-
-
-
-.cha-container {
-
-  max-width: 980px;
-
-  margin: 0 auto;
-
-}
-
-
-
-.cha-subtitulo {
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 16px;
-
-}
-
-
-
-.cha-container h1 {
-
-  font-family: "Serifada", serif;
-
-  font-size: clamp(42px, 4vw, 64px);
-
-  font-weight: 300;
-
-  text-transform: uppercase;
-
-  color: var(--marrom-escuro);
-
-  margin: 0 0 24px;
-
-}
-
-
-
-.cha-texto {
-
-  max-width: 640px;
-
-  margin: 0 auto 52px;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 9px;
-
-  line-height: 2;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-}
-
-
-
-.cha-opcoes {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 24px;
-
-  align-items: stretch;
-
-}
-
-
-
-.cha-card {
-
-  background: var(--creme);
-
-  border: 1px solid var(--linha);
-
-  border-radius: 28px;
-
-  padding: 38px 28px;
-
-  text-decoration: none;
-
-  color: var(--marrom);
-
-  box-shadow: 10px 10px 0 rgba(81, 62, 52, 0.06);
-
-  min-height: 380px;
-
-
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-}
-
-
-
-.cha-card span {
-
-  display: block;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 16px;
-
-  text-transform: uppercase;
-
-}
-
-
-
-.cha-card h2 {
-
-  font-family: "Serifada", serif;
-
-  font-size: clamp(28px, 2.4vw, 36px);
-
-  line-height: 1.1;
-
-  font-weight: 300;
-
-  text-transform: uppercase;
-
-  margin: 0 0 16px;
-
-  color: var(--marrom-escuro);
-
-}
-
-
-
-.cha-card p {
-
-  max-width: 300px;
-
-  margin: 0 auto 24px;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 2;
-
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
-
-}
-
-
-
-.sorteio-card input {
-
-  max-width: 310px;
-
-  width: 100%;
-
-  margin: 0 auto 12px;
-
-  display: block;
-
-  text-align: center;
-
-}
-
-
-
-.resultado-sorteio {
-
-  margin-top: 20px;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 12px;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-}
-
-
-
-.resultado-sorteio strong {
-
-  display: block;
-
-  margin-top: 12px;
-
-  font-family: "Serifada", serif;
-
-  font-size: 28px;
-
-  font-weight: 300;
-
-  letter-spacing: 0;
-
-  text-transform: uppercase;
-
-  color: var(--marrom-escuro);
-
-}
-
-
-
-@media (max-width: 849px) {
 
   .cha-section {
-
     width: min(940px, calc(100% - 28px));
-
     padding: 50px 18px;
-
   }
-
-
 
   .cha-container {
-
     max-width: 760px;
-
   }
-
-
 
   .cha-container h1 {
-
     font-size: 34px;
-
   }
-
-
 
   .cha-texto {
-
     margin-bottom: 42px;
-
     font-size: 8px;
-
   }
-
-
 
   .cha-opcoes {
-
     grid-template-columns: 1fr;
-
     gap: 18px;
-
   }
-
-
 
   .cha-card {
-
     min-height: auto;
-
     padding: 32px 26px;
-
     border-radius: 24px;
-
   }
-
-
 
   .cha-card h2 {
-
     font-size: 24px;
-
   }
-
-
 
   .cha-card p {
-
     max-width: 420px;
-
   }
-
-
-}
 }
