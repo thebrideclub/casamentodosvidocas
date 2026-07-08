@@ -591,7 +591,7 @@ textarea::placeholder {
 .cha-section {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 60px 40px;
   background-color: #fffdf4;
   background-image: repeating-linear-gradient(
     90deg,
@@ -608,12 +608,16 @@ textarea::placeholder {
 .cha-container {
   max-width: 980px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cha-logo {
   width: 300px;
   height: auto;
   display: block;
+  margin: 0 auto 14px;
 }
 
 .cha-subtitulo {
@@ -621,7 +625,7 @@ textarea::placeholder {
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin: 0 0 12px;
 }
 
 .cha-container h1 {
@@ -630,12 +634,12 @@ textarea::placeholder {
   font-weight: 300;
   text-transform: uppercase;
   color: var(--marrom-escuro);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .cha-texto {
   max-width: 640px;
-  margin: 0 auto 52px;
+  margin: 0 auto 42px;
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
   line-height: 2;
@@ -662,6 +666,12 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cha-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 14px 14px 0 rgba(81, 62, 52, 0.08);
 }
 
 .cha-card span {
@@ -722,22 +732,28 @@ textarea::placeholder {
 }
 
 @media (max-width: 849px) {
+
   .cha-section {
     width: min(940px, calc(100% - 28px));
-    padding: 50px 18px;
+    padding: 40px 18px;
   }
 
   .cha-logo {
-    width: 300px;
+    width: 250px;
+    margin: 0 auto 12px;
+  }
+
+  .cha-subtitulo {
     margin-bottom: 10px;
   }
 
   .cha-container h1 {
     font-size: 34px;
+    margin-bottom: 10px;
   }
 
   .cha-texto {
-    margin-bottom: 42px;
+    margin-bottom: 36px;
     font-size: 8px;
   }
 
