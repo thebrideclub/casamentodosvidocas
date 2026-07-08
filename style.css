@@ -611,10 +611,9 @@ textarea::placeholder {
 }
 
 .cha-logo {
-  width: 500px;
+  width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 22px;
 }
 
 .cha-subtitulo {
@@ -631,7 +630,7 @@ textarea::placeholder {
   font-weight: 300;
   text-transform: uppercase;
   color: var(--marrom-escuro);
-  margin: 0 0 24px;
+  margin: 0 0 12px;
 }
 
 .cha-texto {
