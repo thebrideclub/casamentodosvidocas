@@ -4,207 +4,240 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Chá de Cozinha | Vidocas</title>
-
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="casinha.png" type="image/png">
 </head>
 
 <body>
 
+<div id="popup-confirmacao" class="popup-overlay">
+  <div class="popup-box">
+    <button class="popup-fechar" onclick="fecharPopup()">×</button>
+
+    <p class="popup-subtitulo">chá de cozinha</p>
+    <h2>confirme sua presença</h2>
+
+    <p class="popup-texto">
+      antes de acessar a lista, confirme sua presença nesse dia tão especial 💛
+    </p>
+
+    <input type="text" id="confirmacaoNome" placeholder="seu nome">
+    <input type="text" id="confirmacaoTelefone" placeholder="telefone">
+    <input type="number" id="confirmacaoAcompanhantes" placeholder="nº de acompanhantes">
+    <textarea id="confirmacaoObservacao" placeholder="alguma observação?"></textarea>
+
+    <button onclick="enviarConfirmacao()" class="popup-botao">
+      confirmar presença
+    </button>
+  </div>
+</div>
+
+<header class="menu">
+  <div class="logo-container">
+    <img src="casinha.png" class="logo" alt="Logo">
+  </div>
+
+  <nav class="nav-container">
+    <ul class="menu-list">
+      <li><a href="cha.html">CHÁ DE COZINHA</a></li>
+    </ul>
+  </nav>
+</header>
+
 <section class="cha-section">
-
-<div class="cha-container">
-
-    <img
-        src="nome_cha.png"
-        alt="Matheus & Maria"
-        class="cha-logo">
+  <div class="cha-container">
 
     <p class="cha-subtitulo">lista de presentes</p>
-
     <h1>chá de cozinha</h1>
 
     <p class="cha-texto">
-estamos muito felizes em reunir vocês para celebrar mais uma etapa antes do nosso grande dia.
-caso queira nos presentear, vocês podem escolher uma das opções abaixo.    </p>
+      estamos muito felizes em reunir vocês para celebrar mais uma etapa antes do nosso grande dia.
+      para facilitar, vocês podem escolher uma das opções abaixo.
+    </p>
 
-<div class="cha-opcoes">
+    <div class="cha-opcoes">
 
+      <div class="cha-card">
+        <span>01</span>
+        <h2>site camicado</h2>
+        <p>escolha um presente diretamente pela nossa lista.</p>
+        <a href="#" class="botao" target="_blank">acessar lista</a>
+      </div>
 
-<div class="cha-card">
+      <div class="cha-card">
+        <span>02</span>
+        <h2>site preçolândia</h2>
+        <p>também deixamos uma lista por lá.</p>
+        <a href="#" class="botao" target="_blank">acessar lista</a>
+      </div>
 
-<span>01</span>
+      <div class="cha-card sorteio-card">
+        <span>03</span>
+        <h2>quero levar pessoalmente</h2>
+        <p>digite seu nome e sorteie um presente da nossa lista.</p>
 
-<h2>lista de presente</h2>
+        <input type="text" id="nome" placeholder="seu nome">
 
-<p>
-escolha um presente diretamente pela nossa lista.
-</p>
+        <button id="botaoSortear" onclick="sortearPresente()">
+          sortear presente
+        </button>
 
-<a href="https://noivos.casar.com/cha-dos-vidocas" class="botao" target="_blank">
-acessar lista
-</a>
+        <div id="resultadoSorteio" class="resultado-sorteio"></div>
+      </div>
 
-</div>
-
-
-
-<div class="cha-card sorteio-card">
-
-<span>02</span>
-
-<h2>quero levar pessoalmente</h2>
-
-<p>
-digite seu nome e sorteie um presente da nossa lista.
-</p>
-
-
-<input
-type="text"
-id="nome"
-placeholder="seu nome">
-
-
-<button
-id="botaoSortear"
-onclick="sortearPresente()">
-sortear presente
-</button>
-
-
-<div id="resultadoSorteio" class="resultado-sorteio"></div>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
 <footer class="rodape-site">
-<a href="https://instagram.com/___thebrideclub" target="_blank">
-@___THEBRIDECLUB
-</a>
+  <a href="https://instagram.com/___thebrideclub" target="_blank">
+    @___THEBRIDECLUB
+  </a>
 </footer>
 
-
-
 <script>
-
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwk15mVk0IBpOGSTwmXbdGWnzhUVO3jfLjSyCfYGqulW_seQ8FM3DOVaqhkhDPPkeT-QA/exec";
+const URL_SCRIPT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
 let presenteAtualId = null;
 
-
-
-async function sortearPresente(){
-
-const nome = document.getElementById("nome").value.trim();
-const resultado = document.getElementById("resultadoSorteio");
-const botao = document.getElementById("botaoSortear");
-
-if(nome===""){
-alert("Digite seu nome.");
-return;
+function fecharPopup() {
+  document.getElementById("popup-confirmacao").style.display = "none";
 }
 
-botao.disabled = true;
-botao.innerText = "sorteando...";
+async function enviarConfirmacao() {
+  const nome = document.getElementById("confirmacaoNome").value.trim();
+  const telefone = document.getElementById("confirmacaoTelefone").value.trim();
+  const acompanhantes = document.getElementById("confirmacaoAcompanhantes").value.trim();
+  const observacao = document.getElementById("confirmacaoObservacao").value.trim();
 
-resultado.innerHTML="";
+  if (nome === "") {
+    alert("preencha seu nome, por favor 💛");
+    return;
+  }
 
-try{
+  try {
+    const resposta = await fetch(URL_SCRIPT, {
+      method: "POST",
+      redirect: "follow",
+      body: JSON.stringify({
+        acao: "confirmarPresenca",
+        nome: nome,
+        telefone: telefone,
+        presenca: "confirmado",
+        acompanhantes: acompanhantes,
+        observacao: observacao
+      })
+    });
 
-const resposta = await fetch(URL_SCRIPT,{
-method:"POST",
-body:JSON.stringify({
-acao:"sortear",
-nome:nome,
-presenteAnteriorId:presenteAtualId
-})
-});
+    const dados = await resposta.json();
 
-const dados = await resposta.json();
+    if (dados.sucesso) {
+      alert("presença confirmada com sucesso 💛");
+      fecharPopup();
+    } else {
+      alert(dados.mensagem || "não conseguimos confirmar agora.");
+    }
 
-botao.disabled=false;
-botao.innerText="sortear presente";
-
-if(!dados.sucesso){
-resultado.innerHTML=dados.mensagem;
-return;
+  } catch (e) {
+    alert("erro ao conectar com o servidor.");
+  }
 }
 
-presenteAtualId=dados.id;
+async function sortearPresente() {
+  const nome = document.getElementById("nome").value.trim();
+  const resultado = document.getElementById("resultadoSorteio");
+  const botao = document.getElementById("botaoSortear");
 
-resultado.innerHTML=`
+  if (nome === "") {
+    alert("Digite seu nome.");
+    return;
+  }
 
-<p>🎁 seu presente foi:</p>
+  botao.disabled = true;
+  botao.innerText = "sorteando presente...";
+  resultado.innerHTML = "";
 
-<h2>${dados.presente}</h2>
+  try {
+    const resposta = await fetch(URL_SCRIPT, {
+      method: "POST",
+      redirect: "follow",
+      body: JSON.stringify({
+        acao: "sortear",
+        nome: nome,
+        presenteAnteriorId: presenteAtualId
+      })
+    });
 
-<button onclick="confirmarPresente()">
-quero levar esse
-</button>
+    const dados = await resposta.json();
 
-<button onclick="sortearPresente()">
-sortear novamente
-</button>
+    botao.disabled = false;
+    botao.innerText = "sortear presente";
 
-`;
+    if (!dados.sucesso) {
+      resultado.innerHTML = `<p>${dados.mensagem}</p>`;
+      return;
+    }
 
-}catch(e){
+    presenteAtualId = dados.id;
 
-botao.disabled=false;
-botao.innerText="sortear presente";
+    resultado.innerHTML = `
+      <p>seu presente sorteado foi:</p>
+      <h2>${dados.presente}</h2>
 
-resultado.innerHTML="erro ao conectar com o servidor.";
+      <button onclick="confirmarPresente()">
+        quero levar esse
+      </button>
 
+      <button onclick="sortearPresente()">
+        sortear novamente
+      </button>
+    `;
+
+  } catch (e) {
+    botao.disabled = false;
+    botao.innerText = "sortear presente";
+    resultado.innerHTML = "erro ao conectar com o servidor.";
+  }
 }
 
+async function confirmarPresente() {
+  const nome = document.getElementById("nome").value.trim();
+  const resultado = document.getElementById("resultadoSorteio");
+
+  if (!presenteAtualId) {
+    alert("sorteie um presente primeiro.");
+    return;
+  }
+
+  resultado.innerHTML = "reservando seu presente...";
+
+  try {
+    const resposta = await fetch(URL_SCRIPT, {
+      method: "POST",
+      redirect: "follow",
+      body: JSON.stringify({
+        acao: "confirmar",
+        id: presenteAtualId,
+        nome: nome
+      })
+    });
+
+    const dados = await resposta.json();
+
+    if (dados.sucesso) {
+      resultado.innerHTML = `
+        <h2>presente reservado 💛</h2>
+        <p>${dados.presente}</p>
+        <p>muito obrigada por fazer parte desse momento.</p>
+      `;
+    } else {
+      resultado.innerHTML = `<p>${dados.mensagem}</p>`;
+    }
+
+  } catch (e) {
+    resultado.innerHTML = "erro ao reservar o presente.";
+  }
 }
-
-
-
-async function confirmarPresente(){
-
-const nome=document.getElementById("nome").value.trim();
-
-const resposta=await fetch(URL_SCRIPT,{
-method:"POST",
-body:JSON.stringify({
-acao:"confirmar",
-id:presenteAtualId,
-nome:nome
-})
-});
-
-const dados=await resposta.json();
-
-if(dados.sucesso){
-
-document.getElementById("resultadoSorteio").innerHTML=`
-
-<h2>💛 presente reservado!</h2>
-
-<p>${dados.presente}</p>
-
-<p>
-muito obrigada por fazer parte desse momento.
-</p>
-
-`;
-
-}else{
-
-alert(dados.mensagem);
-
-}
-
-}
-
 </script>
 
 </body>
