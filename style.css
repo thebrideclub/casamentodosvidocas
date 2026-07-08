@@ -600,8 +600,8 @@ textarea::placeholder {
     rgba(255, 253, 244, 0.95) 3px,
     rgba(255, 253, 244, 0.95) 16px
   );
-  border-left: 1px solid var(--linha);
-  border-right: 1px solid var(--linha);
+  border-left: 2px solid var(--linha);
+  border-right: 2px solid var(--linha);
   text-align: center;
 }
 
