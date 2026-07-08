@@ -775,5 +775,135 @@ textarea::placeholder {
   .cha-card p {
     max-width: 420px;
   }
+  /* POPUP CONFIRMAÇÃO */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(81, 62, 52, .45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  padding: 20px;
+}
+
+.popup-box {
+  width: min(470px, 100%);
+  background: #fffdf4;
+  border: 2px solid var(--linha);
+  border-radius: 30px;
+  padding: 45px 35px 35px;
+  position: relative;
+  text-align: center;
+  box-shadow: 14px 14px 0 rgba(81,62,52,.08);
+}
+
+.popup-fechar {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 26px;
+  color: var(--marrom);
+  transition: .2s;
+}
+
+.popup-fechar:hover {
+  transform: scale(1.1);
+}
+
+.popup-subtitulo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.popup-box h2 {
+  font-family: "Serifada", serif;
+  font-size: 48px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--marrom-escuro);
+  margin: 0 0 16px;
+}
+
+.popup-texto {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.popup-box input,
+.popup-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--marrom);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  outline: none;
+  transition: .2s;
+}
+
+.popup-box textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.popup-box input:focus,
+.popup-box textarea:focus {
+  border-color: var(--marrom);
+}
+
+.popup-botao {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+  border: none;
+  border-radius: 999px;
+  background: var(--marrom);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.popup-botao:hover {
+  background: var(--marrom-escuro);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 850px) {
+
+  .popup-box {
+    padding: 35px 24px 24px;
+    border-radius: 24px;
+  }
+
+  .popup-box h2 {
+    font-size: 34px;
+  }
+
+  .popup-texto {
+    font-size: 8px;
+  }
+
+}
 }
 }
