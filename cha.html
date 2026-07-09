@@ -54,30 +54,23 @@
     <h1>chá de cozinha</h1>
 
     <p class="cha-texto">
-      estamos muito felizes em reunir vocês para celebrar mais uma etapa antes do nosso grande dia.
-      para facilitar, vocês podem escolher uma das opções abaixo.
+  antes do nosso grande dia, queremos reunir as pessoas que fazem parte da nossa história para celebrar esse momento tão especial.
+se quiser nos presentear, escolhm uma das opções abaixo e venha partilhar desse dia com a gente. ☀️
     </p>
 
     <div class="cha-opcoes">
 
       <div class="cha-card">
-        <span>01</span>
-        <h2>site camicado</h2>
+        <span> casar.com </span>
+        <h2>lista de presente</h2>
         <p>escolha um presente diretamente pela nossa lista.</p>
-        <a href="#" class="botao" target="_blank">acessar lista</a>
-      </div>
-
-      <div class="cha-card">
-        <span>02</span>
-        <h2>site preçolândia</h2>
-        <p>também deixamos uma lista por lá.</p>
-        <a href="#" class="botao" target="_blank">acessar lista</a>
+        <a href="https://noivos.casar.com/cha-dos-vidocas#/presentes" class="botao" target="_blank">acessar lista</a>
       </div>
 
       <div class="cha-card sorteio-card">
-        <span>03</span>
+        <span> levar no chá </span>
         <h2>quero levar pessoalmente</h2>
-        <p>digite seu nome e sorteie um presente da nossa lista.</p>
+        <p>digite seu nome e sorteie um presente da nossa lista para levar no dia do chá.</p>
 
         <input type="text" id="nome" placeholder="seu nome">
 
@@ -99,9 +92,11 @@
 </footer>
 
 <script>
-const URL_SCRIPT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
-
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwk15mVk0IBpOGSTwmXbdGWnzhUVO3jfLjSyCfYGqulW_seQ8FM3DOVaqhkhDPPkeT-QA/exec";
+  
 let presenteAtualId = null;
+
+/* popup confirmação */
 
 function fecharPopup() {
   document.getElementById("popup-confirmacao").style.display = "none";
@@ -113,7 +108,7 @@ async function enviarConfirmacao() {
   const acompanhantes = document.getElementById("confirmacaoAcompanhantes").value.trim();
   const observacao = document.getElementById("confirmacaoObservacao").value.trim();
 
-  if (nome === "") {
+  if (!nome) {
     alert("preencha seu nome, por favor 💛");
     return;
   }
@@ -124,11 +119,11 @@ async function enviarConfirmacao() {
       redirect: "follow",
       body: JSON.stringify({
         acao: "confirmarPresenca",
-        nome: nome,
-        telefone: telefone,
+        nome,
+        telefone,
         presenca: "confirmado",
-        acompanhantes: acompanhantes,
-        observacao: observacao
+        acompanhantes,
+        observacao
       })
     });
 
@@ -146,13 +141,15 @@ async function enviarConfirmacao() {
   }
 }
 
+/* sorteio presente */
+
 async function sortearPresente() {
   const nome = document.getElementById("nome").value.trim();
   const resultado = document.getElementById("resultadoSorteio");
   const botao = document.getElementById("botaoSortear");
 
-  if (nome === "") {
-    alert("Digite seu nome.");
+  if (!nome) {
+    alert("digite seu nome.");
     return;
   }
 
@@ -166,7 +163,7 @@ async function sortearPresente() {
       redirect: "follow",
       body: JSON.stringify({
         acao: "sortear",
-        nome: nome,
+        nome,
         presenteAnteriorId: presenteAtualId
       })
     });
@@ -221,7 +218,7 @@ async function confirmarPresente() {
       body: JSON.stringify({
         acao: "confirmar",
         id: presenteAtualId,
-        nome: nome
+        nome
       })
     });
 
@@ -242,6 +239,6 @@ async function confirmarPresente() {
   }
 }
 </script>
-
+  
 </body>
 </html>
