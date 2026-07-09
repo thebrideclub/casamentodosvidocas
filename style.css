@@ -596,8 +596,8 @@ textarea::placeholder {
   background-image: repeating-linear-gradient(
     90deg,
     rgba(244, 216, 112, 0.10) 0px,
-    rgba(244, 216, 112, 0.10) 3px,
-    rgba(255, 253, 244, 0.95) 3px,
+    rgba(244, 216, 112, 0.10) 7px,
+    rgba(255, 253, 244, 0.95) 7px,
     rgba(255, 253, 244, 0.95) 16px
   );
   border-left: 2px solid var(--linha);
@@ -625,7 +625,7 @@ textarea::placeholder {
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 12px;
+
 }
 
 .cha-container h1 {
@@ -638,8 +638,8 @@ textarea::placeholder {
 }
 
 .cha-texto {
-  max-width: 640px;
-  margin: 0 auto 42px;
+  max-width: 540px;
+  margin: 0 auto 37px;
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
   line-height: 2;
