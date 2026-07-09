@@ -95,7 +95,9 @@
 
 <script>
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwk15mVk0IBpOGSTwmXbdGWnzhUVO3jfLjSyCfYGqulW_seQ8FM3DOVaqhkhDPPkeT-QA/exec";
-  
+
+const LINK_REFERENCIAS = "https://br.pinterest.com/felixmadu/refer%C3%AAncias-ch%C3%A1-dos-vidocas/";
+
 let presenteAtualId = null;
 
 /* popup confirmação */
@@ -229,6 +231,16 @@ async function confirmarPresente() {
         <h2>presente reservado 💛</h2>
         <p>${dados.presente}</p>
         <p>muito obrigada por fazer parte desse momento com a gente.</p>
+
+        <div class="botoes-pos-reserva">
+          <a href="${LINK_REFERENCIAS}" target="_blank" class="botao">
+            ver referências
+          </a>
+
+          <button onclick="darMaisUmPresente()">
+            quero dar mais um presente
+          </button>
+        </div>
       `;
     } else {
       resultado.innerHTML = `<p>${dados.mensagem}</p>`;
@@ -237,6 +249,16 @@ async function confirmarPresente() {
   } catch (e) {
     resultado.innerHTML = "erro ao reservar o presente.";
   }
+}
+
+function darMaisUmPresente() {
+  presenteAtualId = null;
+
+  document.getElementById("resultadoSorteio").innerHTML = "";
+
+  const botao = document.getElementById("botaoSortear");
+  botao.disabled = false;
+  botao.innerText = "sortear presente";
 }
 </script>
   
