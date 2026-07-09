@@ -881,20 +881,20 @@ textarea::placeholder {
 
   .cha-logo {
     width: min(330px, 90%);
-    margin: 0 auto 12px;
+    margin: 30 auto 30px;
   }
 
   .cha-subtitulo {
     font-size: 8px;
     line-height: 1.9;
     letter-spacing: 2.5px;
-    margin: 0 0 8px;
+    margin: 20px 0 20px;
   }
 
   .cha-container h1 {
     font-size: 34px;
     line-height: 1;
-    margin: 0 0 16px;
+    margin: 20px 0 20px;
   }
 
   .cha-texto {
