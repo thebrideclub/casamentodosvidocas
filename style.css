@@ -1001,6 +1001,20 @@ textarea::placeholder {
   background: var(--marrom-escuro);
   transform: translateY(-2px);
 }
+.botoes-pos-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.botoes-pos-reserva .botao,
+.botoes-pos-reserva button {
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
 
 /* ===========================
    MOBILE
