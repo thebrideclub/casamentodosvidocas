@@ -619,7 +619,7 @@ textarea::placeholder {
   width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 18px;
+  margin: 40px auto 40px;
 }
 
 .cha-subtitulo {
@@ -628,7 +628,7 @@ textarea::placeholder {
   line-height: 1.8;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 10px;
+  margin: 10px 0 10px;
 }
 
 .cha-container h1 {
