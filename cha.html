@@ -22,7 +22,6 @@
     </p>
 
     <input type="text" id="confirmacaoNome" placeholder="seu nome">
-    <input type="text" id="confirmacaoTelefone" placeholder="telefone">
     <input type="number" id="confirmacaoAcompanhantes" placeholder="nº de acompanhantes">
     <textarea id="confirmacaoObservacao" placeholder="alguma observação?"></textarea>
 
@@ -104,7 +103,6 @@ function fecharPopup() {
 
 async function enviarConfirmacao() {
   const nome = document.getElementById("confirmacaoNome").value.trim();
-  const telefone = document.getElementById("confirmacaoTelefone").value.trim();
   const acompanhantes = document.getElementById("confirmacaoAcompanhantes").value.trim();
   const observacao = document.getElementById("confirmacaoObservacao").value.trim();
 
