@@ -619,7 +619,7 @@ textarea::placeholder {
   width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 14px;
+  margin: 0 auto 22px; /* mais respiro abaixo do logo */
 }
 
 .cha-subtitulo {
@@ -627,6 +627,7 @@ textarea::placeholder {
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin: 0 0 14px; /* espaço entre subtítulo e título */
 }
 
 .cha-container h1 {
@@ -635,7 +636,8 @@ textarea::placeholder {
   font-weight: 300;
   text-transform: uppercase;
   color: var(--marrom-escuro);
-  margin: 0 0 10px;
+  line-height: 0.95; /* aproxima as linhas caso o título quebre */
+  margin: 0 0 22px; /* espaço depois do título */
 }
 
 .cha-texto {
@@ -644,7 +646,7 @@ textarea::placeholder {
   padding: 0 8px;
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
-  line-height: 2;
+  line-height: 3;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -680,7 +682,7 @@ textarea::placeholder {
 .cha-card span {
   display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 2px;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -700,7 +702,7 @@ textarea::placeholder {
   max-width: 300px;
   margin: 0 auto 24px;
   font-family: "Montserrat", sans-serif;
-  font-size: 8px;
+  font-size: 9px;
   line-height: 2;
   letter-spacing: 1.5px;
   text-transform: uppercase;
