@@ -1089,7 +1089,8 @@ textarea::placeholder {
   }
 
   .botao {
-    width: min(260px, 70%);
+    width: fit-content;
+    max-width: 240px;
   }
 
   .slider {
