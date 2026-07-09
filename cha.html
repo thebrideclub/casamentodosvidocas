@@ -18,12 +18,12 @@
     <h2>confirme sua presença</h2>
 
     <p class="popup-texto">
-      antes de acessar a lista, confirme sua presença nesse dia tão especial 💛
+      antes de acessar a lista, pedimos que confirme sua presença nesse dia tão especial 💛
     </p>
 
     <input type="text" id="confirmacaoNome" placeholder="seu nome">
     <input type="number" id="confirmacaoAcompanhantes" placeholder="nº de acompanhantes">
-    <textarea id="confirmacaoObservacao" placeholder="alguma observação?"></textarea>
+    <textarea id="confirmacaoObservacao" placeholder="mande uma mensagem pros noivos"></textarea>
 
     <button onclick="enviarConfirmacao()" class="popup-botao">
       confirmar presença
@@ -54,7 +54,7 @@
 
     <p class="cha-texto">
   antes do nosso grande dia, queremos reunir as pessoas que fazem parte da nossa história para celebrar esse momento tão especial.
-se quiser nos presentear, escolhm uma das opções abaixo e venha partilhar desse dia com a gente. ☀️
+se quiser nos presentear, escolha uma das opções abaixo e venha partilhar desse dia com a gente. ☀️
     </p>
 
     <div class="cha-opcoes">
@@ -68,7 +68,7 @@ se quiser nos presentear, escolhm uma das opções abaixo e venha partilhar dess
 
       <div class="cha-card sorteio-card">
         <span> levar no chá </span>
-        <h2>quero levar pessoalmente</h2>
+        <h2>quer levar pessoalmente?</h2>
         <p>digite seu nome e sorteie um presente da nossa lista para levar no dia do chá.</p>
 
         <input type="text" id="nome" placeholder="seu nome">
@@ -134,7 +134,7 @@ async function enviarConfirmacao() {
     }
 
   } catch (e) {
-    alert("erro ao conectar com o servidor.");
+    alert("eita, teve um erro. avise pros vidocas.");
   }
 }
 
@@ -182,11 +182,11 @@ async function sortearPresente() {
       <h2>${dados.presente}</h2>
 
       <button onclick="confirmarPresente()">
-        quero levar esse
+        clique aqui se quer levar esse mesmo
       </button>
 
       <button onclick="sortearPresente()">
-        sortear novamente
+        clique se deseja sortear novamente
       </button>
     `;
 
@@ -225,7 +225,7 @@ async function confirmarPresente() {
       resultado.innerHTML = `
         <h2>presente reservado 💛</h2>
         <p>${dados.presente}</p>
-        <p>muito obrigada por fazer parte desse momento.</p>
+        <p>muito obrigada por fazer parte desse momento com a gente.</p>
       `;
     } else {
       resultado.innerHTML = `<p>${dados.mensagem}</p>`;
