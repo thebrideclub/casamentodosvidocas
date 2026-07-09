@@ -586,7 +586,9 @@ textarea::placeholder {
   letter-spacing: 1.6px;
 }
 
-/* CHÁ DE COZINHA */
+/* ===========================
+   CHÁ DE COZINHA
+=========================== */
 
 .cha-section {
   width: min(1100px, calc(100% - 32px));
@@ -625,7 +627,6 @@ textarea::placeholder {
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-
 }
 
 .cha-container h1 {
@@ -640,6 +641,7 @@ textarea::placeholder {
 .cha-texto {
   max-width: 540px;
   margin: 0 auto 37px;
+  padding: 0 8px;
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
   line-height: 2;
@@ -648,6 +650,7 @@ textarea::placeholder {
 }
 
 .cha-opcoes {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
@@ -731,51 +734,10 @@ textarea::placeholder {
   color: var(--marrom-escuro);
 }
 
-@media (max-width: 849px) {
 
-  .cha-section {
-    width: min(940px, calc(100% - 28px));
-    padding: 30px 8px;
-  }
-
-  .cha-logo {
-    width: 350px;
-    margin: 0 auto 12px;
-  }
-
-  .cha-subtitulo {
-    margin-bottom: 2px;
-  }
-
-  .cha-container h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
-  }
-
-  .cha-texto {
-    margin-bottom: 36px;
-    font-size: 8px;
-  }
-
-  .cha-opcoes {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .cha-card {
-    min-height: auto;
-    padding: 32px 26px;
-    border-radius: 24px;
-  }
-
-  .cha-card h2 {
-    font-size: 24px;
-  }
-
-  .cha-card p {
-    max-width: 420px;
-  }
-  /* POPUP CONFIRMAÇÃO */
+/* ===========================
+   POPUP CONFIRMAÇÃO
+=========================== */
 
 .popup-overlay {
   position: fixed;
@@ -797,7 +759,7 @@ textarea::placeholder {
   padding: 45px 35px 35px;
   position: relative;
   text-align: center;
-  box-shadow: 14px 14px 0 rgba(81,62,52,.08);
+  box-shadow: 14px 14px 0 rgba(81, 62, 52, .08);
 }
 
 .popup-fechar {
@@ -889,7 +851,58 @@ textarea::placeholder {
   transform: translateY(-2px);
 }
 
-@media (max-width: 850px) {
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 849px) {
+
+  .cha-section {
+    width: min(940px, calc(100% - 28px));
+    padding: 30px 12px;
+  }
+
+  .cha-logo {
+    width: min(350px, 90%);
+    margin: 0 auto 12px;
+  }
+
+  .cha-subtitulo {
+    margin-bottom: 2px;
+  }
+
+  .cha-container h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+  }
+
+  .cha-texto {
+    max-width: 360px;
+    padding: 0 18px;
+    margin: 0 auto 36px;
+    font-size: 8px;
+    line-height: 2;
+  }
+
+  .cha-opcoes {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cha-card {
+    min-height: auto;
+    padding: 32px 26px;
+    border-radius: 24px;
+  }
+
+  .cha-card h2 {
+    font-size: 24px;
+  }
+
+  .cha-card p {
+    max-width: 420px;
+  }
 
   .popup-box {
     padding: 35px 24px 24px;
@@ -904,6 +917,5 @@ textarea::placeholder {
     font-size: 8px;
   }
 
-}
 }
 }
