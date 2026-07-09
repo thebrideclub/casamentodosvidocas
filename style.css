@@ -34,6 +34,10 @@
   --linha: rgba(81, 62, 52, 0.15);
 }
 
+/* ===========================
+   BASE
+=========================== */
+
 * {
   box-sizing: border-box;
 }
@@ -42,15 +46,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
   background: var(--fundo);
   color: var(--marrom);
   font-family: "Conqueror", Georgia, serif;
   font-weight: 300;
 }
 
-/* MENU */
+/* ===========================
+   MENU
+=========================== */
 
 .menu {
   position: relative;
@@ -110,7 +121,105 @@ body {
   opacity: 0.55;
 }
 
-/* FOTO PRINCIPAL */
+/* ===========================
+   STAND BY
+=========================== */
+
+body.standby-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-standby {
+  width: min(940px, calc(100% - 28px));
+  margin: 18px auto 0;
+  padding: 28px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--creme);
+  border: 1px solid var(--linha);
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 12px 30px rgba(81, 62, 52, 0.06);
+}
+
+.logo-standby {
+  width: 82px;
+  height: auto;
+  display: block;
+}
+
+.standby {
+  flex: 1;
+  width: min(940px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 64px 24px 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--creme);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(244, 216, 112, 0.12) 0px,
+    rgba(244, 216, 112, 0.12) 5px,
+    rgba(255, 250, 244, 0.95) 5px,
+    rgba(255, 250, 244, 0.95) 18px
+  );
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+.standby-card {
+  max-width: 620px;
+  width: 100%;
+  padding: 64px 34px;
+  text-align: center;
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--linha);
+  border-radius: 28px;
+  box-shadow: 10px 10px 0 rgba(81, 62, 52, 0.06);
+}
+
+.standby-subtitulo {
+  margin: 0 0 22px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--marrom);
+}
+
+.standby h1 {
+  margin: 0 0 20px;
+  font-family: "Serifada", serif;
+  font-size: clamp(52px, 8vw, 92px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--marrom-escuro);
+}
+
+.standby-texto {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(12px, 2vw, 16px);
+  line-height: 1.9;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--marrom);
+}
+
+.standby-data {
+  margin: 30px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--marrom-escuro);
+}
+
+/* ===========================
+   FOTO PRINCIPAL
+=========================== */
 
 .foto-principal {
   width: min(940px, calc(80% - 28px));
@@ -124,7 +233,9 @@ body {
   filter: saturate(0.88) contrast(0.96);
 }
 
-/* CONVITE */
+/* ===========================
+   CONVITE
+=========================== */
 
 .convite {
   width: min(940px, calc(100% - 28px));
@@ -161,8 +272,7 @@ body {
   font-size: 7px;
   color: var(--marrom);
   text-align: center;
-  margin-top: 2px;
-  margin-bottom: 8px;
+  margin: 2px 0 8px;
   letter-spacing: 4px;
   opacity: 0.85;
 }
@@ -182,7 +292,9 @@ body {
   color: var(--marrom);
 }
 
-/* BOAS-VINDAS */
+/* ===========================
+   BOAS-VINDAS
+=========================== */
 
 .texto-boas-vindas {
   width: min(940px, calc(100% - 28px));
@@ -209,7 +321,9 @@ body {
   text-transform: uppercase;
 }
 
-/* TÍTULOS */
+/* ===========================
+   TÍTULOS
+=========================== */
 
 .titulo-contagem,
 .titulo-sessao,
@@ -227,7 +341,9 @@ body {
   line-height: 1.1;
 }
 
-/* CONTAGEM */
+/* ===========================
+   CONTAGEM
+=========================== */
 
 .contagem-regressiva {
   width: min(940px, calc(100% - 28px));
@@ -279,7 +395,9 @@ body {
   font-size: 20px;
 }
 
-/* CASAMENTO */
+/* ===========================
+   CASAMENTO
+=========================== */
 
 .sessao-como-chegar {
   width: min(940px, calc(100% - 28px));
@@ -318,7 +436,9 @@ body {
   margin-bottom: 28px;
 }
 
-/* BOTÕES */
+/* ===========================
+   BOTÕES
+=========================== */
 
 .botao-como-chegar,
 .botao,
@@ -346,7 +466,9 @@ button:hover {
   color: var(--marrom);
 }
 
-/* RSVP */
+/* ===========================
+   RSVP
+=========================== */
 
 .rsvp-section {
   width: min(940px, calc(100% - 28px));
@@ -367,7 +489,9 @@ button:hover {
   box-shadow: 10px 10px 0 rgba(81, 62, 52, 0.08);
 }
 
-/* FORM */
+/* ===========================
+   FORMULÁRIOS
+=========================== */
 
 form {
   display: flex;
@@ -424,7 +548,9 @@ textarea::placeholder {
   width: auto;
 }
 
-/* PRESENTES */
+/* ===========================
+   PRESENTES
+=========================== */
 
 .lista-presentes {
   width: min(940px, calc(100% - 28px));
@@ -467,7 +593,9 @@ textarea::placeholder {
   color: var(--creme);
 }
 
-/* MENSAGEM */
+/* ===========================
+   MENSAGEM AOS NOIVOS
+=========================== */
 
 .msg-section {
   width: min(940px, calc(100% - 28px));
@@ -488,7 +616,9 @@ textarea::placeholder {
   box-shadow: -10px 10px 0 rgba(81, 62, 52, 0.08);
 }
 
-/* CONTATO */
+/* ===========================
+   CONTATO
+=========================== */
 
 .contato-section {
   width: min(940px, calc(100% - 28px));
@@ -523,7 +653,9 @@ textarea::placeholder {
   width: 16px;
 }
 
-/* SLIDER */
+/* ===========================
+   SLIDER
+=========================== */
 
 .slider {
   width: min(940px, calc(100% - 28px));
@@ -567,7 +699,9 @@ textarea::placeholder {
   }
 }
 
-/* RODAPÉ */
+/* ===========================
+   RODAPÉ
+=========================== */
 
 .rodape-site {
   width: min(940px, calc(100% - 28px));
@@ -597,8 +731,8 @@ textarea::placeholder {
   background-color: #fffdf4;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(244, 216, 112, 0.10) 0px,
-    rgba(244, 216, 112, 0.10) 7px,
+    rgba(244, 216, 112, 0.1) 0px,
+    rgba(244, 216, 112, 0.1) 7px,
     rgba(255, 253, 244, 0.95) 7px,
     rgba(255, 253, 244, 0.95) 16px
   );
@@ -619,7 +753,7 @@ textarea::placeholder {
   width: 300px;
   height: auto;
   display: block;
-  margin: 40px auto 40px;
+  margin: 40px auto;
 }
 
 .cha-subtitulo {
@@ -628,7 +762,7 @@ textarea::placeholder {
   line-height: 1.8;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 10px 0 10px;
+  margin: 10px 0;
 }
 
 .cha-container h1 {
@@ -673,7 +807,7 @@ textarea::placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cha-card:hover {
@@ -754,7 +888,7 @@ textarea::placeholder {
 .popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(81, 62, 52, .45);
+  background: rgba(81, 62, 52, 0.45);
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
@@ -771,7 +905,7 @@ textarea::placeholder {
   padding: 45px 35px 35px;
   position: relative;
   text-align: center;
-  box-shadow: 14px 14px 0 rgba(81, 62, 52, .08);
+  box-shadow: 14px 14px 0 rgba(81, 62, 52, 0.08);
 }
 
 .popup-fechar {
@@ -784,7 +918,7 @@ textarea::placeholder {
   font-size: 26px;
   line-height: 1;
   color: var(--marrom);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .popup-fechar:hover {
@@ -833,7 +967,7 @@ textarea::placeholder {
   font-size: 12px;
   line-height: 1.4;
   outline: none;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .popup-box textarea {
@@ -860,7 +994,7 @@ textarea::placeholder {
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .popup-botao:hover {
@@ -873,6 +1007,133 @@ textarea::placeholder {
 =========================== */
 
 @media (max-width: 849px) {
+  .menu {
+    width: min(940px, calc(100% - 28px));
+    margin-top: 14px;
+    padding: 12px;
+  }
+
+  .nav-container {
+    padding: 12px;
+  }
+
+  .menu-list {
+    gap: 14px;
+  }
+
+  .menu-list a {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .foto-principal {
+    width: min(940px, calc(100% - 28px));
+    height: 520px;
+  }
+
+  .convite {
+    padding: 38px 18px;
+  }
+
+  .nomes {
+    font-size: 30px;
+    line-height: 0.95;
+  }
+
+  .texto-boas-vindas,
+  .contagem-regressiva,
+  .sessao-como-chegar,
+  .rsvp-section,
+  .lista-presentes,
+  .msg-section,
+  .contato-section {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  .texto-boas-vindas {
+    padding: 52px 22px;
+  }
+
+  .texto-boas-vindas p {
+    font-size: 6px;
+    line-height: 2.2;
+    letter-spacing: 2.4px;
+  }
+
+  .sessao-como-chegar .titulo-sessao {
+    font-size: 42px;
+  }
+
+  .retangulo,
+  .retangulo_msg {
+    padding: 28px 22px;
+  }
+
+  .botoes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao {
+    width: min(260px, 100%);
+  }
+
+  .slider {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  .slide img {
+    width: 190px;
+    height: 260px;
+  }
+
+  .rodape-site {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  /* stand by mobile */
+
+  .menu-standby {
+    width: min(940px, calc(100% - 28px));
+    margin-top: 14px;
+    padding: 24px 18px 18px;
+  }
+
+  .logo-standby {
+    width: 76px;
+  }
+
+  .standby {
+    width: min(940px, calc(100% - 28px));
+    padding: 44px 18px 60px;
+  }
+
+  .standby-card {
+    padding: 50px 22px;
+    border-radius: 24px;
+  }
+
+  .standby-subtitulo {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .standby h1 {
+    font-size: 54px;
+  }
+
+  .standby-texto {
+    font-size: 11px;
+    line-height: 1.9;
+    letter-spacing: 1.4px;
+  }
+
+  .standby-data {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  /* chá mobile */
 
   .cha-section {
     width: min(940px, calc(100% - 28px));
@@ -881,20 +1142,20 @@ textarea::placeholder {
 
   .cha-logo {
     width: min(330px, 90%);
-    margin: 30 auto 30px;
+    margin: 30px auto;
   }
 
   .cha-subtitulo {
     font-size: 8px;
     line-height: 1.9;
     letter-spacing: 2.5px;
-    margin: 20px 0 20px;
+    margin: 20px 0;
   }
 
   .cha-container h1 {
     font-size: 34px;
     line-height: 1;
-    margin: 20px 0 20px;
+    margin: 20px 0;
   }
 
   .cha-texto {
@@ -962,6 +1223,4 @@ textarea::placeholder {
     line-height: 2.1;
     letter-spacing: 1.5px;
   }
-
-}
 }
