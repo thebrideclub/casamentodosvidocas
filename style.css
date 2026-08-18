@@ -1015,230 +1015,7 @@ textarea::placeholder {
   max-width: 260px;
   text-align: center;
 }
-
 /* ===========================
-   MOBILE
-=========================== */
-
-@media (max-width: 849px) {
-  .menu {
-    width: min(940px, calc(100% - 28px));
-    margin-top: 14px;
-    padding: 12px;
-  }
-
-  .nav-container {
-    padding: 12px;
-  }
-
-  .menu-list {
-    gap: 14px;
-  }
-
-  .menu-list a {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-
-  .foto-principal {
-    width: min(940px, calc(100% - 28px));
-    height: 520px;
-  }
-
-  .convite {
-    padding: 38px 18px;
-  }
-
-  .nomes {
-    font-size: 30px;
-    line-height: 0.95;
-  }
-
-  .texto-boas-vindas,
-  .contagem-regressiva,
-  .sessao-como-chegar,
-  .rsvp-section,
-  .lista-presentes,
-  .msg-section,
-  .contato-section {
-    width: min(940px, calc(100% - 28px));
-  }
-
-  .texto-boas-vindas {
-    padding: 52px 22px;
-  }
-
-  .texto-boas-vindas p {
-    font-size: 6px;
-    line-height: 2.2;
-    letter-spacing: 2.4px;
-  }
-
-  .sessao-como-chegar .titulo-sessao {
-    font-size: 42px;
-  }
-
-  .retangulo,
-  .retangulo_msg {
-    padding: 28px 22px;
-  }
-
-  .botoes-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .botao {
-    width: fit-content;
-    max-width: 240px;
-  }
-
-  .slider {
-    width: min(940px, calc(100% - 28px));
-  }
-
-  .slide img {
-    width: 190px;
-    height: 260px;
-  }
-
-  .rodape-site {
-    width: min(940px, calc(100% - 28px));
-  }
-
-  /* stand by mobile */
-
-  .menu-standby {
-    width: min(940px, calc(100% - 28px));
-    margin-top: 14px;
-    padding: 24px 18px 18px;
-  }
-
-  .logo-standby {
-    width: 76px;
-  }
-
-  .standby {
-    width: min(940px, calc(100% - 28px));
-    padding: 44px 18px 60px;
-  }
-
-  .standby-card {
-    padding: 50px 22px;
-    border-radius: 24px;
-  }
-
-  .standby-subtitulo {
-    font-size: 8px;
-    letter-spacing: 3px;
-  }
-
-  .standby h1 {
-    font-size: 54px;
-  }
-
-  .standby-texto {
-    font-size: 11px;
-    line-height: 1.9;
-    letter-spacing: 1.4px;
-  }
-
-  .standby-data {
-    font-size: 9px;
-    letter-spacing: 3px;
-  }
-
-  /* chá mobile */
-
-  .cha-section {
-    width: min(940px, calc(100% - 28px));
-    padding: 34px 12px;
-  }
-
-  .cha-logo {
-    width: min(330px, 90%);
-    margin: 30px auto;
-  }
-
-  .cha-subtitulo {
-    font-size: 8px;
-    line-height: 1.9;
-    letter-spacing: 2.5px;
-    margin: 20px 0;
-  }
-
-  .cha-container h1 {
-    font-size: 34px;
-    line-height: 1;
-    margin: 20px 0;
-  }
-
-  .cha-texto {
-    max-width: 360px;
-    padding: 0 20px;
-    margin: 0 auto 36px;
-    font-size: 8px;
-    line-height: 2.2;
-    letter-spacing: 1.6px;
-  }
-
-  .cha-opcoes {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .cha-card {
-    min-height: auto;
-    padding: 32px 26px;
-    border-radius: 24px;
-  }
-
-  .presente2-logo {
-    width: 76px;
-    margin-bottom: 14px;
-  }
-
-  .cha-card span {
-    font-size: 8px;
-    line-height: 1.8;
-    margin-bottom: 10px;
-  }
-
-  .cha-card h2 {
-    font-size: 26px;
-    line-height: 1.05;
-    margin-bottom: 16px;
-  }
-
-  .cha-card p {
-    max-width: 420px;
-    font-size: 8px;
-    line-height: 2.1;
-    letter-spacing: 1.4px;
-  }
-
-  .popup-box {
-    padding: 35px 24px 24px;
-    border-radius: 24px;
-  }
-
-  .popup-subtitulo {
-    font-size: 8px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-  }
-
-  .popup-box h2 {
-    font-size: 34px;
-    line-height: 1;
-  }
-
-  .popup-texto {
-    font-size: 8px;
-    line-height: 2.1;
-    letter-spacing: 1.5px;
-  }
-  /* ===========================
    PÁGINA DE DICAS
 =========================== */
 
@@ -1535,6 +1312,340 @@ textarea::placeholder {
 
   color: var(--creme);
 }
+
+
+/* ===========================
+   MOBILE - DICAS
+=========================== */
+
+@media (max-width: 849px) {
+
+  .dicas-intro {
+    padding: 44px 22px 36px;
+  }
+
+  .titulo-dicas {
+    font-size: 40px;
+  }
+
+  .subtitulo-dicas {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .texto-dicas-intro {
+    font-size: 7px;
+    line-height: 2.1;
+    letter-spacing: 1.5px;
+  }
+
+
+  .dicas-container {
+    padding: 38px 18px 54px;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .dica-card {
+    min-height: auto;
+
+    padding: 36px 24px;
+
+    border-radius: 24px;
+  }
+
+
+  .dica-card:last-child {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+
+  .icone-dica {
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .dica-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .dica-card p {
+    max-width: 390px;
+
+    font-size: 8px;
+
+    line-height: 2;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .botao-dica {
+    margin-top: 18px;
+
+    font-size: 7.5px;
+  }
+
+
+  .final-dicas {
+    padding: 58px 22px;
+  }
+
+
+  .final-dicas .imagem-casa {
+    width: 120px;
+
+    margin-bottom: 28px;
+  }
+
+
+  .final-dicas p {
+    font-size: 7.5px;
+
+    letter-spacing: 1.6px;
+  }
+
+
+  .final-dicas strong {
+    font-size: 12px;
+  }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 849px) {
+  .menu {
+    width: min(940px, calc(100% - 28px));
+    margin-top: 14px;
+    padding: 12px;
+  }
+
+  .nav-container {
+    padding: 12px;
+  }
+
+  .menu-list {
+    gap: 14px;
+  }
+
+  .menu-list a {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .foto-principal {
+    width: min(940px, calc(100% - 28px));
+    height: 520px;
+  }
+
+  .convite {
+    padding: 38px 18px;
+  }
+
+  .nomes {
+    font-size: 30px;
+    line-height: 0.95;
+  }
+
+  .texto-boas-vindas,
+  .contagem-regressiva,
+  .sessao-como-chegar,
+  .rsvp-section,
+  .lista-presentes,
+  .msg-section,
+  .contato-section {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  .texto-boas-vindas {
+    padding: 52px 22px;
+  }
+
+  .texto-boas-vindas p {
+    font-size: 6px;
+    line-height: 2.2;
+    letter-spacing: 2.4px;
+  }
+
+  .sessao-como-chegar .titulo-sessao {
+    font-size: 42px;
+  }
+
+  .retangulo,
+  .retangulo_msg {
+    padding: 28px 22px;
+  }
+
+  .botoes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao {
+    width: fit-content;
+    max-width: 240px;
+  }
+
+  .slider {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  .slide img {
+    width: 190px;
+    height: 260px;
+  }
+
+  .rodape-site {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  /* stand by mobile */
+
+  .menu-standby {
+    width: min(940px, calc(100% - 28px));
+    margin-top: 14px;
+    padding: 24px 18px 18px;
+  }
+
+  .logo-standby {
+    width: 76px;
+  }
+
+  .standby {
+    width: min(940px, calc(100% - 28px));
+    padding: 44px 18px 60px;
+  }
+
+  .standby-card {
+    padding: 50px 22px;
+    border-radius: 24px;
+  }
+
+  .standby-subtitulo {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .standby h1 {
+    font-size: 54px;
+  }
+
+  .standby-texto {
+    font-size: 11px;
+    line-height: 1.9;
+    letter-spacing: 1.4px;
+  }
+
+  .standby-data {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  /* chá mobile */
+
+  .cha-section {
+    width: min(940px, calc(100% - 28px));
+    padding: 34px 12px;
+  }
+
+  .cha-logo {
+    width: min(330px, 90%);
+    margin: 30px auto;
+  }
+
+  .cha-subtitulo {
+    font-size: 8px;
+    line-height: 1.9;
+    letter-spacing: 2.5px;
+    margin: 20px 0;
+  }
+
+  .cha-container h1 {
+    font-size: 34px;
+    line-height: 1;
+    margin: 20px 0;
+  }
+
+  .cha-texto {
+    max-width: 360px;
+    padding: 0 20px;
+    margin: 0 auto 36px;
+    font-size: 8px;
+    line-height: 2.2;
+    letter-spacing: 1.6px;
+  }
+
+  .cha-opcoes {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cha-card {
+    min-height: auto;
+    padding: 32px 26px;
+    border-radius: 24px;
+  }
+
+  .presente2-logo {
+    width: 76px;
+    margin-bottom: 14px;
+  }
+
+  .cha-card span {
+    font-size: 8px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .cha-card h2 {
+    font-size: 26px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .cha-card p {
+    max-width: 420px;
+    font-size: 8px;
+    line-height: 2.1;
+    letter-spacing: 1.4px;
+  }
+
+  .popup-box {
+    padding: 35px 24px 24px;
+    border-radius: 24px;
+  }
+
+  .popup-subtitulo {
+    font-size: 8px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .popup-box h2 {
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .popup-texto {
+    font-size: 8px;
+    line-height: 2.1;
+    letter-spacing: 1.5px;
+  }
+ ≈
 
 
 /* ===========================
