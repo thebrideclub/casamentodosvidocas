@@ -19,15 +19,11 @@
     <nav class="nav-container">
       <ul class="menu-list">
         <li><a href="index.html">NOSSO DIA</a></li>
-
         <li>
-          <a
-            href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-            target="_blank">
+          <a href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
             COMO CHEGAR
           </a>
         </li>
-
         <li><a href="dicas.html">DICAS</a></li>
         <li><a href="#rsvp">R.S.V.P</a></li>
         <li><a href="#lista-presentes">PRESENTES</a></li>
@@ -46,7 +42,9 @@
       Matheus <span class="ampersand">&</span> Maria
     </h1>
 
-    <p class="vidoca">OS VIDOCAS VÃO SE CASAR!</p>
+    <p class="vidoca">
+      OS VIDOCAS VÃO SE CASAR!
+    </p>
   </div>
 
 
@@ -58,11 +56,9 @@
 
         A PARTIR DE AGORA, O NOSSO GRANDE DIA JÁ COMEÇOU.<br><br>
 
-        CRIAMOS ESTE SITE PARA COMPARTILHAR ALGUMAS INFORMAÇÕES
-        SOBRE O NOSSO CASAMENTO PARA FACILITAR A IDA DE TODOS VOCÊS.<br><br>
+        CRIAMOS ESTE SITE PARA COMPARTILHAR ALGUMAS INFORMAÇÕES SOBRE O NOSSO CASAMENTO PARA FACILITAR A IDA DE TODOS VOCÊS.<br><br>
 
-        ESPERAMOS QUE VOCÊS APROVEITEM E QUE ESSE DIA SEJA
-        INESQUECÍVEL PARA TODOS NÓS.<br>
+        ESPERAMOS QUE VOCÊS APROVEITEM E QUE ESSE DIA SEJA INESQUECÍVEL PARA TODOS NÓS.<br>
 
         VOCÊS FAZEM PARTE DO NOSSO SONHO!<br><br>
 
@@ -141,7 +137,8 @@
 
     <a
       class="botao-como-chegar"
-      href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+      href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+      target="_blank">
       COMO CHEGAR
     </a>
 
@@ -158,7 +155,7 @@
       <form id="rsvpForm" autocomplete="off">
 
         <!-- Nome -->
-        <label>Nome</label>
+        <label>Seu nome</label>
 
         <input
           type="text"
@@ -168,17 +165,18 @@
         />
 
 
-        <!-- Whatsapp -->
+        <!-- WhatsApp -->
         <label>Whatsapp (DDD) + NÚMERO</label>
 
         <input
           type="tel"
           name="whatsapp"
+          placeholder="(11) 99999-9999"
           required
         />
 
 
-        <!-- Presença -->
+        <!-- Confirmação -->
         <label>Confirma presença?</label>
 
         <div class="radio-group">
@@ -205,39 +203,27 @@
         </div>
 
 
-        <!-- Área dos convidados -->
-        <div
-          id="areaConvidados"
-          style="display:none;"
-        >
+        <!-- Campos que aparecem somente se marcar SIM -->
+        <div id="camposConvidados" style="display:none;">
 
-          <label>
-            Quem deste convite estará presente?
-          </label>
+          <label>Quantidade de pessoas</label>
 
-          <div id="listaConvidados"></div>
-
-
-          <!-- Quantidade automática -->
           <input
-            type="hidden"
+            type="number"
             name="quantidade"
             id="quantidade"
-            value="0"
-          >
+            min="1"
+            placeholder="Ex: 2"
+          />
 
 
-          <!-- Nomes automáticos -->
-          <input
-            type="hidden"
+          <label>Nome dos convidados</label>
+
+          <textarea
             name="convidados"
             id="convidados"
-          >
-
-
-          <p id="contadorConfirmados">
-            Confirmados: 0
-          </p>
+            placeholder="Digite seu nome e o nome dos acompanhantes"
+          ></textarea>
 
         </div>
 
@@ -253,206 +239,51 @@
 
     <script>
 
-      /*
-      ============================================
-      LISTA DE GRUPOS / CONVITES
-      ============================================
-      Cada linha representa UM convite.
-      */
+      const form = document.getElementById("rsvpForm");
 
-      const grupos = [
+      const radiosPresenca = document.querySelectorAll(
+        '#rsvpForm input[name="presenca"]'
+      );
 
-        [
-          "Maria Eduarda Felix",
-          "Matheus Oliveira"
-        ],
+      const camposConvidados =
+        document.getElementById("camposConvidados");
 
-        [
-          "João Silva",
-          "Ana Silva",
-          "Pedro Silva"
-        ]
-
-      ];
-
-
-      /*
-      ============================================
-      NORMALIZAÇÃO DO NOME
-      ============================================
-      Isso ajuda o sistema a encontrar o convidado
-      mesmo se ele digitar sem acento ou com
-      letras maiúsculas/minúsculas diferentes.
-      */
-
-      function normalizarNome(nome) {
-
-        return nome
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .toLowerCase()
-          .trim();
-
-      }
-
-
-      /*
-      ============================================
-      ENCONTRAR O GRUPO
-      ============================================
-      */
-
-      function encontrarGrupo(nome) {
-
-        const nomeDigitado = normalizarNome(nome);
-
-        return grupos.find(grupo =>
-
-          grupo.some(pessoa =>
-
-            normalizarNome(pessoa) === nomeDigitado
-
-          )
-
-        );
-
-      }
-
-
-      /*
-      ============================================
-      ELEMENTOS DO FORMULÁRIO
-      ============================================
-      */
-
-      const form =
-        document.getElementById("rsvpForm");
-
-      const campoNome =
-        document.querySelector(
-          '#rsvpForm input[name="nome"]'
-        );
-
-      const campoQuantidade =
+      const quantidade =
         document.getElementById("quantidade");
 
-      const campoConvidados =
+      const convidados =
         document.getElementById("convidados");
-
-      const areaConvidados =
-        document.getElementById("areaConvidados");
-
-      const listaConvidados =
-        document.getElementById("listaConvidados");
-
-      const contadorConfirmados =
-        document.getElementById("contadorConfirmados");
 
 
       /*
-      ============================================
-      MOSTRAR CONVIDADOS DO GRUPO
-      ============================================
+      MOSTRA OS CAMPOS DE CONVIDADOS
+      SOMENTE QUANDO MARCAR "SIM"
       */
 
-      campoNome.addEventListener("change", () => {
+      radiosPresenca.forEach(radio => {
 
-        const grupo =
-          encontrarGrupo(campoNome.value);
+        radio.addEventListener("change", () => {
 
-        listaConvidados.innerHTML = "";
+          if (radio.value === "sim" && radio.checked) {
 
-        campoQuantidade.value = 0;
+            camposConvidados.style.display = "block";
 
-        campoConvidados.value = "";
+            quantidade.required = true;
+            convidados.required = true;
 
-        contadorConfirmados.textContent =
-          "Confirmados: 0";
+          }
 
+          if (radio.value === "nao" && radio.checked) {
 
-        /*
-        Se o nome não for encontrado,
-        não mostra a área.
-        */
+            camposConvidados.style.display = "none";
 
-        if (!grupo) {
+            quantidade.required = false;
+            convidados.required = false;
 
-          areaConvidados.style.display = "none";
+            quantidade.value = "";
+            convidados.value = "";
 
-          return;
-
-        }
-
-
-        /*
-        Se encontrou o grupo,
-        mostra a área.
-        */
-
-        areaConvidados.style.display = "block";
-
-
-        /*
-        Cria um checkbox para cada pessoa.
-        */
-
-        grupo.forEach((pessoa, index) => {
-
-          const container =
-            document.createElement("div");
-
-          container.classList.add(
-            "convidado-rsvp"
-          );
-
-
-          const checkbox =
-            document.createElement("input");
-
-          checkbox.type = "checkbox";
-
-          checkbox.value = pessoa;
-
-          checkbox.id =
-            "convidado-" + index;
-
-          checkbox.classList.add(
-            "checkbox-convidado"
-          );
-
-
-          const label =
-            document.createElement("label");
-
-          label.htmlFor =
-            "convidado-" + index;
-
-          label.textContent =
-            pessoa;
-
-
-          container.appendChild(
-            checkbox
-          );
-
-          container.appendChild(
-            label
-          );
-
-          listaConvidados.appendChild(
-            container
-          );
-
-
-          /*
-          Sempre que marcar/desmarcar,
-          atualiza quantidade e nomes.
-          */
-
-          checkbox.addEventListener(
-            "change",
-            atualizarConfirmados
-          );
+          }
 
         });
 
@@ -460,179 +291,50 @@
 
 
       /*
-      ============================================
-      ATUALIZA QUANTIDADE E NOMES
-      ============================================
+      ENVIO PARA GOOGLE SHEETS
       */
 
-      function atualizarConfirmados() {
+      form.addEventListener("submit", e => {
 
-        const selecionados =
-          document.querySelectorAll(
-            ".checkbox-convidado:checked"
-          );
+        e.preventDefault();
 
+        fetch(
+          "https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec",
+          {
+            method: "POST",
+            body: new FormData(form)
+          }
+        )
 
-        const nomes =
-          Array.from(selecionados)
-            .map(item => item.value);
+        .then(res => res.json())
 
+        .then(data => {
 
-        campoQuantidade.value =
-          nomes.length;
+          if (data.result === "success") {
 
+            alert("RSVP enviado com sucesso!");
 
-        campoConvidados.value =
-          nomes.join(", ");
+            form.reset();
 
-
-        contadorConfirmados.textContent =
-          "Confirmados: " + nomes.length;
-
-      }
-
-
-      /*
-      ============================================
-      SE MARCAR "NÃO"
-      ============================================
-      Remove automaticamente os convidados.
-      */
-
-      const radiosPresenca =
-        document.querySelectorAll(
-          'input[name="presenca"]'
-        );
-
-
-      radiosPresenca.forEach(radio => {
-
-        radio.addEventListener(
-          "change",
-          () => {
-
-            if (radio.value === "nao" &&
-                radio.checked) {
-
-              document
-                .querySelectorAll(
-                  ".checkbox-convidado"
-                )
-                .forEach(checkbox => {
-
-                  checkbox.checked = false;
-
-                });
-
-
-              atualizarConfirmados();
-
-            }
+            camposConvidados.style.display = "none";
 
           }
-        );
+
+          else {
+
+            alert("Ocorreu um erro, tente novamente.");
+
+          }
+
+        })
+
+        .catch(err => {
+
+          alert("Erro: " + err);
+
+        });
 
       });
-
-
-      /*
-      ============================================
-      ENVIO PARA GOOGLE SHEETS
-      ============================================
-      */
-
-      form.addEventListener(
-        "submit",
-        e => {
-
-          e.preventDefault();
-
-
-          const presenca =
-            document.querySelector(
-              'input[name="presenca"]:checked'
-            );
-
-
-          /*
-          Se marcou SIM, pelo menos uma
-          pessoa precisa estar selecionada.
-          */
-
-          if (
-            presenca &&
-            presenca.value === "sim" &&
-            Number(campoQuantidade.value) === 0
-          ) {
-
-            alert(
-              "Selecione quem estará presente."
-            );
-
-            return;
-
-          }
-
-
-          fetch(
-            "https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec",
-            {
-
-              method: "POST",
-
-              body:
-                new FormData(form)
-
-            }
-          )
-
-          .then(res =>
-            res.json()
-          )
-
-          .then(data => {
-
-            if (
-              data.result === "success"
-            ) {
-
-              alert(
-                "RSVP enviado com sucesso!"
-              );
-
-              form.reset();
-
-              listaConvidados.innerHTML =
-                "";
-
-              areaConvidados.style.display =
-                "none";
-
-              contadorConfirmados.textContent =
-                "Confirmados: 0";
-
-            }
-
-            else {
-
-              alert(
-                "Ocorreu um erro, tente novamente."
-              );
-
-            }
-
-          })
-
-          .catch(err => {
-
-            alert(
-              "Erro: " + err
-            );
-
-          });
-
-        }
-      );
 
     </script>
 
@@ -640,10 +342,7 @@
 
 
   <!-- Sessão Presentes -->
-  <section
-    class="lista-presentes"
-    id="lista-presentes"
-  >
+  <section class="lista-presentes" id="lista-presentes">
 
     <h2>Lista de Presentes</h2>
 
@@ -679,30 +378,21 @@
 
       e.preventDefault();
 
-      const numero =
-        "(11) 95135-6389";
+      const numero = "(11) 95135-6389";
 
-      navigator.clipboard
-        .writeText(numero)
-        .then(() => {
+      navigator.clipboard.writeText(numero).then(() => {
 
-          alert(
-            "Chave PIX copiada: " +
-            numero
-          );
+        alert("Chave PIX copiada: " + numero);
 
-        });
+      });
 
     }
 
   </script>
 
 
-  <!-- Mensagem aos noivos -->
-  <div
-    class="msg-section"
-    id="msg"
-  >
+  <!-- Seção Mensagem aos noivos -->
+  <div class="msg-section" id="msg">
 
     <div class="retangulo_msg">
 
@@ -712,9 +402,7 @@
         class="mensagem-img"
       >
 
-      <h2>
-        Mensagem aos noivos
-      </h2>
+      <h2>Mensagem aos noivos</h2>
 
       <form id="msgForm">
 
@@ -730,8 +418,8 @@
           id="msg-noivos"
           name="mensagem"
           placeholder="Escreva sua mensagem"
-          required>
-        </textarea>
+          required
+        ></textarea>
 
         <button type="submit">
           Enviar
@@ -745,23 +433,15 @@
 
 
   <!-- Contato -->
-  <section
-    class="contato-section"
-    id="contato"
-  >
+  <section class="contato-section" id="contato">
 
     <h2 class="titulo-contato">
       CONTATO
     </h2>
 
     <p class="texto-contato">
-
-      CASO TENHAM QUALQUER DÚVIDA
-      OU PRECISEM DE AJUDA,<br>
-
-      ENTREM EM CONTATO COM A
-      ASSESSORIA DO CASAMENTO
-
+      CASO TENHAM QUALQUER DÚVIDA OU PRECISEM DE AJUDA,<br>
+      ENTREM EM CONTATO COM A ASSESSORIA DO CASAMENTO
     </p>
 
     <p class="texto-contato">
@@ -808,7 +488,6 @@
         <img src="foto3.jpg" alt="Foto 3" />
       </div>
 
-
       <!-- repete para efeito contínuo -->
 
       <div class="slide">
@@ -838,7 +517,6 @@
     </a>
 
   </footer>
-
 
 </body>
 </html>
