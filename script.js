@@ -65,11 +65,13 @@ atualizarContagem();
 setInterval(atualizarContagem, 1000);
 
 
+
 // ===============================
 // RSVP
 // ===============================
 
-const rsvpForm = document.getElementById("rsvpForm");
+const rsvpForm =
+  document.getElementById("rsvpForm");
 
 const camposConvidados =
   document.getElementById("camposConvidados");
@@ -79,6 +81,7 @@ const convidados =
 
 const URL_RSVP =
   "https://script.google.com/macros/s/AKfycbzdKEtzjqlpAMfF-oaKkvrWzu-ej_cA5D76eVKtHYVDEiOHZKMfFdr0_QzLOtTlWSwbfQ/exec";
+
 
 
 // ===============================
@@ -95,6 +98,7 @@ function atualizarCamposConvidados() {
     return;
   }
 
+  // Nenhuma opção marcada
   if (!presencaSelecionada) {
     camposConvidados.style.display = "none";
 
@@ -105,9 +109,13 @@ function atualizarCamposConvidados() {
     return;
   }
 
+  // Marcou SIM
   if (presencaSelecionada.value === "sim") {
     camposConvidados.style.display = "block";
-  } else {
+  }
+
+  // Marcou NÃO
+  else {
     camposConvidados.style.display = "none";
 
     if (convidados) {
@@ -117,8 +125,9 @@ function atualizarCamposConvidados() {
 }
 
 
+
 // ===============================
-// RADIO DE PRESENÇA
+// ESCUTA OS RADIOS DE PRESENÇA
 // ===============================
 
 const radiosPresenca =
@@ -134,11 +143,13 @@ radiosPresenca.forEach(function(radio) {
 });
 
 
+
 // ===============================
 // ENVIO DO RSVP
 // ===============================
 
 if (rsvpForm) {
+
   rsvpForm.addEventListener(
     "submit",
     async function(event) {
@@ -156,16 +167,75 @@ if (rsvpForm) {
       botao.disabled = true;
       botao.textContent = "ENVIANDO...";
 
+
+      // ===============================
+      // MONTA OS DADOS
+      // ===============================
+
       const dados =
-        new FormData(rsvpForm);
+        new URLSearchParams();
+
+      const nome =
+        rsvpForm.querySelector(
+          '[name="nome"]'
+        ).value.trim();
+
+      const whatsapp =
+        rsvpForm.querySelector(
+          '[name="whatsapp"]'
+        ).value.trim();
+
+      const presencaSelecionada =
+        rsvpForm.querySelector(
+          '[name="presenca"]:checked'
+        );
+
+      const presenca =
+        presencaSelecionada
+          ? presencaSelecionada.value
+          : "";
+
+      const listaConvidados =
+        convidados
+          ? convidados.value.trim()
+          : "";
+
+
+      dados.append(
+        "nome",
+        nome
+      );
+
+      dados.append(
+        "whatsapp",
+        whatsapp
+      );
+
+      dados.append(
+        "presenca",
+        presenca
+      );
+
+      dados.append(
+        "convidados",
+        listaConvidados
+      );
+
+
+      // ===============================
+      // ENVIA
+      // ===============================
 
       try {
 
-        await fetch(URL_RSVP, {
-          method: "POST",
-          body: dados,
-          mode: "no-cors"
-        });
+        await fetch(
+          URL_RSVP,
+          {
+            method: "POST",
+            body: dados,
+            mode: "no-cors"
+          }
+        );
 
         alert(
           "Sua confirmação foi enviada com sucesso! 💛"
@@ -193,7 +263,9 @@ if (rsvpForm) {
 
     }
   );
+
 }
+
 
 
 // ===============================
@@ -205,6 +277,7 @@ const msgForm =
 
 const URL_MENSAGEM =
   "https://script.google.com/macros/s/AKfycbz4mtIX4VMlPcvRNVu4LS9WhkfOW8DP0oU9IOgZlzqPpT-JJCit1hBBkiFKvFJtawFz/exec";
+
 
 
 if (msgForm) {
@@ -226,15 +299,16 @@ if (msgForm) {
       const nome =
         document.getElementById(
           "msg-nome"
-        ).value;
+        ).value.trim();
 
       const mensagem =
         document.getElementById(
           "msg-noivos"
-        ).value;
+        ).value.trim();
 
       botao.disabled = true;
       botao.textContent = "ENVIANDO...";
+
 
       const dados =
         new URLSearchParams();
@@ -248,6 +322,7 @@ if (msgForm) {
         "mensagem",
         mensagem
       );
+
 
       try {
 
