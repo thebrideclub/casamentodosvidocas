@@ -109,8 +109,6 @@
 
     </div>
 
-    <script src="script.js"></script>
-
   </section>
 
 
@@ -222,7 +220,7 @@
           <textarea
             name="convidados"
             id="convidados"
-            placeholder="Digite seu nome e o nome dos acompanhantes"
+            placeholder="Digite o nome dos acompanhantes"
           ></textarea>
 
         </div>
@@ -235,108 +233,6 @@
       </form>
 
     </div>
-
-
-    <script>
-
-      const form = document.getElementById("rsvpForm");
-
-      const radiosPresenca = document.querySelectorAll(
-        '#rsvpForm input[name="presenca"]'
-      );
-
-      const camposConvidados =
-        document.getElementById("camposConvidados");
-
-      const quantidade =
-        document.getElementById("quantidade");
-
-      const convidados =
-        document.getElementById("convidados");
-
-
-      /*
-      MOSTRA OS CAMPOS DE CONVIDADOS
-      SOMENTE QUANDO MARCAR "SIM"
-      */
-
-      radiosPresenca.forEach(radio => {
-
-        radio.addEventListener("change", () => {
-
-          if (radio.value === "sim" && radio.checked) {
-
-            camposConvidados.style.display = "block";
-
-            quantidade.required = true;
-            convidados.required = true;
-
-          }
-
-          if (radio.value === "nao" && radio.checked) {
-
-            camposConvidados.style.display = "none";
-
-            quantidade.required = false;
-            convidados.required = false;
-
-            quantidade.value = "";
-            convidados.value = "";
-
-          }
-
-        });
-
-      });
-
-
-      /*
-      ENVIO PARA GOOGLE SHEETS
-      */
-
-      form.addEventListener("submit", e => {
-
-        e.preventDefault();
-
-        fetch(
-          "https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec",
-          {
-            method: "POST",
-            body: new FormData(form)
-          }
-        )
-
-        .then(res => res.json())
-
-        .then(data => {
-
-          if (data.result === "success") {
-
-            alert("RSVP enviado com sucesso!");
-
-            form.reset();
-
-            camposConvidados.style.display = "none";
-
-          }
-
-          else {
-
-            alert("Ocorreu um erro, tente novamente.");
-
-          }
-
-        })
-
-        .catch(err => {
-
-          alert("Erro: " + err);
-
-        });
-
-      });
-
-    </script>
 
   </section>
 
@@ -370,25 +266,6 @@
     </div>
 
   </section>
-
-
-  <script>
-
-    function copiarPix(e) {
-
-      e.preventDefault();
-
-      const numero = "(11) 95135-6389";
-
-      navigator.clipboard.writeText(numero).then(() => {
-
-        alert("Chave PIX copiada: " + numero);
-
-      });
-
-    }
-
-  </script>
 
 
   <!-- Seção Mensagem aos noivos -->
@@ -517,6 +394,22 @@
     </a>
 
   </footer>
+
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+  <script>
+    function copiarPix(e) {
+      e.preventDefault();
+
+      const numero = "(11) 95135-6389";
+
+      navigator.clipboard.writeText(numero).then(() => {
+        alert("Chave PIX copiada: " + numero);
+      });
+    }
+  </script>
 
 </body>
 </html>
