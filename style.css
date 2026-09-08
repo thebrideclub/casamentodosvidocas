@@ -1,3 +1,4 @@
+
 /* =========================================
    FONTES
 ========================================= */
@@ -109,6 +110,7 @@ select {
 .rsvp-section,
 .lista-presentes,
 .msg-section,
+.atalhos-home,
 .contato-section,
 .slider,
 .rodape-site {
@@ -852,6 +854,149 @@ textarea:focus {
 
 
 /* =========================================
+   DICAS + PLAYLIST
+========================================= */
+
+.atalhos-home {
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  background: var(--creme);
+
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+.atalho-home {
+  min-height: 285px;
+
+  padding: 46px 32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 20px;
+}
+
+.atalho-dicas {
+  background: var(--bege);
+}
+
+.atalho-playlist {
+  background: var(--bege-escuro);
+}
+
+.atalho-home-mini {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  letter-spacing: 1.6px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+}
+
+.atalho-home h2 {
+  margin: 0 0 17px;
+
+  font-family: "Serifada", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+
+  font-synthesis: none;
+}
+
+.atalho-home p {
+  max-width: 320px;
+
+  margin: 0 auto 24px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 6.5px;
+
+  line-height: 1.9;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+}
+
+.atalho-home-botao {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 145px;
+
+  padding: 10px 22px;
+
+  border: 1px solid rgba(81, 62, 52, 0.45);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--marrom-suave);
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 6.5px;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.atalho-home-botao:hover {
+  background: var(--marrom);
+
+  color: var(--creme);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
    CONTATO
 ========================================= */
 
@@ -1022,6 +1167,7 @@ textarea:focus {
   .rsvp-section,
   .lista-presentes,
   .msg-section,
+  .atalhos-home,
   .contato-section,
   .slider,
   .rodape-site {
@@ -1312,7 +1458,8 @@ textarea:focus {
     font-size: 8px;
 
     line-height: 1.8;
-  font-weight: 300;
+
+    font-weight: 300;
 
     letter-spacing: 2.5px;
 
@@ -1469,6 +1616,74 @@ textarea:focus {
 
 
   /* =========================================
+     DICAS + PLAYLIST MOBILE
+  ========================================= */
+
+  .atalhos-home {
+    padding: 22px 18px;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    background: var(--creme);
+
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .atalho-home {
+    min-height: auto;
+
+    padding: 40px 24px;
+
+    border-radius: 17px;
+
+    text-align: center;
+  }
+
+  .atalho-home-mini {
+    margin-bottom: 12px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .atalho-home h2 {
+    margin-bottom: 14px;
+
+    font-size: 20px;
+
+    line-height: 1.08;
+
+    letter-spacing: 2.3px;
+  }
+
+  .atalho-home p {
+    max-width: 290px;
+
+    margin-bottom: 21px;
+
+    font-size: 6px;
+
+    line-height: 1.85;
+
+    letter-spacing: 1px;
+  }
+
+  .atalho-home-botao {
+    min-width: 135px;
+
+    padding: 9px 18px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /* =========================================
      CONTATO MOBILE
   ========================================= */
 
@@ -1604,195 +1819,29 @@ textarea:focus {
   .retangulo_msg h2 {
     white-space: normal;
   }
-}
-/* =========================================
-   DICAS + PLAYLIST — FINAL DA HOME
-========================================= */
-
-.atalhos-home {
-  width: min(1000px, 88%);
-  margin: 0 auto;
-  padding: 75px 0;
-
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  align-items: center;
-  gap: 55px;
-}
 
 
-/* BLOCO */
-
-.atalho-home {
-  text-align: center;
-  padding: 10px 20px;
-}
-
-
-/* TEXTO PEQUENO */
-
-.atalho-home-mini {
-  display: block;
-
-  margin-bottom: 16px;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-
-  color: var(--marrom);
-}
-
-
-/* TÍTULO */
-
-.atalho-home h2 {
-  margin: 0 0 17px;
-
-  font-family: "Serifada", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.1;
-
-  color: var(--marrom);
-}
-
-
-/* TEXTO */
-
-.atalho-home p {
-  max-width: 360px;
-
-  margin: 0 auto 25px;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 0.07em;
-
-  color: var(--marrom);
-}
-
-
-/* DIVISÓRIA */
-
-.atalho-home-divisor {
-  width: 1px;
-  height: 150px;
-
-  background: rgba(92, 65, 48, 0.18);
-}
-
-
-/* BOTÕES */
-
-.atalho-home-botao {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 145px;
-
-  padding: 11px 20px;
-
-  border: 1px solid rgba(92, 65, 48, 0.45);
-  border-radius: 100px;
-
-  background: transparent;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 8px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-
-  color: var(--marrom);
-
-  text-decoration: none;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.atalho-home-botao:hover {
-  background: var(--marrom);
-  color: var(--creme);
-
-  transform: translateY(-2px);
-}
-
-
-
-/* =========================================
-   RESPONSIVO — DICAS + PLAYLIST
-========================================= */
-
-@media (max-width: 768px) {
+  /* =========================================
+     DICAS + PLAYLIST — CELULAR PEQUENO
+  ========================================= */
 
   .atalhos-home {
-    width: 86%;
+    padding: 18px 14px;
 
-    padding: 55px 0;
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
+    gap: 12px;
   }
-
 
   .atalho-home {
-    padding: 0;
-
-    text-align: center;
+    padding: 34px 18px;
   }
-
-
-  .atalho-home-mini {
-    margin-bottom: 13px;
-
-    font-size: 8px;
-    letter-spacing: 0.15em;
-  }
-
 
   .atalho-home h2 {
-    margin-bottom: 14px;
+    font-size: 18px;
 
-    font-size: 22px;
-    line-height: 1.1;
+    letter-spacing: 2px;
   }
-
 
   .atalho-home p {
-    max-width: 290px;
-
-    margin-bottom: 21px;
-
-    font-size: 8px;
-    line-height: 1.75;
+    max-width: 260px;
   }
-
-
-  .atalho-home-divisor {
-    width: 50px;
-    height: 1px;
-
-    margin: 0 auto;
-
-    background: rgba(92, 65, 48, 0.18);
-  }
-
-
-  .atalho-home-botao {
-    min-width: 135px;
-
-    padding: 10px 18px;
-
-    font-size: 8px;
-  }
-
 }
