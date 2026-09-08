@@ -196,6 +196,7 @@
           <a
             href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
             target="_blank"
+            rel="noopener noreferrer"
           >
             COMO CHEGAR
           </a>
@@ -479,6 +480,7 @@
       class="botao-como-chegar"
       href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
       target="_blank"
+      rel="noopener noreferrer"
     >
       COMO CHEGAR
     </a>
@@ -496,7 +498,10 @@
     id="rsvp"
   >
 
-    <div class="retangulo">
+    <div
+      class="retangulo"
+      id="rsvpContainer"
+    >
 
       <h2>
         Confirme sua presença
@@ -631,6 +636,136 @@
 
 
   <!-- ========================================= -->
+  <!-- CARD APÓS CONFIRMAÇÃO -->
+  <!-- ========================================= -->
+
+  <section
+    class="confirmacao-final"
+    id="confirmacaoFinal"
+    aria-hidden="true"
+  >
+
+    <div class="confirmacao-final-card">
+
+
+      <!-- CASINHA -->
+
+      <img
+        src="casinha.png"
+        alt="Casinha dos Vidocas"
+        class="confirmacao-final-icon"
+      />
+
+
+      <!-- MINI TEXTO -->
+
+      <p class="confirmacao-final-mini">
+        AGORA É OFICIAL ☼
+      </p>
+
+
+      <!-- NOME DO CONVIDADO -->
+
+      <h2 id="nomeConfirmado">
+        VOCÊ VAI ESTAR COM A GENTE 🤎
+      </h2>
+
+
+      <div class="confirmacao-final-linha"></div>
+
+
+      <!-- CONFIRMAÇÃO -->
+
+      <p class="confirmacao-final-texto">
+        SUA PRESENÇA ESTÁ CONFIRMADA NO NOSSO DIA.
+      </p>
+
+
+      <!-- DATA -->
+
+      <div class="confirmacao-final-data">
+        10.10.2026
+      </div>
+
+
+      <!-- LOCAL -->
+
+      <p class="confirmacao-final-local">
+
+        MIRANTE JURUÁ
+
+        <br>
+
+        MAIRIPORÃ — SP
+
+      </p>
+
+
+      <!-- FRASE -->
+
+      <p class="confirmacao-final-frase">
+        ESTAMOS CONTANDO OS DIAS PARA VIVER ESSE MOMENTO COM VOCÊ.
+      </p>
+
+
+
+      <!-- ========================================= -->
+      <!-- BOTÕES -->
+      <!-- ========================================= -->
+
+      <div class="confirmacao-final-botoes">
+
+
+        <!-- CALENDÁRIO -->
+
+        <button
+          type="button"
+          class="botao-confirmacao"
+          onclick="adicionarAoCalendario()"
+        >
+          ADICIONAR AO CALENDÁRIO
+        </button>
+
+
+        <!-- COMO CHEGAR -->
+
+        <a
+          href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="botao-confirmacao"
+        >
+          COMO CHEGAR
+        </a>
+
+
+        <!-- PLAYLIST -->
+
+        <a
+          href="https://open.spotify.com/playlist/50aAUMTMIiuM3HJ1uL18ki?si=qSjuVQQ_R2icnQ4WSH3KYg&utm_source=copy-link&pi=AwfliT1XTGyB0"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="botao-confirmacao"
+        >
+          OUVIR PLAYLIST
+        </a>
+
+      </div>
+
+
+      <!-- ASSINATURA -->
+
+      <p class="confirmacao-final-assinatura">
+        MARIA & MATHEUS
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================= -->
   <!-- LISTA DE PRESENTES -->
   <!-- ========================================= -->
 
@@ -660,6 +795,7 @@
         href="https://noivos.casar.com/luisaelucas25?#/one-page/_start"
         class="botao"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Lista virtual
       </a>
@@ -846,6 +982,7 @@
       <a
         href="https://wa.me/5521974202046"
         target="_blank"
+        rel="noopener noreferrer"
       >
 
         <img
@@ -968,6 +1105,7 @@
     <a
       href="https://instagram.com/___thebrideclub"
       target="_blank"
+      rel="noopener noreferrer"
     >
       @___THEBRIDECLUB
     </a>
@@ -980,7 +1118,8 @@
   <!-- JAVASCRIPT PRINCIPAL -->
   <!-- ========================================= -->
 
-<script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
+
 
 
   <!-- ========================================= -->
@@ -1019,6 +1158,75 @@
           );
 
         });
+
+    }
+
+  </script>
+
+
+
+  <!-- ========================================= -->
+  <!-- ADICIONAR CASAMENTO AO CALENDÁRIO -->
+  <!-- ========================================= -->
+
+  <script>
+
+    function adicionarAoCalendario() {
+
+      const conteudo = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "PRODID:-//Casamento dos Vidocas//PT-BR",
+        "BEGIN:VEVENT",
+        "UID:casamento-vidocas-10102026@casamentodosvidocas",
+        "DTSTAMP:20260908T051000Z",
+        "DTSTART:20261010T180000Z",
+        "DTEND:20261011T000000Z",
+        "SUMMARY:🤎 CASAMENTO DOS VIDOCAS — MARIA & MATHEUS",
+        "DESCRIPTION:O NOSSO GRANDE DIA CHEGOU!\\n\\nMARIA & MATHEUS\\n10.10.2026\\n\\nNOS VEMOS NO MIRANTE JURUÁ 🤎",
+        "LOCATION:Mirante Juruá\\, R. Benedito Fontana\\, 305\\, Parque Suíço\\, Mairiporã - SP",
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+
+      const arquivo = new Blob(
+        [conteudo],
+        {
+          type: "text/calendar;charset=utf-8"
+        }
+      );
+
+
+      const url =
+        URL.createObjectURL(arquivo);
+
+
+      const link =
+        document.createElement("a");
+
+
+      link.href = url;
+
+      link.download =
+        "casamento-dos-vidocas-10-10-2026.ics";
+
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+
+      setTimeout(() => {
+
+        URL.revokeObjectURL(url);
+
+      }, 1000);
 
     }
 
