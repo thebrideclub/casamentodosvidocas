@@ -1,13 +1,15 @@
+```css
 /* =========================================================
    DICAS.CSS
-   Página de dicas - Casamento dos Vidocas
+   Casamento dos Vidocas
 ========================================================= */
 
 
 /* =========================================
-   LARGURA DA PÁGINA
+   LARGURA PADRÃO DA PÁGINA
 ========================================= */
 
+.foto-dicas-section,
 .dicas-intro,
 .dicas-container,
 .final-dicas {
@@ -22,11 +24,34 @@
 
 
 /* =========================================
+   FOTO PRINCIPAL
+========================================= */
+
+.foto-dicas-section {
+  overflow: hidden;
+
+  background: var(--creme);
+}
+
+.foto-dicas {
+  display: block;
+
+  width: 100%;
+  height: 570px;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.88);
+}
+
+
+/* =========================================
    INTRODUÇÃO
 ========================================= */
 
 .dicas-intro {
-  padding: 72px 30px 66px;
+  padding: 65px 30px 61px;
 
   background: var(--bege);
 
@@ -35,14 +60,14 @@
 
 .dicas-intro-conteudo {
   width: 100%;
-  max-width: 560px;
+  max-width: 570px;
 
   margin: 0 auto;
 }
 
 
 /* =========================================
-   TÍTULO
+   TÍTULO PRINCIPAL
 ========================================= */
 
 .titulo-dicas {
@@ -50,16 +75,17 @@
 
   font-family: "Serifada", serif;
 
-  font-size: 28px;
+  font-size: 27px;
 
   line-height: 1;
 
-  letter-spacing: 5.8px;
+  letter-spacing: 6.2px;
 
   text-transform: uppercase;
 
   color: var(--marrom-suave);
 
+  font-weight: 400;
   font-synthesis: none;
 }
 
@@ -69,40 +95,46 @@
 ========================================= */
 
 .subtitulo-dicas {
-  margin: 0 0 22px;
-
-  font-family: "Providence", cursive;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-
-  letter-spacing: 2.3px;
-
-  color: var(--marrom-suave);
-}
-
-
-/* =========================================
-   TEXTO DA INTRO
-========================================= */
-
-.texto-dicas-intro {
-  max-width: 430px;
-
-  margin: 0 auto;
+  margin: 0 0 20px;
 
   font-family: "Montserrat", sans-serif;
 
   font-size: 7px;
 
-  line-height: 2;
+  line-height: 1.9;
 
-  letter-spacing: 1.4px;
+  letter-spacing: 1.8px;
 
   text-transform: uppercase;
 
   color: var(--marrom-suave);
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   TEXTO DA INTRODUÇÃO
+========================================= */
+
+.texto-dicas-intro {
+  max-width: 440px;
+
+  margin: 0 auto;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 6.5px;
+
+  line-height: 2;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+
+  font-weight: 400;
 }
 
 
@@ -119,7 +151,7 @@
 
   padding: 1px;
 
-  background: rgba(81, 62, 52, 0.08);
+  background: rgba(81, 62, 52, 0.09);
 }
 
 
@@ -131,11 +163,13 @@
   display: flex;
 
   flex-direction: column;
+
+  justify-content: flex-start;
   align-items: center;
 
-  min-height: 430px;
+  min-height: 420px;
 
-  padding: 58px 52px;
+  padding: 54px 48px;
 
   background: var(--creme);
 
@@ -143,7 +177,20 @@
 }
 
 
-/* Último card centralizado */
+/* =========================================
+   FUNDOS ALTERNADOS
+========================================= */
+
+.dica-card:nth-child(2),
+.dica-card:nth-child(3),
+.dica-card:nth-child(5) {
+  background: #f7f0e6;
+}
+
+
+/* =========================================
+   ÚLTIMO CARD
+========================================= */
 
 .dica-card:last-child {
   grid-column: 1 / -1;
@@ -159,12 +206,14 @@
 ========================================= */
 
 .icone-dica {
-  width: 54px;
-  height: 54px;
+  display: block;
+
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 22px;
 
   object-fit: contain;
-
-  margin: 0 auto 23px;
 
   opacity: 0.72;
 }
@@ -175,20 +224,21 @@
 ========================================= */
 
 .dica-card h2 {
-  margin: 0 0 25px;
+  margin: 0 0 24px;
 
   font-family: "Serifada", serif;
 
   font-size: 21px;
 
-  line-height: 1;
+  line-height: 1.1;
 
-  letter-spacing: 3px;
+  letter-spacing: 3.7px;
 
   text-transform: uppercase;
 
   color: var(--marrom-suave);
 
+  font-weight: 400;
   font-synthesis: none;
 }
 
@@ -198,24 +248,36 @@
 ========================================= */
 
 .dica-card p {
+  width: 100%;
   max-width: 330px;
 
-  margin: 0 0 16px;
+  margin: 0 auto 15px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
   line-height: 2;
 
   letter-spacing: 0.9px;
 
+  text-align: center;
+
+  text-transform: uppercase;
+
   color: var(--marrom-suave);
+
+  font-weight: 400;
 }
 
 .dica-card p:last-of-type {
   margin-bottom: 0;
 }
+
+
+/* =========================================
+   DESTAQUES
+========================================= */
 
 .dica-card strong {
   font-weight: 600;
@@ -235,6 +297,8 @@
 
   letter-spacing: 1.2px !important;
 
+  text-align: center !important;
+
   text-transform: uppercase;
 
   color: var(--marrom) !important;
@@ -246,9 +310,12 @@
 ========================================= */
 
 .botao-dica {
-  display: inline-block;
+  display: inline-flex;
 
-  margin-top: 27px;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 25px;
 
   padding: 10px 22px;
 
@@ -272,6 +339,8 @@
 
   text-transform: uppercase;
 
+  font-weight: 400;
+
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -288,22 +357,11 @@
 
 
 /* =========================================
-   VARIAÇÃO DE FUNDO DOS CARDS
-========================================= */
-
-.dica-card:nth-child(2),
-.dica-card:nth-child(3),
-.dica-card:nth-child(5) {
-  background: #f7f0e6;
-}
-
-
-/* =========================================
    MENSAGEM FINAL
 ========================================= */
 
 .final-dicas {
-  padding: 68px 30px 72px;
+  padding: 66px 30px 69px;
 
   background: var(--marrom);
 
@@ -312,55 +370,88 @@
   color: var(--creme);
 }
 
+
+/* =========================================
+   CASA EM AQUARELA
+========================================= */
+
 .final-dicas .imagem-casa {
-  width: 125px;
+  display: block;
 
-  margin: 0 auto 25px;
+  width: 120px;
 
-  filter: brightness(0) invert(1);
+  margin: 0 auto 24px;
 
-  opacity: 0.75;
+  opacity: 0.78;
 }
 
+
+/* =========================================
+   TEXTO FINAL
+========================================= */
+
 .final-dicas p {
-  margin: 0 0 17px;
+  max-width: 430px;
+
+  margin: 0 auto 18px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
   line-height: 2;
 
   letter-spacing: 1.4px;
 
+  text-align: center;
+
   text-transform: uppercase;
 
   color: var(--creme);
+
+  font-weight: 400;
 }
+
+
+/* =========================================
+   FRASE FINAL
+========================================= */
 
 .final-dicas strong {
   display: block;
 
-  font-family: "Providence", cursive;
+  margin: 0 auto;
 
-  font-size: 11px;
+  font-family: "Montserrat", sans-serif;
 
-  font-weight: 400;
+  font-size: 7px;
 
-  line-height: 1.5;
+  line-height: 1.8;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
+
+  text-align: center;
+
+  text-transform: uppercase;
 
   color: var(--creme);
+
+  font-weight: 400;
 }
 
 
 /* =========================================================
-   NOTEBOOK / TABLET
+   RESPONSIVO
 ========================================================= */
 
 @media (max-width: 849px) {
 
+
+  /* =========================================
+     LARGURA MOBILE
+  ========================================= */
+
+  .foto-dicas-section,
   .dicas-intro,
   .dicas-container,
   .final-dicas {
@@ -375,55 +466,104 @@
 
 
   /* =========================================
-     INTRO
+     FOTO MOBILE
+  ========================================= */
+
+  .foto-dicas-section {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .foto-dicas {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+
+  /* =========================================
+     INTRO MOBILE
   ========================================= */
 
   .dicas-intro {
-    padding: 52px 22px 48px;
+    padding: 48px 24px 46px;
+
+    text-align: center;
   }
 
   .dicas-intro-conteudo {
-    max-width: 450px;
+    width: 100%;
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    text-align: center;
   }
 
   .titulo-dicas {
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
 
-    font-size: 21px;
+    font-size: 19px;
+
+    line-height: 1.15;
 
     letter-spacing: 4.3px;
+
+    text-align: center;
   }
 
   .subtitulo-dicas {
-    margin-bottom: 19px;
+    max-width: 320px;
 
-    font-size: 9px;
+    margin: 0 auto 17px;
 
-    letter-spacing: 1.8px;
+    font-size: 6.3px;
+
+    line-height: 1.9;
+
+    letter-spacing: 1.3px;
+
+    text-align: center;
   }
 
   .texto-dicas-intro {
-    max-width: 360px;
+    max-width: 310px;
+
+    margin: 0 auto;
 
     font-size: 6px;
 
     line-height: 1.9;
 
-    letter-spacing: 1.1px;
+    letter-spacing: 1px;
+
+    text-align: center;
   }
 
 
   /* =========================================
-     CARDS
+     CONTAINER MOBILE
   ========================================= */
 
   .dicas-container {
+    display: grid;
+
     grid-template-columns: 1fr;
 
     gap: 1px;
 
     padding: 0;
   }
+
+
+  /* =========================================
+     CARDS MOBILE
+  ========================================= */
 
   .dica-card,
   .dica-card:last-child {
@@ -433,94 +573,150 @@
 
     grid-column: auto;
 
-    padding: 48px 28px;
+    justify-self: stretch;
+
+    padding: 45px 27px;
+
+    text-align: center;
   }
 
 
   /* =========================================
-     ÍCONES
+     ÍCONES MOBILE
   ========================================= */
 
   .icone-dica {
-    width: 47px;
-    height: 47px;
+    width: 45px;
+    height: 45px;
 
-    margin-bottom: 19px;
+    margin: 0 auto 19px;
   }
 
 
   /* =========================================
-     TÍTULO CARD
+     TÍTULOS MOBILE
   ========================================= */
 
   .dica-card h2 {
-    margin-bottom: 22px;
+    width: 100%;
 
-    font-size: 19px;
+    margin: 0 auto 21px;
 
-    letter-spacing: 3.4px;
+    font-size: 18px;
+
+    line-height: 1.15;
+
+    letter-spacing: 3.3px;
+
+    text-align: center;
   }
 
 
   /* =========================================
-     TEXTO CARD
+     TEXTOS MOBILE
   ========================================= */
 
   .dica-card p {
-    max-width: 390px;
+    width: 100%;
+    max-width: 330px;
 
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 14px;
 
-    font-size: 7px;
+    font-size: 6.5px;
 
-    line-height: 1.9;
+    line-height: 1.95;
 
     letter-spacing: 0.8px;
+
+    text-align: center;
+  }
+
+  .endereco-dica {
+    width: 100%;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    text-align: center !important;
   }
 
 
   /* =========================================
-     BOTÃO
+     BOTÃO MOBILE
   ========================================= */
 
   .botao-dica {
-    margin-top: 23px;
+    margin: 23px auto 0;
 
     padding: 9px 18px;
 
-    font-size: 9px;
+    font-size: 7px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
   }
 
 
   /* =========================================
-     MENSAGEM FINAL
+     FINAL MOBILE
   ========================================= */
 
   .final-dicas {
-    padding: 52px 22px 56px;
+    padding: 50px 24px 53px;
+
+    text-align: center;
   }
 
   .final-dicas .imagem-casa {
     width: 100px;
 
-    margin-bottom: 22px;
+    margin: 0 auto 21px;
   }
 
   .final-dicas p {
-    font-size: 6.3px;
+    max-width: 310px;
+
+    margin: 0 auto 16px;
+
+    font-size: 6px;
 
     line-height: 1.9;
 
-    letter-spacing: 1.15px;
+    letter-spacing: 1.1px;
+
+    text-align: center;
   }
 
   .final-dicas strong {
-    font-size: 9px;
+    max-width: 300px;
 
-    letter-spacing: 1.7px;
+    margin: 0 auto;
+
+    font-size: 6.5px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1.4px;
+
+    text-align: center;
   }
+
+
+  /* =========================================
+     CONTATO MAIS CENTRALIZADO
+  ========================================= */
+
+  .contato-section {
+    text-align: center;
+  }
+
+  .titulo-contato,
+  .texto-contato,
+  .whatsapp-contato {
+    text-align: center;
+  }
+
 }
 
 
@@ -530,50 +726,105 @@
 
 @media (max-width: 380px) {
 
+
+  /* =========================================
+     FOTO
+  ========================================= */
+
+  .foto-dicas {
+    height: 360px;
+  }
+
+
+  /* =========================================
+     INTRO
+  ========================================= */
+
   .dicas-intro {
-    padding: 45px 18px 42px;
+    padding: 43px 20px 41px;
   }
 
   .titulo-dicas {
-    font-size: 19px;
+    font-size: 18px;
 
-    letter-spacing: 3.6px;
+    letter-spacing: 3.4px;
   }
 
   .subtitulo-dicas {
-    font-size: 8px;
+    max-width: 285px;
 
-    letter-spacing: 1.5px;
+    font-size: 6px;
+
+    line-height: 1.85;
+
+    letter-spacing: 1.1px;
   }
 
   .texto-dicas-intro {
-    font-size: 5.7px;
+    max-width: 280px;
+
+    font-size: 5.8px;
+
+    line-height: 1.9;
 
     letter-spacing: 0.9px;
   }
 
-  .dica-card {
-    padding: 42px 22px;
+
+  /* =========================================
+     CARDS
+  ========================================= */
+
+  .dica-card,
+  .dica-card:last-child {
+    padding: 40px 22px;
   }
 
   .icone-dica {
-    width: 43px;
-    height: 43px;
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 18px;
   }
 
   .dica-card h2 {
-    font-size: 18px;
+    font-size: 17px;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.8px;
   }
 
   .dica-card p {
-    font-size: 6.5px;
+    max-width: 290px;
 
-    line-height: 1.85;
+    font-size: 6.2px;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.7px;
   }
+
+
+  /* =========================================
+     FINAL
+  ========================================= */
 
   .final-dicas {
-    padding: 48px 20px;
+    padding: 46px 20px 49px;
   }
+
+  .final-dicas .imagem-casa {
+    width: 92px;
+  }
+
+  .final-dicas p {
+    max-width: 280px;
+
+    font-size: 5.8px;
+  }
+
+  .final-dicas strong {
+    font-size: 6.2px;
+  }
+
 }
+```
