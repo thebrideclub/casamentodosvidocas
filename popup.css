@@ -1,0 +1,310 @@
+/* =========================================
+   POP-UP DE BOAS-VINDAS
+========================================= */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(66, 48, 34, 0.45);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-card {
+  position: relative;
+
+  width: min(92vw, 460px);
+
+  padding: 46px 38px 34px;
+
+  background: #f7efe4;
+
+  border: 1px solid rgba(91, 67, 47, 0.25);
+  border-radius: 28px;
+
+  text-align: center;
+
+  box-shadow:
+    0 24px 60px rgba(67, 48, 34, 0.16);
+
+  transform: translateY(15px) scale(0.98);
+  transition: transform 0.45s ease;
+}
+
+.popup-overlay.active .popup-card {
+  transform: translateY(0) scale(1);
+}
+
+
+/* =========================================
+   BOTÃO FECHAR
+========================================= */
+
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 27px;
+  font-weight: 300;
+
+  color: #735d4b;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.popup-close:hover {
+  opacity: 0.6;
+  transform: rotate(5deg);
+}
+
+
+/* =========================================
+   ÍCONE
+========================================= */
+
+.popup-icon {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 22px;
+}
+
+.popup-icon img {
+  width: 70px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+.popup-kicker {
+  margin: 0 0 15px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 2.1px;
+
+  color: #9b8772;
+}
+
+.popup-title {
+  margin: 0 0 16px;
+
+  font-family: "Serifada", serif;
+  font-size: clamp(31px, 5vw, 45px);
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  color: #5b4333;
+}
+
+.popup-text {
+  margin: 0 0 13px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 1.7px;
+  line-height: 1.7;
+
+  color: #6f5948;
+}
+
+.popup-description {
+  max-width: 320px;
+
+  margin: 0 auto 20px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 1.2px;
+  line-height: 1.9;
+
+  color: #8d7966;
+}
+
+.popup-date {
+  margin-bottom: 24px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #76604e;
+}
+
+.popup-names {
+  margin: 22px 0 0;
+
+  font-family: "Serifada", serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  color: #806a56;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.popup-button {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #5c4434;
+  color: #fffaf4;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.popup-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.93;
+}
+
+.popup-secondary {
+  margin-top: 14px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  color: #9a8774;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.popup-secondary:hover {
+  color: #5c4434;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 600px) {
+
+  .popup-overlay {
+    padding: 18px;
+  }
+
+  .popup-card {
+    width: 100%;
+
+    padding:
+      42px
+      24px
+      30px;
+
+    border-radius: 24px;
+  }
+
+  .popup-icon img {
+    width: 58px;
+  }
+
+  .popup-kicker {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+
+  .popup-title {
+    font-size: 32px;
+  }
+
+  .popup-text {
+    font-size: 10px;
+  }
+
+  .popup-description {
+    max-width: 280px;
+
+    font-size: 9px;
+
+    text-align: center;
+  }
+
+  .popup-date {
+    font-size: 10px;
+  }
+
+  .popup-button {
+    font-size: 9px;
+  }
+
+  .popup-secondary {
+    font-size: 8px;
+  }
+
+  .popup-names {
+    font-size: 13px;
+  }
+}
