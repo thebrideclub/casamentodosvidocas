@@ -2,7 +2,9 @@
 // CONTAGEM REGRESSIVA
 // ===============================
 
-const dataCasamento = new Date("2026-10-10T15:00:00-03:00").getTime();
+const dataCasamento = new Date(
+  "2026-10-10T15:00:00-03:00"
+).getTime();
 
 function atualizarContagem() {
   const agora = new Date().getTime();
@@ -62,7 +64,11 @@ function atualizarContagem() {
 }
 
 atualizarContagem();
-setInterval(atualizarContagem, 1000);
+
+setInterval(
+  atualizarContagem,
+  1000
+);
 
 
 
@@ -76,9 +82,6 @@ const rsvpForm =
 const camposConvidados =
   document.getElementById("camposConvidados");
 
-const convidados =
-  document.getElementById("convidados");
-
 const URL_RSVP =
   "https://script.google.com/macros/s/AKfycbzdKEtzjqlpAMfF-oaKkvrWzu-ej_cA5D76eVKtHYVDEiOHZKMfFdr0_QzLOtTlWSwbfQ/exec";
 
@@ -89,6 +92,7 @@ const URL_RSVP =
 // ===============================
 
 function atualizarCamposConvidados() {
+
   const presencaSelecionada =
     document.querySelector(
       'input[name="presenca"]:checked'
@@ -98,29 +102,43 @@ function atualizarCamposConvidados() {
     return;
   }
 
-  // Nenhuma opção marcada
+
+  // NENHUMA OPÇÃO MARCADA
   if (!presencaSelecionada) {
+
     camposConvidados.style.display = "none";
 
-    if (convidados) {
-      convidados.value = "";
+    const campoConvidados =
+      document.getElementById("convidados");
+
+    if (campoConvidados) {
+      campoConvidados.value = "";
     }
 
     return;
   }
 
-  // Marcou SIM
+
+  // MARCOU SIM
   if (presencaSelecionada.value === "sim") {
+
     camposConvidados.style.display = "block";
+
   }
 
-  // Marcou NÃO
+
+  // MARCOU NÃO
   else {
+
     camposConvidados.style.display = "none";
 
-    if (convidados) {
-      convidados.value = "";
+    const campoConvidados =
+      document.getElementById("convidados");
+
+    if (campoConvidados) {
+      campoConvidados.value = "";
     }
+
   }
 }
 
@@ -135,12 +153,20 @@ const radiosPresenca =
     'input[name="presenca"]'
   );
 
-radiosPresenca.forEach(function(radio) {
-  radio.addEventListener(
-    "change",
-    atualizarCamposConvidados
-  );
-});
+radiosPresenca.forEach(
+  function(radio) {
+
+    radio.addEventListener(
+      "change",
+      atualizarCamposConvidados
+    );
+
+  }
+);
+
+
+// DEFINE ESTADO INICIAL
+atualizarCamposConvidados();
 
 
 
@@ -156,16 +182,75 @@ if (rsvpForm) {
 
       event.preventDefault();
 
+
       const botao =
         rsvpForm.querySelector(
           "button[type='submit']"
         );
 
+      if (!botao) {
+        return;
+      }
+
       const textoOriginal =
         botao.textContent;
 
       botao.disabled = true;
-      botao.textContent = "ENVIANDO...";
+      botao.textContent =
+        "ENVIANDO...";
+
+
+
+      // ===============================
+      // CAMPOS
+      // ===============================
+
+      const campoNome =
+        rsvpForm.querySelector(
+          '[name="nome"]'
+        );
+
+      const campoWhatsapp =
+        rsvpForm.querySelector(
+          '[name="whatsapp"]'
+        );
+
+      const presencaSelecionada =
+        rsvpForm.querySelector(
+          '[name="presenca"]:checked'
+        );
+
+      const campoConvidados =
+        rsvpForm.querySelector(
+          '[name="convidados"]'
+        );
+
+
+
+      // ===============================
+      // VALORES
+      // ===============================
+
+      const nome =
+        campoNome
+          ? campoNome.value.trim()
+          : "";
+
+      const whatsapp =
+        campoWhatsapp
+          ? campoWhatsapp.value.trim()
+          : "";
+
+      const presenca =
+        presencaSelecionada
+          ? presencaSelecionada.value
+          : "";
+
+      const listaConvidados =
+        campoConvidados
+          ? campoConvidados.value.trim()
+          : "";
+
 
 
       // ===============================
@@ -174,32 +259,6 @@ if (rsvpForm) {
 
       const dados =
         new URLSearchParams();
-
-      const nome =
-        rsvpForm.querySelector(
-          '[name="nome"]'
-        ).value.trim();
-
-      const whatsapp =
-        rsvpForm.querySelector(
-          '[name="whatsapp"]'
-        ).value.trim();
-
-      const presencaSelecionada =
-        rsvpForm.querySelector(
-          '[name="presenca"]:checked'
-        );
-
-      const presenca =
-        presencaSelecionada
-          ? presencaSelecionada.value
-          : "";
-
-      const listaConvidados =
-        convidados
-          ? convidados.value.trim()
-          : "";
-
 
       dados.append(
         "nome",
@@ -222,6 +281,37 @@ if (rsvpForm) {
       );
 
 
+
+      // ===============================
+      // TESTE NO CONSOLE
+      // ===============================
+
+      console.log(
+        "DADOS DO RSVP"
+      );
+
+      console.log(
+        "NOME:",
+        nome
+      );
+
+      console.log(
+        "WHATSAPP:",
+        whatsapp
+      );
+
+      console.log(
+        "PRESENÇA:",
+        presenca
+      );
+
+      console.log(
+        "ACOMPANHANTES:",
+        listaConvidados
+      );
+
+
+
       // ===============================
       // ENVIA
       // ===============================
@@ -237,13 +327,16 @@ if (rsvpForm) {
           }
         );
 
+
         alert(
           "Sua confirmação foi enviada com sucesso! 💛"
         );
 
+
         rsvpForm.reset();
 
         atualizarCamposConvidados();
+
 
       } catch (erro) {
 
@@ -258,8 +351,10 @@ if (rsvpForm) {
 
       }
 
+
       botao.disabled = false;
-      botao.textContent = textoOriginal;
+      botao.textContent =
+        textoOriginal;
 
     }
   );
@@ -288,26 +383,45 @@ if (msgForm) {
 
       event.preventDefault();
 
+
       const botao =
         msgForm.querySelector(
           "button[type='submit']"
         );
 
+      if (!botao) {
+        return;
+      }
+
       const textoOriginal =
         botao.textContent;
 
-      const nome =
+
+      const campoNome =
         document.getElementById(
           "msg-nome"
-        ).value.trim();
+        );
 
-      const mensagem =
+      const campoMensagem =
         document.getElementById(
           "msg-noivos"
-        ).value.trim();
+        );
+
+
+      const nome =
+        campoNome
+          ? campoNome.value.trim()
+          : "";
+
+      const mensagem =
+        campoMensagem
+          ? campoMensagem.value.trim()
+          : "";
+
 
       botao.disabled = true;
-      botao.textContent = "ENVIANDO...";
+      botao.textContent =
+        "ENVIANDO...";
 
 
       const dados =
@@ -335,11 +449,14 @@ if (msgForm) {
           }
         );
 
+
         alert(
           "Mensagem enviada com sucesso! 💛"
         );
 
+
         msgForm.reset();
+
 
       } catch (erro) {
 
@@ -354,8 +471,10 @@ if (msgForm) {
 
       }
 
+
       botao.disabled = false;
-      botao.textContent = textoOriginal;
+      botao.textContent =
+        textoOriginal;
 
     }
   );
