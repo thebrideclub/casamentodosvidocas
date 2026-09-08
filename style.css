@@ -1605,3 +1605,194 @@ textarea:focus {
     white-space: normal;
   }
 }
+/* =========================================
+   DICAS + PLAYLIST — FINAL DA HOME
+========================================= */
+
+.atalhos-home {
+  width: min(1000px, 88%);
+  margin: 0 auto;
+  padding: 75px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+
+/* BLOCO */
+
+.atalho-home {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+
+/* TEXTO PEQUENO */
+
+.atalho-home-mini {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+
+  color: var(--marrom);
+}
+
+
+/* TÍTULO */
+
+.atalho-home h2 {
+  margin: 0 0 17px;
+
+  font-family: "Serifada", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--marrom);
+}
+
+
+/* TEXTO */
+
+.atalho-home p {
+  max-width: 360px;
+
+  margin: 0 auto 25px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.07em;
+
+  color: var(--marrom);
+}
+
+
+/* DIVISÓRIA */
+
+.atalho-home-divisor {
+  width: 1px;
+  height: 150px;
+
+  background: rgba(92, 65, 48, 0.18);
+}
+
+
+/* BOTÕES */
+
+.atalho-home-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 145px;
+
+  padding: 11px 20px;
+
+  border: 1px solid rgba(92, 65, 48, 0.45);
+  border-radius: 100px;
+
+  background: transparent;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+
+  color: var(--marrom);
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.atalho-home-botao:hover {
+  background: var(--marrom);
+  color: var(--creme);
+
+  transform: translateY(-2px);
+}
+
+
+
+/* =========================================
+   RESPONSIVO — DICAS + PLAYLIST
+========================================= */
+
+@media (max-width: 768px) {
+
+  .atalhos-home {
+    width: 86%;
+
+    padding: 55px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .atalho-home {
+    padding: 0;
+
+    text-align: center;
+  }
+
+
+  .atalho-home-mini {
+    margin-bottom: 13px;
+
+    font-size: 8px;
+    letter-spacing: 0.15em;
+  }
+
+
+  .atalho-home h2 {
+    margin-bottom: 14px;
+
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+
+  .atalho-home p {
+    max-width: 290px;
+
+    margin-bottom: 21px;
+
+    font-size: 8px;
+    line-height: 1.75;
+  }
+
+
+  .atalho-home-divisor {
+    width: 50px;
+    height: 1px;
+
+    margin: 0 auto;
+
+    background: rgba(92, 65, 48, 0.18);
+  }
+
+
+  .atalho-home-botao {
+    min-width: 135px;
+
+    padding: 10px 18px;
+
+    font-size: 8px;
+  }
+
+}
