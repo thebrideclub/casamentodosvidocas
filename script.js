@@ -219,6 +219,10 @@ if (rsvpForm) {
           "button[type='submit']"
         );
 
+      if (!botao) {
+        return;
+      }
+
       const textoOriginal =
         botao.textContent;
 
@@ -287,11 +291,36 @@ if (rsvpForm) {
 
       const dados = new FormData();
 
-dados.append("nome", nome);
-dados.append("whatsapp", whatsapp);
-dados.append("presenca", presenca);
-dados.append("acompanhante", acompanhante);
-      
+      dados.append(
+        "nome",
+        nome
+      );
+
+      dados.append(
+        "whatsapp",
+        whatsapp
+      );
+
+      dados.append(
+        "presenca",
+        presenca
+      );
+
+      // NOME NOVO
+      dados.append(
+        "acompanhante",
+        acompanhante
+      );
+
+      // NOME ANTIGO
+      // MANTIDO PARA GARANTIR COMPATIBILIDADE
+      dados.append(
+        "convidados",
+        acompanhante
+      );
+
+
+
       // ===============================
       // TESTE NO CONSOLE
       // ===============================
@@ -315,10 +344,17 @@ dados.append("acompanhante", acompanhante);
         "ACOMPANHANTE:",
         acompanhante
       );
-console.log(
-  "FORMDATA ACOMPANHANTE:",
-  dados.get("acompanhante")
-);
+
+      console.log(
+        "FORMDATA acompanhante:",
+        dados.get("acompanhante")
+      );
+
+      console.log(
+        "FORMDATA convidados:",
+        dados.get("convidados")
+      );
+
 
 
       // ===============================
@@ -411,6 +447,10 @@ if (msgForm) {
         msgForm.querySelector(
           "button[type='submit']"
         );
+
+      if (!botao) {
+        return;
+      }
 
       const textoOriginal =
         botao.textContent;
