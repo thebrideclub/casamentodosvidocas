@@ -1,3 +1,4 @@
+```css
 /* =========================================
    FONTES
 ========================================= */
@@ -65,6 +66,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+
   width: 100%;
   min-height: 100%;
 }
@@ -89,13 +91,14 @@ img {
 
 button,
 input,
-textarea {
+textarea,
+select {
   box-sizing: border-box;
 }
 
 
 /* =========================================
-   LARGURA PADRÃO
+   LARGURA PADRÃO DO SITE
 ========================================= */
 
 .menu,
@@ -143,6 +146,8 @@ textarea {
 
 .logo {
   width: 58px;
+
+  height: auto;
 }
 
 .nav-container {
@@ -153,13 +158,11 @@ textarea {
   list-style: none;
 
   margin: 0;
-
   padding: 0;
 
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   flex-wrap: wrap;
@@ -200,7 +203,6 @@ textarea {
   object-position: center;
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 
   filter: saturate(0.9);
@@ -208,7 +210,7 @@ textarea {
 
 
 /* =========================================
-   CONVITE
+   CONVITE / NOMES
 ========================================= */
 
 .convite {
@@ -219,7 +221,6 @@ textarea {
   background: var(--bege);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
@@ -276,7 +277,6 @@ textarea {
   color: var(--creme);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
@@ -305,69 +305,73 @@ textarea {
 
 /* =========================================
    TÍTULOS PADRÃO
+
+   Contagem regressiva
+   Nosso dia
+   Confirme sua presença
+   Mensagem aos noivos
 ========================================= */
 
 .titulo-contagem,
-.titulo-sessao,
+.sessao-como-chegar .titulo-sessao,
 .retangulo h2,
-.lista-presentes h2,
-.retangulo_msg h2,
-.titulo-contato {
+.retangulo_msg h2 {
   margin: 0;
 
   font-family: "Serifada", serif;
 
+  font-size: 30px;
+
   font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: 1.3px;
 
   text-transform: uppercase;
 
   color: var(--marrom-escuro);
-
-  line-height: 1;
 }
 
 
 /* =========================================
-   CONTAGEM
+   CONTAGEM REGRESSIVA
 ========================================= */
 
 .contagem-regressiva {
-  padding: 68px 20px;
+  padding: 62px 20px;
 
   text-align: center;
 
   background: var(--creme);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .titulo-contagem {
-  margin-bottom: 42px;
-
-  font-size: 34px;
-
-  letter-spacing: 1.5px;
+  margin-bottom: 36px;
 }
 
 .contador {
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
-  gap: 16px;
+  flex-wrap: nowrap;
+
+  gap: 13px;
 }
 
 .bloco {
-  min-width: 88px;
+  width: 78px;
 
-  padding: 18px 10px;
+  min-width: 78px;
+
+  padding: 15px 8px;
 
   border-top: 1px solid var(--linha);
-
   border-bottom: 1px solid var(--linha);
 }
 
@@ -376,29 +380,37 @@ textarea {
 
   font-family: "Serifada", serif;
 
-  font-size: 30px;
+  font-size: 25px;
+
+  line-height: 1;
 
   color: var(--marrom-escuro);
 }
 
 .bloco p {
-  margin: 8px 0 0;
+  margin: 7px 0 0;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 6px;
+  font-size: 5.5px;
 
-  letter-spacing: 1.7px;
+  line-height: 1;
+
+  letter-spacing: 1.2px;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
 }
 
 .dois-pontos {
   font-family: "Serifada", serif;
 
-  font-size: 22px;
+  font-size: 18px;
 
-  opacity: 0.45;
+  color: var(--marrom);
+
+  opacity: 0.4;
 }
 
 
@@ -407,7 +419,7 @@ textarea {
 ========================================= */
 
 .sessao-como-chegar {
-  padding: 82px 20px;
+  padding: 76px 20px;
 
   text-align: center;
 
@@ -420,20 +432,15 @@ textarea {
   );
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .sessao-como-chegar .titulo-sessao {
-  margin-bottom: 42px;
-
-  font-size: 58px;
-
-  letter-spacing: 1px;
+  margin-bottom: 36px;
 }
 
 .data-sessao {
-  margin: 0 0 58px;
+  margin: 0 0 52px;
 
   font-family: "Montserrat", sans-serif;
 
@@ -447,9 +454,9 @@ textarea {
 }
 
 .imagem-casa {
-  width: 150px;
+  width: 145px;
 
-  margin: 0 auto 54px;
+  margin: 0 auto 50px;
 }
 
 .local-sessao {
@@ -468,7 +475,7 @@ textarea {
 
 
 /* =========================================
-   BOTÕES PADRÃO
+   BOTÕES
 ========================================= */
 
 .botao-como-chegar,
@@ -476,7 +483,7 @@ textarea {
 button {
   display: inline-block;
 
-  padding: 12px 25px;
+  padding: 11px 24px;
 
   border: 1px solid var(--marrom);
 
@@ -492,7 +499,7 @@ button {
 
   font-size: 7px;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 1.7px;
 
   text-transform: uppercase;
 
@@ -517,19 +524,18 @@ button:hover {
 ========================================= */
 
 .rsvp-section {
-  padding: 84px 30px;
+  padding: 76px 30px;
 
   background: var(--bege);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .retangulo {
   width: 100%;
 
-  max-width: 580px;
+  max-width: 560px;
 
   margin: 0 auto;
 
@@ -541,15 +547,7 @@ button:hover {
 }
 
 .retangulo h2 {
-  margin-bottom: 50px;
-
-  font-size: 40px;
-
-  letter-spacing: 1px;
-}
-
-.retangulo form {
-  width: 100%;
+  margin-bottom: 42px;
 }
 
 
@@ -580,7 +578,8 @@ form label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
 
   padding: 13px 0;
@@ -627,12 +626,11 @@ textarea:focus {
   display: flex;
 
   justify-content: flex-start;
-
   align-items: center;
 
   gap: 32px;
 
-  margin: 8px 0 8px;
+  margin: 8px 0;
 }
 
 .radio-group label {
@@ -657,7 +655,7 @@ textarea:focus {
 
 
 /* =========================================
-   ACOMPANHANTES RSVP
+   ACOMPANHANTES
 ========================================= */
 
 #camposConvidados {
@@ -685,9 +683,9 @@ textarea:focus {
 .retangulo button {
   align-self: center;
 
-  margin-top: 35px;
+  margin-top: 32px;
 
-  min-width: 170px;
+  min-width: 160px;
 }
 
 
@@ -696,7 +694,7 @@ textarea:focus {
 ========================================= */
 
 .lista-presentes {
-  padding: 86px 30px;
+  padding: 76px 30px;
 
   text-align: center;
 
@@ -705,22 +703,31 @@ textarea:focus {
   color: var(--creme);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .lista-presentes h2 {
-  margin-bottom: 28px;
+  margin: 0 0 28px;
 
-  font-size: 40px;
+  font-family: "Serifada", serif;
+
+  font-size: 30px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
 
   color: var(--creme);
 }
 
 .presente-img {
-  width: 65px;
+  width: 60px;
 
-  margin: 0 auto 34px;
+  margin: 0 auto 32px;
 
   filter: brightness(0) invert(1);
 
@@ -731,7 +738,6 @@ textarea:focus {
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   gap: 14px;
@@ -757,19 +763,18 @@ textarea:focus {
 ========================================= */
 
 .msg-section {
-  padding: 86px 30px;
+  padding: 76px 30px;
 
   background: var(--creme);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .retangulo_msg {
   width: 100%;
 
-  max-width: 580px;
+  max-width: 560px;
 
   margin: 0 auto;
 
@@ -781,25 +786,23 @@ textarea:focus {
 }
 
 .mensagem-img {
-  width: 58px;
+  width: 55px;
 
-  margin: 0 auto 26px;
+  margin: 0 auto 24px;
 
   opacity: 0.82;
 }
 
 .retangulo_msg h2 {
-  margin-bottom: 42px;
-
-  font-size: 40px;
+  margin-bottom: 38px;
 }
 
 .retangulo_msg button {
   align-self: center;
 
-  min-width: 160px;
+  min-width: 150px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 
@@ -808,23 +811,32 @@ textarea:focus {
 ========================================= */
 
 .contato-section {
-  padding: 78px 30px;
+  padding: 68px 30px;
 
   text-align: center;
 
   background: var(--bege);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
 .titulo-contato {
-  margin-bottom: 30px;
+  margin: 0 0 28px;
 
-  font-size: 30px;
+  font-family: "Serifada", serif;
 
-  letter-spacing: 1.5px;
+  font-size: 26px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-escuro);
 }
 
 .texto-contato {
@@ -842,14 +854,13 @@ textarea:focus {
 }
 
 .whatsapp-contato {
-  margin-top: 28px;
+  margin-top: 26px;
 }
 
 .whatsapp-contato a {
   display: inline-flex;
 
   justify-content: center;
-
   align-items: center;
 
   gap: 8px;
@@ -885,12 +896,11 @@ textarea:focus {
 .slider {
   overflow: hidden;
 
-  padding: 50px 0;
+  padding: 42px 0;
 
   background: var(--creme);
 
   border-left: 1px solid var(--linha);
-
   border-right: 1px solid var(--linha);
 }
 
@@ -923,6 +933,7 @@ textarea:focus {
 }
 
 @keyframes deslizar {
+
   from {
     transform: translateX(0);
   }
@@ -930,6 +941,7 @@ textarea:focus {
   to {
     transform: translateX(-50%);
   }
+
 }
 
 
@@ -964,11 +976,16 @@ textarea:focus {
 }
 
 
-/* =========================================
-   TABLET / MOBILE
-========================================= */
+/* =========================================================
+   RESPONSIVO
+   CELULAR + TABLET
+========================================================= */
 
 @media (max-width: 849px) {
+
+  /* =========================================
+     LARGURA MOBILE
+  ========================================= */
 
   .menu,
   .foto-principal,
@@ -985,33 +1002,32 @@ textarea:focus {
     width: 100%;
 
     margin-left: 0;
-
     margin-right: 0;
   }
 
 
-  /* MENU */
+  /* =========================================
+     MENU MOBILE
+  ========================================= */
 
   .menu {
     margin-top: 0;
 
-    padding: 16px 0 12px;
+    padding: 14px 0 11px;
 
     border-left: 0;
-
     border-right: 0;
-
     border-top: 0;
 
     border-radius: 0;
   }
 
   .logo-container {
-    margin-bottom: 13px;
+    margin-bottom: 11px;
   }
 
   .logo {
-    width: 54px;
+    width: 50px;
   }
 
   .nav-container {
@@ -1033,13 +1049,13 @@ textarea:focus {
 
     min-width: 100%;
 
-    padding: 0 12px;
+    padding: 0 10px;
 
     justify-content: flex-start;
 
     flex-wrap: nowrap;
 
-    gap: 6px;
+    gap: 4px;
   }
 
   .menu-list li {
@@ -1049,17 +1065,19 @@ textarea:focus {
   .menu-list a {
     display: block;
 
-    padding: 6px 8px;
+    padding: 5px 7px;
 
     white-space: nowrap;
 
-    font-size: 7px;
+    font-size: 6.5px;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
   }
 
 
-  /* FOTO */
+  /* =========================================
+     FOTO MOBILE
+  ========================================= */
 
   .foto-principal {
     height: auto;
@@ -1072,14 +1090,16 @@ textarea:focus {
   }
 
 
-  /* NOMES */
+  /* =========================================
+     NOMES MOBILE
+  ========================================= */
 
   .convite {
-    padding: 46px 18px;
+    padding: 42px 16px;
   }
 
   .nomes {
-    font-size: clamp(28px, 9vw, 36px);
+    font-size: clamp(26px, 8vw, 32px);
 
     letter-spacing: 1px;
   }
@@ -1087,61 +1107,107 @@ textarea:focus {
   .vidoca {
     margin-top: 8px;
 
-    font-size: 7px;
+    font-size: 6.5px;
 
-    letter-spacing: 2.8px;
+    letter-spacing: 2.5px;
   }
 
 
-  /* BOAS VINDAS */
+  /* =========================================
+     BOAS-VINDAS MOBILE
+  ========================================= */
 
   .texto-boas-vindas {
-    padding: 58px 24px;
+    padding: 52px 22px;
+  }
+
+  .texto-boas-vindas-conteudo {
+    max-width: 400px;
   }
 
   .texto-boas-vindas p {
-    font-size: 7px;
+    font-size: 6.5px;
 
     line-height: 2;
 
-    letter-spacing: 1.7px;
+    letter-spacing: 1.5px;
   }
 
 
-  /* CONTAGEM */
+  /* =========================================
+     TÍTULOS MOBILE
+  ========================================= */
+
+  .titulo-contagem,
+  .sessao-como-chegar .titulo-sessao,
+  .retangulo h2,
+  .retangulo_msg h2 {
+    font-size: 23px;
+
+    line-height: 1.05;
+
+    letter-spacing: 0.9px;
+  }
+
+
+  /* =========================================
+     CONTAGEM MOBILE
+  ========================================= */
 
   .contagem-regressiva {
-    padding: 56px 14px;
+    padding: 42px 12px;
   }
 
   .titulo-contagem {
-    margin-bottom: 32px;
+    margin-bottom: 27px;
 
-    font-size: clamp(27px, 8vw, 36px);
+    white-space: nowrap;
   }
 
   .contador {
-    gap: 5px;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
   }
 
   .bloco {
-    flex: 1;
+    flex: 0 1 58px;
+
+    width: 58px;
 
     min-width: 0;
 
-    max-width: 78px;
+    max-width: 58px;
 
-    padding: 15px 3px;
+    padding: 10px 3px;
   }
 
   .bloco span {
-    font-size: 22px;
+    font-size: 18px;
+
+    line-height: 1;
   }
 
   .bloco p {
-    font-size: 5.5px;
+    margin-top: 6px;
 
-    letter-spacing: 0.8px;
+    font-size: 5px;
+
+    line-height: 1;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
   }
 
   .dois-pontos {
@@ -1149,10 +1215,12 @@ textarea:focus {
   }
 
 
-  /* NOSSO DIA */
+  /* =========================================
+     NOSSO DIA MOBILE
+  ========================================= */
 
   .sessao-como-chegar {
-    padding: 65px 20px;
+    padding: 56px 20px;
 
     background: repeating-linear-gradient(
       90deg,
@@ -1164,178 +1232,328 @@ textarea:focus {
   }
 
   .sessao-como-chegar .titulo-sessao {
-    margin-bottom: 30px;
-
-    font-size: clamp(40px, 12vw, 52px);
+    margin-bottom: 28px;
   }
 
   .data-sessao {
-    margin-bottom: 42px;
+    margin-bottom: 38px;
 
-    font-size: 7px;
+    font-size: 6.5px;
+
+    line-height: 2;
+
+    letter-spacing: 1.4px;
   }
 
   .imagem-casa {
-    width: 125px;
+    width: 115px;
 
-    margin-bottom: 42px;
+    margin-bottom: 38px;
   }
 
   .local-sessao {
-    font-size: 7px;
+    margin-bottom: 26px;
+
+    font-size: 6.5px;
+
+    line-height: 2;
+
+    letter-spacing: 1.4px;
   }
 
 
-  /* RSVP */
+  /* =========================================
+     BOTÕES MOBILE
+  ========================================= */
+
+  .botao-como-chegar,
+  .botao,
+  button {
+    padding: 10px 20px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  /* =========================================
+     RSVP MOBILE
+  ========================================= */
 
   .rsvp-section {
-    padding: 64px 22px;
+    padding: 56px 22px;
   }
 
   .retangulo {
-    max-width: 520px;
+    width: 100%;
+
+    max-width: 500px;
   }
 
   .retangulo h2 {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 
-    font-size: clamp(30px, 9vw, 38px);
+    white-space: nowrap;
   }
 
   form label {
-    font-size: 7px;
+    font-size: 6.5px;
+
+    letter-spacing: 1.2px;
   }
 
   input,
-  textarea {
+  textarea,
+  select {
     font-size: 16px;
+  }
+
+  textarea {
+    min-height: 90px;
   }
 
   .radio-group {
     gap: 24px;
   }
 
+  .radio-group label {
+    font-size: 6.5px;
+  }
+
   #camposConvidados small {
     font-size: 6px;
+
+    line-height: 1.7;
+  }
+
+  .retangulo button {
+    margin-top: 28px;
   }
 
 
-  /* PRESENTES */
+  /* =========================================
+     PRESENTES MOBILE
+  ========================================= */
 
   .lista-presentes {
-    padding: 66px 22px;
+    padding: 56px 22px;
   }
 
   .lista-presentes h2 {
-    font-size: clamp(30px, 9vw, 38px);
+    margin-bottom: 24px;
+
+    font-size: 23px;
+
+    letter-spacing: 0.9px;
   }
 
   .presente-img {
-    width: 58px;
+    width: 52px;
+
+    margin-bottom: 26px;
   }
 
   .botoes-container {
     flex-direction: column;
+
+    gap: 10px;
   }
 
 
-  /* MENSAGEM */
+  /* =========================================
+     MENSAGEM MOBILE
+  ========================================= */
 
   .msg-section {
-    padding: 66px 22px;
+    padding: 56px 22px;
   }
 
-  .retangulo_msg h2 {
-    margin-bottom: 36px;
+  .retangulo_msg {
+    width: 100%;
 
-    font-size: clamp(30px, 9vw, 38px);
+    max-width: 500px;
   }
 
   .mensagem-img {
-    width: 52px;
+    width: 48px;
+
+    margin-bottom: 21px;
+  }
+
+  .retangulo_msg h2 {
+    margin-bottom: 32px;
+
+    white-space: nowrap;
+  }
+
+  .retangulo_msg button {
+    margin-top: 25px;
   }
 
 
-  /* CONTATO */
+  /* =========================================
+     CONTATO MOBILE
+  ========================================= */
 
   .contato-section {
-    padding: 60px 22px;
+    padding: 52px 22px;
   }
 
   .titulo-contato {
-    font-size: 28px;
+    margin-bottom: 24px;
+
+    font-size: 22px;
   }
 
   .texto-contato {
-    font-size: 7px;
+    font-size: 6.5px;
 
-    letter-spacing: 1.4px;
+    line-height: 1.9;
+
+    letter-spacing: 1.2px;
+  }
+
+  .whatsapp-contato {
+    margin-top: 22px;
+  }
+
+  .whatsapp-contato a {
+    font-size: 7px;
   }
 
 
-  /* SLIDER */
+  /* =========================================
+     SLIDER MOBILE
+  ========================================= */
 
   .slider {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 
   .slider-track {
-    gap: 8px;
+    gap: 7px;
   }
 
   .slide img {
-    width: 145px;
+    width: 135px;
 
-    height: 190px;
+    height: 180px;
   }
 
 
-  /* RODAPÉ */
+  /* =========================================
+     RODAPÉ MOBILE
+  ========================================= */
 
   .rodape-site {
     margin-bottom: 0;
 
-    padding: 28px 20px;
+    padding: 25px 18px;
 
     border-radius: 0;
+  }
+
+  .rodape-site a {
+    font-size: 6.5px;
+
+    letter-spacing: 1.5px;
   }
 }
 
 
-/* =========================================
-   CELULAR PEQUENO
-========================================= */
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
+
+  /* MENU */
 
   .menu-list a {
-    font-size: 6.5px;
+    font-size: 6px;
 
-    padding: 5px 6px;
+    padding: 5px;
   }
+
+
+  /* NOMES */
 
   .nomes {
-    font-size: 27px;
+    font-size: 25px;
   }
 
-  .texto-boas-vindas {
-    padding-left: 22px;
 
-    padding-right: 22px;
+  /* TÍTULOS */
+
+  .titulo-contagem,
+  .sessao-como-chegar .titulo-sessao,
+  .retangulo h2,
+  .retangulo_msg h2,
+  .lista-presentes h2 {
+    font-size: 21px;
+  }
+
+
+  /* CONTAGEM */
+
+  .contagem-regressiva {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+  .titulo-contagem {
+    font-size: 21px;
+
+    margin-bottom: 24px;
   }
 
   .contador {
-    padding: 0 4px;
+    gap: 7px;
+  }
+
+  .bloco {
+    flex-basis: 54px;
+
+    width: 54px;
+
+    max-width: 54px;
+
+    padding: 9px 2px;
   }
 
   .bloco span {
-    font-size: 20px;
+    font-size: 17px;
   }
+
+  .bloco p {
+    font-size: 4.5px;
+  }
+
+
+  /* RSVP */
+
+  .rsvp-section,
+  .msg-section {
+    padding-left: 18px;
+
+    padding-right: 18px;
+  }
+
+  .retangulo h2,
+  .retangulo_msg h2 {
+    white-space: normal;
+  }
+
+
+  /* BOTÕES */
 
   .retangulo button,
   .retangulo_msg button {
     width: 100%;
 
-    max-width: 220px;
+    max-width: 200px;
   }
 }
+```
