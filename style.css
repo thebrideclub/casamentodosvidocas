@@ -459,11 +459,11 @@ select {
 }
 
 .data-sessao {
-  margin: 0 0 27px;
+  margin: 0 0 15px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 8px;
+  font-size: 10px;
 
   line-height: 1.8;
 
@@ -477,15 +477,15 @@ select {
 .imagem-casa {
   width: 138px;
 
-  margin: 0 auto 27px;
+  margin: 0 auto 15px;
 }
 
 .local-sessao {
-  margin: 0 0 23px;
+  margin: 0 0 15px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 8px;
+  font-size: 10px;
 
   line-height: 1.8;
 
