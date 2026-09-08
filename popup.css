@@ -13,16 +13,16 @@
 
   padding: 24px;
 
-  background: rgba(66, 48, 34, 0.45);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(63, 47, 35, 0.28);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 
   opacity: 0;
   visibility: hidden;
 
   transition:
-    opacity 0.45s ease,
-    visibility 0.45s ease;
+    opacity 0.4s ease,
+    visibility 0.4s ease;
 }
 
 .popup-overlay.active {
@@ -30,55 +30,68 @@
   visibility: visible;
 }
 
+
+/* =========================================
+   CARD
+========================================= */
+
 .popup-card {
   position: relative;
 
-  width: min(92vw, 460px);
+  width: min(90vw, 430px);
 
-  padding: 46px 38px 34px;
+  padding: 42px 34px 30px;
 
-  background: #f7efe4;
+  background: #f5ecdf;
 
-  border: 1px solid rgba(91, 67, 47, 0.25);
-  border-radius: 28px;
+  border: 1px solid rgba(91, 67, 51, 0.12);
+  border-radius: 18px;
 
   text-align: center;
 
   box-shadow:
-    0 24px 60px rgba(67, 48, 34, 0.16);
+    0 12px 35px rgba(73, 54, 40, 0.08);
 
-  transform: translateY(15px) scale(0.98);
+  transform: translateY(10px);
 
-  transition: transform 0.45s ease;
+  transition: transform 0.4s ease;
 }
 
 .popup-overlay.active .popup-card {
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 
 /* =========================================
-   BOTÃO FECHAR
+   FECHAR
 ========================================= */
 
 .popup-close {
   position: absolute;
-  top: 16px;
-  right: 18px;
+  top: 13px;
+  right: 14px;
 
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
 
   border: none;
   background: transparent;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 27px;
+  font-size: 22px;
   font-weight: 300;
 
-  color: #735d4b;
+  color: #8f7a68;
 
   cursor: pointer;
+
+  opacity: 0.8;
+}
+
+.popup-close:hover {
+  opacity: 1;
 }
 
 
@@ -90,11 +103,11 @@
   display: flex;
   justify-content: center;
 
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .popup-icon img {
-  width: 70px;
+  width: 54px;
   height: auto;
 }
 
@@ -104,55 +117,55 @@
 ========================================= */
 
 .popup-kicker {
-  margin: 0 0 15px;
+  margin: 0 0 13px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 500;
 
   letter-spacing: 2px;
 
-  color: #9b8772;
+  color: #a18d79;
 }
 
 .popup-title {
-  margin: 0 0 16px;
+  margin: 0 0 13px;
 
   font-family: "Serifada", serif;
-  font-size: clamp(31px, 5vw, 45px);
+  font-size: 30px;
   font-weight: 400;
 
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 
-  color: #5b4333;
+  color: #654b39;
 }
 
 .popup-text {
-  margin: 0 0 13px;
+  margin: 0 0 10px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 500;
 
-  letter-spacing: 1.7px;
+  letter-spacing: 1.5px;
   line-height: 1.7;
 
   color: #6f5948;
 }
 
 .popup-description {
-  max-width: 320px;
+  max-width: 310px;
 
-  margin: 0 auto 20px;
+  margin: 0 auto 18px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 400;
 
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   line-height: 1.9;
 
-  color: #8d7966;
+  color: #8e7966;
 }
 
 
@@ -161,45 +174,48 @@
 ========================================= */
 
 .popup-rsvp {
-  margin: 20px 0 22px;
+  margin: 18px auto 20px;
 
-  padding: 14px 18px;
+  padding: 12px 14px;
 
-  border: 1px solid rgba(91, 67, 47, 0.16);
-  border-radius: 18px;
+  max-width: 270px;
 
-  background: rgba(255, 250, 244, 0.55);
+  border-top: 1px solid rgba(91, 67, 51, 0.12);
+  border-bottom: 1px solid rgba(91, 67, 51, 0.12);
+
+  background: transparent;
 }
 
 .popup-rsvp-label {
   display: block;
 
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 7px;
+  font-weight: 500;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 
-  color: #9b8772;
+  color: #a18d79;
 }
 
 .popup-rsvp p {
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+  font-size: 8px;
+  font-weight: 400;
 
-  letter-spacing: 1.2px;
+  letter-spacing: 1.1px;
   line-height: 1.6;
 
-  color: #6f5948;
+  color: #705a48;
 }
 
 .popup-rsvp strong {
-  color: #5b4333;
-  font-weight: 700;
+  font-weight: 600;
+  color: #5d4534;
 }
 
 
@@ -208,25 +224,27 @@
 ========================================= */
 
 .popup-date {
-  margin-bottom: 24px;
+  margin-bottom: 21px;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 9px;
+  font-weight: 500;
 
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
 
-  color: #76604e;
+  color: #816b58;
 }
 
 .popup-names {
-  margin: 22px 0 0;
+  margin: 19px 0 0;
 
-  font-family: "Serifada", serif;
-  font-size: 15px;
+  font-family: "Conqueror", serif;
+  font-size: 13px;
+  font-weight: 400;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
 
-  color: #806a56;
+  color: #806957;
 }
 
 
@@ -237,38 +255,103 @@
 .popup-button {
   width: 100%;
 
-  padding: 15px 20px;
+  padding: 13px 18px;
 
-  border: none;
+  border: 1px solid #5c4434;
   border-radius: 999px;
 
   background: #5c4434;
   color: #fffaf4;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 500;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 
   cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.popup-button:hover {
+  background: transparent;
+  color: #5c4434;
 }
 
 .popup-secondary {
-  margin-top: 14px;
+  margin-top: 11px;
+
+  padding: 4px 8px;
 
   border: none;
   background: transparent;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 9px;
+  font-size: 7px;
   font-weight: 500;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
 
-  color: #9a8774;
+  color: #a18d79;
 
   cursor: pointer;
+}
+
+.popup-secondary:hover {
+  color: #5c4434;
+}
+
+
+/* =========================================
+   BOTÃO FLUTUANTE DE MÚSICA
+========================================= */
+
+.music-control {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9998;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(91, 67, 51, 0.18);
+  border-radius: 50%;
+
+  background: rgba(245, 236, 223, 0.94);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+
+  color: #654b39;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(73, 54, 40, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.music-control:hover {
+  transform: translateY(-2px);
+}
+
+.music-control.visible {
+  display: flex;
+}
+
+.music-control.paused {
+  opacity: 0.65;
 }
 
 
@@ -279,59 +362,75 @@
 @media (max-width: 600px) {
 
   .popup-overlay {
-    padding: 18px;
+    padding: 16px;
   }
 
   .popup-card {
     width: 100%;
 
-    padding: 42px 24px 30px;
+    padding: 38px 22px 27px;
 
-    border-radius: 24px;
+    border-radius: 16px;
+  }
+
+  .popup-icon {
+    margin-bottom: 15px;
   }
 
   .popup-icon img {
-    width: 58px;
+    width: 48px;
   }
 
   .popup-kicker {
-    font-size: 9px;
-    line-height: 1.7;
+    font-size: 7px;
+    line-height: 1.6;
   }
 
   .popup-title {
-    font-size: 32px;
+    font-size: 27px;
   }
 
   .popup-text {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .popup-description {
-    max-width: 280px;
+    max-width: 270px;
 
-    font-size: 9px;
+    font-size: 7.5px;
 
     text-align: center;
   }
 
+  .popup-rsvp {
+    max-width: 250px;
+  }
+
   .popup-rsvp p {
-    font-size: 9px;
+    font-size: 7.5px;
   }
 
   .popup-date {
-    font-size: 10px;
-  }
-
-  .popup-button {
-    font-size: 9px;
-  }
-
-  .popup-secondary {
     font-size: 8px;
   }
 
+  .popup-button {
+    font-size: 7.5px;
+  }
+
+  .popup-secondary {
+    font-size: 7px;
+  }
+
   .popup-names {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .music-control {
+    right: 16px;
+    bottom: 16px;
+
+    width: 40px;
+    height: 40px;
   }
 }
