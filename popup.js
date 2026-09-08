@@ -1,76 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const popupOverlay = document.getElementById("popupOverlay");
-  const popupClose = document.getElementById("popupClose");
-  const enterSite = document.getElementById("enterSite");
-  const continueWithoutMusic = document.getElementById(
-    "continueWithoutMusic"
-  );
+  const popup = document.getElementById("popupOverlay");
+  const closeButton = document.getElementById("popupClose");
+  const enterButton = document.getElementById("enterSite");
+  const noMusicButton = document.getElementById("continueWithoutMusic");
+  const music = document.getElementById("siteMusic");
 
-  const siteMusic = document.getElementById("siteMusic");
+  if (!popup) {
+    console.error("POP-UP NÃO ENCONTRADO");
+    return;
+  }
 
-
-  /* =========================================
-     ABRIR POP-UP
-  ========================================= */
-
-  setTimeout(function () {
-    popupOverlay.classList.add("active");
-  }, 500);
-
-
-  /* =========================================
-     ENTRAR COM MÚSICA
-  ========================================= */
-
-  enterSite.addEventListener("click", function () {
-
-    siteMusic.volume = 0.35;
-
-    siteMusic.play()
-      .then(function () {
-        console.log("Música iniciada.");
-      })
-      .catch(function (error) {
-        console.log(
-          "O navegador bloqueou a reprodução automática:",
-          error
-        );
-      });
-
-    fecharPopup();
-  });
-
-
-  /* =========================================
-     CONTINUAR SEM MÚSICA
-  ========================================= */
-
-  continueWithoutMusic.addEventListener("click", function () {
-    fecharPopup();
-  });
-
-
-  /* =========================================
-     FECHAR NO X
-  ========================================= */
-
-  popupClose.addEventListener("click", function () {
-    fecharPopup();
-  });
-
-
-  /* =========================================
-     FUNÇÃO DE FECHAR
-  ========================================= */
+  setTimeout(() => {
+    popup.classList.add("active");
+  }, 400);
 
   function fecharPopup() {
+    popup.classList.remove("active");
 
-    popupOverlay.classList.remove("active");
-
-    setTimeout(function () {
-      popupOverlay.style.display = "none";
+    setTimeout(() => {
+      popup.style.display = "none";
     }, 450);
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener("click", fecharPopup);
+  }
+
+  if (noMusicButton) {
+    noMusicButton.addEventListener("click", fecharPopup);
+  }
+
+  if (enterButton) {
+    enterButton.addEventListener("click", () => {
+
+      if (music) {
+        music.volume = 0.3;
+
+        music.play().catch((error) => {
+          console.log("NÃO FOI POSSÍVEL TOCAR A MÚSICA:", error);
+        });
+      }
+
+      fecharPopup();
+    });
   }
 
 });
