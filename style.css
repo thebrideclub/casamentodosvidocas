@@ -6,14 +6,14 @@
 @font-face {
   font-family: "Serifada";
   src: url("Serifada.woff2") format("woff2");
-  font-weight: 300;
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Conqueror";
   src: url("Conqueror.woff2") format("woff2");
-  font-weight: 300;
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -41,11 +41,11 @@
   --creme: #fffaf4;
   --bege: #efe5d7;
   --bege-escuro: #dfcfba;
-
-  --marrom: #513e34;
-  --marrom-escuro: #3b2b24;
-
-  --linha: rgba(81, 62, 52, 0.16);
+  --bege-texto: #b9a58d;
+  --marrom: #5f4d42;
+  --marrom-suave: #78685e;
+  --marrom-escuro: #46362f;
+  --linha: rgba(81, 62, 52, 0.12);
   --linha-clara: rgba(255, 250, 244, 0.22);
 }
 
@@ -66,26 +66,20 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   width: 100%;
   min-height: 100%;
 }
 
 body {
   background: var(--fundo);
-
   color: var(--marrom);
-
   font-family: "Conqueror", Georgia, serif;
-
   overflow-x: hidden;
 }
 
 img {
   display: block;
-
   max-width: 100%;
-
   height: auto;
 }
 
@@ -98,7 +92,7 @@ select {
 
 
 /* =========================================
-   LARGURA PADRÃO DO SITE
+   LARGURA PADRÃO
 ========================================= */
 
 .menu,
@@ -114,7 +108,6 @@ select {
 .slider,
 .rodape-site {
   width: min(940px, calc(100% - 28px));
-
   margin-left: auto;
   margin-right: auto;
 }
@@ -126,35 +119,33 @@ select {
 
 .menu {
   margin-top: 18px;
-
-  padding: 20px 20px 16px;
+  padding: 20px 22px 18px;
 
   background: var(--creme);
 
   border: 1px solid var(--linha);
-
   border-radius: 22px 22px 0 0;
 }
 
 .logo-container {
   display: flex;
-
   justify-content: center;
-
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .logo {
-  width: 58px;
-
-  height: auto;
+  width: 62px;
 }
 
 .nav-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-list {
+  width: 100%;
+
   list-style: none;
 
   margin: 0;
@@ -167,27 +158,37 @@ select {
 
   flex-wrap: wrap;
 
-  gap: 24px;
+  gap: 28px;
+}
+
+.menu-list li {
+  display: flex;
 }
 
 .menu-list a {
+  display: block;
+
   text-decoration: none;
 
   color: var(--marrom);
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 8px;
+  font-size: 9px;
 
-  letter-spacing: 2px;
+  font-weight: normal;
+
+  letter-spacing: 1.8px;
 
   text-transform: uppercase;
 
-  transition: opacity 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
 }
 
 .menu-list a:hover {
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
 
@@ -205,16 +206,16 @@ select {
   border-left: 1px solid var(--linha);
   border-right: 1px solid var(--linha);
 
-  filter: saturate(0.9);
+  filter: saturate(0.88);
 }
 
 
 /* =========================================
-   CONVITE / NOMES
+   NOMES
 ========================================= */
 
 .convite {
-  padding: 56px 20px 52px;
+  padding: 54px 20px 50px;
 
   text-align: center;
 
@@ -229,13 +230,13 @@ select {
 
   font-family: "Serifada", serif;
 
-  font-weight: 300;
+  font-size: clamp(30px, 3.6vw, 44px);
 
-  font-size: clamp(32px, 4vw, 48px);
+  font-weight: normal;
 
   line-height: 1;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
 
   text-transform: uppercase;
 
@@ -247,7 +248,7 @@ select {
 
   font-family: "Conqueror", serif;
 
-  font-weight: 300;
+  font-weight: normal;
 
   text-transform: none;
 }
@@ -259,9 +260,9 @@ select {
 
   font-size: 8px;
 
-  letter-spacing: 4px;
+  letter-spacing: 3.5px;
 
-  color: var(--marrom);
+  color: var(--marrom-suave);
 }
 
 
@@ -270,7 +271,7 @@ select {
 ========================================= */
 
 .texto-boas-vindas {
-  padding: 78px 30px;
+  padding: 72px 30px;
 
   background: var(--marrom);
 
@@ -281,7 +282,7 @@ select {
 }
 
 .texto-boas-vindas-conteudo {
-  max-width: 580px;
+  max-width: 560px;
 
   margin: 0 auto;
 
@@ -295,42 +296,41 @@ select {
 
   font-size: 7px;
 
-  line-height: 2.2;
+  line-height: 2.1;
 
-  letter-spacing: 2.5px;
+  letter-spacing: 2.1px;
 
   text-transform: uppercase;
+
+  font-weight: normal;
 }
 
 
 /* =========================================
    TÍTULOS PADRÃO
-
-   Contagem regressiva
-   Nosso dia
-   Confirme sua presença
-   Mensagem aos noivos
 ========================================= */
 
 .titulo-contagem,
 .sessao-como-chegar .titulo-sessao,
 .retangulo h2,
-.retangulo_msg h2 {
+.retangulo_msg h2,
+.lista-presentes h2,
+.titulo-contato {
   margin: 0;
 
   font-family: "Serifada", serif;
 
-  font-size: 30px;
+  font-size: 28px;
 
-  font-weight: 300;
+  font-weight: normal;
 
   line-height: 1;
 
-  letter-spacing: 1.3px;
+  letter-spacing: 1px;
 
   text-transform: uppercase;
 
-  color: var(--marrom-escuro);
+  color: var(--marrom-suave);
 }
 
 
@@ -339,7 +339,7 @@ select {
 ========================================= */
 
 .contagem-regressiva {
-  padding: 62px 20px;
+  padding: 58px 20px;
 
   text-align: center;
 
@@ -350,7 +350,13 @@ select {
 }
 
 .titulo-contagem {
-  margin-bottom: 36px;
+  margin-bottom: 30px;
+
+  color: var(--bege-texto);
+
+  font-size: 27px;
+
+  letter-spacing: 1.1px;
 }
 
 .contador {
@@ -361,18 +367,18 @@ select {
 
   flex-wrap: nowrap;
 
-  gap: 13px;
+  gap: 16px;
 }
 
 .bloco {
-  width: 78px;
+  width: 72px;
 
-  min-width: 78px;
+  min-width: 72px;
 
-  padding: 15px 8px;
+  padding: 12px 5px;
 
-  border-top: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
+  border-top: 1px solid rgba(185, 165, 141, 0.45);
+  border-bottom: 1px solid rgba(185, 165, 141, 0.45);
 }
 
 .bloco span {
@@ -380,11 +386,13 @@ select {
 
   font-family: "Serifada", serif;
 
-  font-size: 25px;
+  font-size: 22px;
 
   line-height: 1;
 
-  color: var(--marrom-escuro);
+  color: var(--bege-texto);
+
+  font-weight: normal;
 }
 
 .bloco p {
@@ -392,13 +400,15 @@ select {
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 5.5px;
+  font-size: 5px;
 
   line-height: 1;
 
-  letter-spacing: 1.2px;
+  letter-spacing: 0.9px;
 
   text-transform: uppercase;
+
+  color: var(--bege-texto);
 
   white-space: nowrap;
 }
@@ -406,11 +416,11 @@ select {
 .dois-pontos {
   font-family: "Serifada", serif;
 
-  font-size: 18px;
+  font-size: 16px;
 
-  color: var(--marrom);
+  color: var(--bege-texto);
 
-  opacity: 0.4;
+  opacity: 0.45;
 }
 
 
@@ -419,7 +429,7 @@ select {
 ========================================= */
 
 .sessao-como-chegar {
-  padding: 76px 20px;
+  padding: 72px 20px;
 
   text-align: center;
 
@@ -436,41 +446,47 @@ select {
 }
 
 .sessao-como-chegar .titulo-sessao {
-  margin-bottom: 36px;
+  margin-bottom: 34px;
+
+  font-size: 28px;
 }
 
 .data-sessao {
-  margin: 0 0 52px;
+  margin: 0 0 46px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 8px;
+  font-size: 7px;
 
-  line-height: 2.2;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-.imagem-casa {
-  width: 145px;
-
-  margin: 0 auto 50px;
-}
-
-.local-sessao {
-  margin: 0 0 30px;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 2;
+  line-height: 2.1;
 
   letter-spacing: 1.8px;
 
   text-transform: uppercase;
+
+  color: var(--marrom-suave);
+}
+
+.imagem-casa {
+  width: 136px;
+
+  margin: 0 auto 45px;
+}
+
+.local-sessao {
+  margin: 0 0 28px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  line-height: 2;
+
+  letter-spacing: 1.6px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
 }
 
 
@@ -483,23 +499,23 @@ select {
 button {
   display: inline-block;
 
-  padding: 11px 24px;
+  padding: 10px 22px;
 
-  border: 1px solid var(--marrom);
+  border: 1px solid rgba(81, 62, 52, 0.55);
 
   border-radius: 999px;
 
   background: transparent;
 
-  color: var(--marrom);
+  color: var(--marrom-suave);
 
   text-decoration: none;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
-  letter-spacing: 1.7px;
+  letter-spacing: 1.5px;
 
   text-transform: uppercase;
 
@@ -524,7 +540,7 @@ button:hover {
 ========================================= */
 
 .rsvp-section {
-  padding: 76px 30px;
+  padding: 72px 30px;
 
   background: var(--bege);
 
@@ -535,7 +551,7 @@ button:hover {
 .retangulo {
   width: 100%;
 
-  max-width: 560px;
+  max-width: 540px;
 
   margin: 0 auto;
 
@@ -547,7 +563,9 @@ button:hover {
 }
 
 .retangulo h2 {
-  margin-bottom: 42px;
+  margin-bottom: 38px;
+
+  font-size: 28px;
 }
 
 
@@ -560,21 +578,23 @@ form {
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 9px;
 }
 
 form label {
-  margin-top: 18px;
+  margin-top: 17px;
 
   text-align: left;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
-  letter-spacing: 1.6px;
+  letter-spacing: 1.4px;
 
   text-transform: uppercase;
+
+  color: var(--marrom-suave);
 }
 
 input,
@@ -582,11 +602,11 @@ textarea,
 select {
   width: 100%;
 
-  padding: 13px 0;
+  padding: 12px 0;
 
   border: 0;
 
-  border-bottom: 1px solid var(--marrom);
+  border-bottom: 1px solid rgba(81, 62, 52, 0.35);
 
   border-radius: 0;
 
@@ -602,19 +622,19 @@ select {
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 95px;
 
   resize: vertical;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(81, 62, 52, 0.45);
+  color: rgba(81, 62, 52, 0.4);
 }
 
 input:focus,
 textarea:focus {
-  border-bottom-color: var(--marrom-escuro);
+  border-bottom-color: rgba(81, 62, 52, 0.7);
 }
 
 
@@ -628,7 +648,7 @@ textarea:focus {
   justify-content: flex-start;
   align-items: center;
 
-  gap: 32px;
+  gap: 28px;
 
   margin: 8px 0;
 }
@@ -638,7 +658,7 @@ textarea:focus {
 
   align-items: center;
 
-  gap: 8px;
+  gap: 7px;
 
   margin: 0;
 
@@ -650,7 +670,7 @@ textarea:focus {
 
   margin: 0;
 
-  accent-color: var(--marrom);
+  accent-color: var(--marrom-suave);
 }
 
 
@@ -665,36 +685,36 @@ textarea:focus {
 #camposConvidados small {
   display: block;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
   text-align: left;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 6.5px;
+  font-size: 6px;
 
-  line-height: 1.8;
+  line-height: 1.7;
 
-  letter-spacing: 0.7px;
+  letter-spacing: 0.6px;
 
-  color: rgba(81, 62, 52, 0.7);
+  color: rgba(81, 62, 52, 0.62);
 }
 
 .retangulo button {
   align-self: center;
 
-  margin-top: 32px;
+  margin-top: 30px;
 
-  min-width: 160px;
+  min-width: 150px;
 }
 
 
 /* =========================================
-   LISTA DE PRESENTES
+   PRESENTES
 ========================================= */
 
 .lista-presentes {
-  padding: 76px 30px;
+  padding: 72px 30px;
 
   text-align: center;
 
@@ -707,31 +727,21 @@ textarea:focus {
 }
 
 .lista-presentes h2 {
-  margin: 0 0 28px;
-
-  font-family: "Serifada", serif;
-
-  font-size: 30px;
-
-  font-weight: 300;
-
-  line-height: 1;
-
-  letter-spacing: 1.3px;
-
-  text-transform: uppercase;
+  margin-bottom: 26px;
 
   color: var(--creme);
+
+  font-size: 28px;
 }
 
 .presente-img {
-  width: 60px;
+  width: 56px;
 
-  margin: 0 auto 32px;
+  margin: 0 auto 30px;
 
   filter: brightness(0) invert(1);
 
-  opacity: 0.88;
+  opacity: 0.76;
 }
 
 .botoes-container {
@@ -740,13 +750,13 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 
-  gap: 14px;
+  gap: 13px;
 
   flex-wrap: wrap;
 }
 
 .lista-presentes .botao {
-  border-color: var(--creme);
+  border-color: rgba(255, 250, 244, 0.65);
 
   color: var(--creme);
 }
@@ -763,7 +773,7 @@ textarea:focus {
 ========================================= */
 
 .msg-section {
-  padding: 76px 30px;
+  padding: 72px 30px;
 
   background: var(--creme);
 
@@ -774,7 +784,7 @@ textarea:focus {
 .retangulo_msg {
   width: 100%;
 
-  max-width: 560px;
+  max-width: 540px;
 
   margin: 0 auto;
 
@@ -786,23 +796,25 @@ textarea:focus {
 }
 
 .mensagem-img {
-  width: 55px;
+  width: 50px;
 
-  margin: 0 auto 24px;
+  margin: 0 auto 22px;
 
-  opacity: 0.82;
+  opacity: 0.72;
 }
 
 .retangulo_msg h2 {
-  margin-bottom: 38px;
+  margin-bottom: 36px;
+
+  font-size: 28px;
 }
 
 .retangulo_msg button {
   align-self: center;
 
-  min-width: 150px;
+  min-width: 145px;
 
-  margin-top: 28px;
+  margin-top: 27px;
 }
 
 
@@ -811,7 +823,7 @@ textarea:focus {
 ========================================= */
 
 .contato-section {
-  padding: 68px 30px;
+  padding: 64px 30px;
 
   text-align: center;
 
@@ -822,39 +834,29 @@ textarea:focus {
 }
 
 .titulo-contato {
-  margin: 0 0 28px;
+  margin-bottom: 25px;
 
-  font-family: "Serifada", serif;
-
-  font-size: 26px;
-
-  font-weight: 300;
-
-  line-height: 1;
-
-  letter-spacing: 1.3px;
-
-  text-transform: uppercase;
-
-  color: var(--marrom-escuro);
+  font-size: 24px;
 }
 
 .texto-contato {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
-  line-height: 2;
+  line-height: 1.9;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 1.6px;
 
   text-transform: uppercase;
+
+  color: var(--marrom-suave);
 }
 
 .whatsapp-contato {
-  margin-top: 26px;
+  margin-top: 23px;
 }
 
 .whatsapp-contato a {
@@ -865,27 +867,27 @@ textarea:focus {
 
   gap: 8px;
 
-  padding-bottom: 4px;
+  padding-bottom: 3px;
 
-  border-bottom: 1px solid var(--marrom);
+  border-bottom: 1px solid rgba(81, 62, 52, 0.45);
 
-  color: var(--marrom);
+  color: var(--marrom-suave);
 
   text-decoration: none;
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 8px;
+  font-size: 7px;
 
-  letter-spacing: 1px;
+  letter-spacing: 0.9px;
 }
 
 .icone-whatsapp {
-  width: 14px;
+  width: 13px;
 
-  height: 14px;
+  height: 13px;
 
-  opacity: 0.75;
+  opacity: 0.65;
 }
 
 
@@ -896,7 +898,7 @@ textarea:focus {
 .slider {
   overflow: hidden;
 
-  padding: 42px 0;
+  padding: 38px 0;
 
   background: var(--creme);
 
@@ -909,11 +911,11 @@ textarea:focus {
 
   align-items: center;
 
-  gap: 12px;
+  gap: 10px;
 
   width: max-content;
 
-  animation: deslizar 28s linear infinite;
+  animation: deslizar 30s linear infinite;
 }
 
 .slide {
@@ -921,19 +923,18 @@ textarea:focus {
 }
 
 .slide img {
-  width: 250px;
+  width: 245px;
 
-  height: 320px;
+  height: 315px;
 
   object-fit: cover;
 
   border-radius: 0;
 
-  filter: saturate(0.85);
+  filter: saturate(0.82);
 }
 
 @keyframes deslizar {
-
   from {
     transform: translateX(0);
   }
@@ -941,7 +942,6 @@ textarea:focus {
   to {
     transform: translateX(-50%);
   }
-
 }
 
 
@@ -952,7 +952,7 @@ textarea:focus {
 .rodape-site {
   margin-bottom: 28px;
 
-  padding: 28px 20px;
+  padding: 26px 20px;
 
   text-align: center;
 
@@ -968,9 +968,9 @@ textarea:focus {
 
   font-family: "Montserrat", sans-serif;
 
-  font-size: 7px;
+  font-size: 6.5px;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 
   text-transform: uppercase;
 }
@@ -978,14 +978,9 @@ textarea:focus {
 
 /* =========================================================
    RESPONSIVO
-   CELULAR + TABLET
 ========================================================= */
 
 @media (max-width: 849px) {
-
-  /* =========================================
-     LARGURA MOBILE
-  ========================================= */
 
   .menu,
   .foto-principal,
@@ -1013,7 +1008,7 @@ textarea:focus {
   .menu {
     margin-top: 0;
 
-    padding: 14px 0 11px;
+    padding: 15px 0 13px;
 
     border-left: 0;
     border-right: 0;
@@ -1023,15 +1018,19 @@ textarea:focus {
   }
 
   .logo-container {
-    margin-bottom: 11px;
+    margin-bottom: 13px;
   }
 
   .logo {
-    width: 50px;
+    width: 56px;
   }
 
   .nav-container {
     width: 100%;
+
+    display: flex;
+
+    justify-content: center;
 
     overflow-x: auto;
 
@@ -1047,15 +1046,17 @@ textarea:focus {
   .menu-list {
     width: max-content;
 
-    min-width: 100%;
+    min-width: max-content;
 
-    padding: 0 10px;
+    margin: 0 auto;
 
-    justify-content: flex-start;
+    padding: 0 14px;
+
+    justify-content: center;
 
     flex-wrap: nowrap;
 
-    gap: 4px;
+    gap: 10px;
   }
 
   .menu-list li {
@@ -1065,13 +1066,13 @@ textarea:focus {
   .menu-list a {
     display: block;
 
-    padding: 5px 7px;
+    padding: 5px 6px;
 
     white-space: nowrap;
 
-    font-size: 6.5px;
+    font-size: 7.5px;
 
-    letter-spacing: 0.9px;
+    letter-spacing: 1px;
   }
 
 
@@ -1099,9 +1100,9 @@ textarea:focus {
   }
 
   .nomes {
-    font-size: clamp(26px, 8vw, 32px);
+    font-size: clamp(25px, 8vw, 31px);
 
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
   }
 
   .vidoca {
@@ -1109,7 +1110,7 @@ textarea:focus {
 
     font-size: 6.5px;
 
-    letter-spacing: 2.5px;
+    letter-spacing: 2.3px;
   }
 
 
@@ -1118,19 +1119,19 @@ textarea:focus {
   ========================================= */
 
   .texto-boas-vindas {
-    padding: 52px 22px;
+    padding: 50px 22px;
   }
 
   .texto-boas-vindas-conteudo {
-    max-width: 400px;
+    max-width: 390px;
   }
 
   .texto-boas-vindas p {
-    font-size: 6.5px;
+    font-size: 6.3px;
 
-    line-height: 2;
+    line-height: 1.95;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
   }
 
 
@@ -1141,12 +1142,13 @@ textarea:focus {
   .titulo-contagem,
   .sessao-como-chegar .titulo-sessao,
   .retangulo h2,
-  .retangulo_msg h2 {
-    font-size: 23px;
+  .retangulo_msg h2,
+  .lista-presentes h2 {
+    font-size: 21px;
 
-    line-height: 1.05;
+    line-height: 1;
 
-    letter-spacing: 0.9px;
+    letter-spacing: 0.7px;
   }
 
 
@@ -1155,11 +1157,15 @@ textarea:focus {
   ========================================= */
 
   .contagem-regressiva {
-    padding: 42px 12px;
+    padding: 39px 10px;
   }
 
   .titulo-contagem {
-    margin-bottom: 27px;
+    margin-bottom: 24px;
+
+    font-size: 21px;
+
+    color: var(--bege-texto);
 
     white-space: nowrap;
   }
@@ -1181,33 +1187,31 @@ textarea:focus {
   }
 
   .bloco {
-    flex: 0 1 58px;
+    flex: 0 1 54px;
 
-    width: 58px;
+    width: 54px;
 
     min-width: 0;
 
-    max-width: 58px;
+    max-width: 54px;
 
-    padding: 10px 3px;
+    padding: 9px 2px;
   }
 
   .bloco span {
-    font-size: 18px;
+    font-size: 16px;
 
-    line-height: 1;
+    color: var(--bege-texto);
   }
 
   .bloco p {
-    margin-top: 6px;
+    margin-top: 5px;
 
-    font-size: 5px;
+    font-size: 4.5px;
 
-    line-height: 1;
+    letter-spacing: 0.4px;
 
-    letter-spacing: 0.5px;
-
-    white-space: nowrap;
+    color: var(--bege-texto);
   }
 
   .dois-pontos {
@@ -1220,7 +1224,7 @@ textarea:focus {
   ========================================= */
 
   .sessao-como-chegar {
-    padding: 56px 20px;
+    padding: 52px 20px;
 
     background: repeating-linear-gradient(
       90deg,
@@ -1232,33 +1236,33 @@ textarea:focus {
   }
 
   .sessao-como-chegar .titulo-sessao {
-    margin-bottom: 28px;
+    margin-bottom: 26px;
   }
 
   .data-sessao {
-    margin-bottom: 38px;
+    margin-bottom: 35px;
 
-    font-size: 6.5px;
+    font-size: 6.2px;
 
-    line-height: 2;
+    line-height: 1.9;
 
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
   }
 
   .imagem-casa {
-    width: 115px;
+    width: 108px;
 
-    margin-bottom: 38px;
+    margin-bottom: 35px;
   }
 
   .local-sessao {
-    margin-bottom: 26px;
+    margin-bottom: 24px;
 
-    font-size: 6.5px;
+    font-size: 6.2px;
 
-    line-height: 2;
+    line-height: 1.9;
 
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
   }
 
 
@@ -1269,11 +1273,11 @@ textarea:focus {
   .botao-como-chegar,
   .botao,
   button {
-    padding: 10px 20px;
+    padding: 9px 18px;
 
-    font-size: 6.5px;
+    font-size: 6px;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
   }
 
 
@@ -1282,25 +1286,23 @@ textarea:focus {
   ========================================= */
 
   .rsvp-section {
-    padding: 56px 22px;
+    padding: 52px 20px;
   }
 
   .retangulo {
-    width: 100%;
-
-    max-width: 500px;
+    max-width: 480px;
   }
 
   .retangulo h2 {
-    margin-bottom: 34px;
+    margin-bottom: 31px;
 
     white-space: nowrap;
   }
 
   form label {
-    font-size: 6.5px;
+    font-size: 6.2px;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
   }
 
   input,
@@ -1310,25 +1312,25 @@ textarea:focus {
   }
 
   textarea {
-    min-height: 90px;
+    min-height: 85px;
   }
 
   .radio-group {
-    gap: 24px;
+    gap: 22px;
   }
 
   .radio-group label {
-    font-size: 6.5px;
+    font-size: 6.2px;
   }
 
   #camposConvidados small {
-    font-size: 6px;
+    font-size: 5.8px;
 
     line-height: 1.7;
   }
 
   .retangulo button {
-    margin-top: 28px;
+    margin-top: 26px;
   }
 
 
@@ -1337,27 +1339,23 @@ textarea:focus {
   ========================================= */
 
   .lista-presentes {
-    padding: 56px 22px;
+    padding: 52px 20px;
   }
 
   .lista-presentes h2 {
-    margin-bottom: 24px;
-
-    font-size: 23px;
-
-    letter-spacing: 0.9px;
+    margin-bottom: 22px;
   }
 
   .presente-img {
-    width: 52px;
+    width: 48px;
 
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .botoes-container {
     flex-direction: column;
 
-    gap: 10px;
+    gap: 9px;
   }
 
 
@@ -1366,29 +1364,27 @@ textarea:focus {
   ========================================= */
 
   .msg-section {
-    padding: 56px 22px;
+    padding: 52px 20px;
   }
 
   .retangulo_msg {
-    width: 100%;
-
-    max-width: 500px;
+    max-width: 480px;
   }
 
   .mensagem-img {
-    width: 48px;
+    width: 44px;
 
-    margin-bottom: 21px;
+    margin-bottom: 19px;
   }
 
   .retangulo_msg h2 {
-    margin-bottom: 32px;
+    margin-bottom: 29px;
 
     white-space: nowrap;
   }
 
   .retangulo_msg button {
-    margin-top: 25px;
+    margin-top: 24px;
   }
 
 
@@ -1397,29 +1393,29 @@ textarea:focus {
   ========================================= */
 
   .contato-section {
-    padding: 52px 22px;
+    padding: 48px 20px;
   }
 
   .titulo-contato {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .texto-contato {
-    font-size: 6.5px;
+    font-size: 6px;
 
-    line-height: 1.9;
+    line-height: 1.85;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
   }
 
   .whatsapp-contato {
-    margin-top: 22px;
+    margin-top: 20px;
   }
 
   .whatsapp-contato a {
-    font-size: 7px;
+    font-size: 6.7px;
   }
 
 
@@ -1428,7 +1424,7 @@ textarea:focus {
   ========================================= */
 
   .slider {
-    padding: 24px 0;
+    padding: 22px 0;
   }
 
   .slider-track {
@@ -1436,9 +1432,9 @@ textarea:focus {
   }
 
   .slide img {
-    width: 135px;
+    width: 132px;
 
-    height: 180px;
+    height: 175px;
   }
 
 
@@ -1449,15 +1445,15 @@ textarea:focus {
   .rodape-site {
     margin-bottom: 0;
 
-    padding: 25px 18px;
+    padding: 23px 18px;
 
     border-radius: 0;
   }
 
   .rodape-site a {
-    font-size: 6.5px;
+    font-size: 6px;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
   }
 }
 
@@ -1468,92 +1464,45 @@ textarea:focus {
 
 @media (max-width: 380px) {
 
-  /* MENU */
+  .menu-list {
+    gap: 6px;
+    padding: 0 10px;
+  }
 
   .menu-list a {
-    font-size: 6px;
-
-    padding: 5px;
+    font-size: 6.8px;
+    padding: 5px 4px;
   }
-
-
-  /* NOMES */
 
   .nomes {
-    font-size: 25px;
-  }
-
-
-  /* TÍTULOS */
-
-  .titulo-contagem,
-  .sessao-como-chegar .titulo-sessao,
-  .retangulo h2,
-  .retangulo_msg h2,
-  .lista-presentes h2 {
-    font-size: 21px;
-  }
-
-
-  /* CONTAGEM */
-
-  .contagem-regressiva {
-    padding-left: 10px;
-
-    padding-right: 10px;
+    font-size: 24px;
   }
 
   .titulo-contagem {
-    font-size: 21px;
-
-    margin-bottom: 24px;
+    font-size: 19px;
   }
 
   .contador {
-    gap: 7px;
+    gap: 6px;
   }
 
   .bloco {
-    flex-basis: 54px;
-
-    width: 54px;
-
-    max-width: 54px;
-
-    padding: 9px 2px;
+    flex-basis: 50px;
+    width: 50px;
+    max-width: 50px;
   }
 
   .bloco span {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .bloco p {
-    font-size: 4.5px;
-  }
-
-
-  /* RSVP */
-
-  .rsvp-section,
-  .msg-section {
-    padding-left: 18px;
-
-    padding-right: 18px;
+    font-size: 4.2px;
   }
 
   .retangulo h2,
   .retangulo_msg h2 {
     white-space: normal;
-  }
-
-
-  /* BOTÕES */
-
-  .retangulo button,
-  .retangulo_msg button {
-    width: 100%;
-
-    max-width: 200px;
   }
 }
 ```
