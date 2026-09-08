@@ -319,7 +319,7 @@ select {
 .titulo-contato {
   margin: 0;
 
-  font-family: "Serifada";
+  font-family: "Serifada", serif;
 
   font-size: 27px;
 
@@ -352,6 +352,7 @@ select {
 
 .titulo-contagem {
   margin-bottom: 30px;
+
   letter-spacing: 6.2px;
 
   color: var(--bege-texto);
@@ -1171,12 +1172,19 @@ textarea:focus {
   .sessao-como-chegar .titulo-sessao,
   .retangulo h2,
   .retangulo_msg h2,
-  .lista-presentes h2 {
+  .lista-presentes h2,
+  .titulo-contato {
+    font-family: "Serifada", serif;
+
     font-size: 21px;
 
     line-height: 1;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 4.5px;
+
+    text-transform: uppercase;
+
+    font-synthesis: none;
   }
 
 
@@ -1192,6 +1200,8 @@ textarea:focus {
     margin-bottom: 23px;
 
     font-size: 20px;
+
+    letter-spacing: 4.5px;
 
     color: var(--bege-texto);
 
@@ -1266,32 +1276,48 @@ textarea:focus {
 
   .sessao-como-chegar .titulo-sessao {
     margin-bottom: 20px;
+
+    font-size: 21px;
+
+    letter-spacing: 4.5px;
   }
 
   .data-sessao {
-    margin-bottom: 23px;
+    margin: 0 0 15px;
 
-    font-size: 7px;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
 
     line-height: 1.8;
 
-    letter-spacing: 1.25px;
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    color: var(--marrom-suave);
   }
 
   .imagem-casa {
     width: 105px;
 
-    margin-bottom: 23px;
+    margin: 0 auto 15px;
   }
 
   .local-sessao {
-    margin-bottom: 21px;
+    margin: 0 0 15px;
 
-    font-size: 7px;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
 
     line-height: 1.8;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: var(--marrom-suave);
   }
 
 
@@ -1453,6 +1479,8 @@ textarea:focus {
     margin-bottom: 20px;
 
     font-size: 20px;
+
+    letter-spacing: 4.5px;
   }
 
   .texto-contato {
@@ -1533,8 +1561,20 @@ textarea:focus {
     font-size: 24px;
   }
 
-  .titulo-contagem {
+  .titulo-contagem,
+  .sessao-como-chegar .titulo-sessao,
+  .retangulo h2,
+  .retangulo_msg h2,
+  .lista-presentes h2,
+  .titulo-contato {
     font-size: 19px;
+
+    letter-spacing: 3.6px;
+  }
+
+  .data-sessao,
+  .local-sessao {
+    font-size: 11px;
   }
 
   .contador {
