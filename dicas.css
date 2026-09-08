@@ -1,0 +1,579 @@
+/* =========================================================
+   DICAS.CSS
+   Página de dicas - Casamento dos Vidocas
+========================================================= */
+
+
+/* =========================================
+   LARGURA DA PÁGINA
+========================================= */
+
+.dicas-intro,
+.dicas-container,
+.final-dicas {
+  width: min(940px, calc(100% - 28px));
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-left: 1px solid var(--linha);
+  border-right: 1px solid var(--linha);
+}
+
+
+/* =========================================
+   INTRODUÇÃO
+========================================= */
+
+.dicas-intro {
+  padding: 72px 30px 66px;
+
+  background: var(--bege);
+
+  text-align: center;
+}
+
+.dicas-intro-conteudo {
+  width: 100%;
+  max-width: 560px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.titulo-dicas {
+  margin: 0 0 22px;
+
+  font-family: "Serifada", serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  letter-spacing: 5.8px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+
+  font-synthesis: none;
+}
+
+
+/* =========================================
+   SUBTÍTULO
+========================================= */
+
+.subtitulo-dicas {
+  margin: 0 0 22px;
+
+  font-family: "Providence", cursive;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  letter-spacing: 2.3px;
+
+  color: var(--marrom-suave);
+}
+
+
+/* =========================================
+   TEXTO DA INTRO
+========================================= */
+
+.texto-dicas-intro {
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  line-height: 2;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+}
+
+
+/* =========================================
+   CONTAINER DAS DICAS
+========================================= */
+
+.dicas-container {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  padding: 1px;
+
+  background: rgba(81, 62, 52, 0.08);
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.dica-card {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 430px;
+
+  padding: 58px 52px;
+
+  background: var(--creme);
+
+  text-align: center;
+}
+
+
+/* Último card centralizado */
+
+.dica-card:last-child {
+  grid-column: 1 / -1;
+
+  width: 50%;
+
+  justify-self: center;
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.icone-dica {
+  width: 54px;
+  height: 54px;
+
+  object-fit: contain;
+
+  margin: 0 auto 23px;
+
+  opacity: 0.72;
+}
+
+
+/* =========================================
+   TÍTULOS DOS CARDS
+========================================= */
+
+.dica-card h2 {
+  margin: 0 0 25px;
+
+  font-family: "Serifada", serif;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--marrom-suave);
+
+  font-synthesis: none;
+}
+
+
+/* =========================================
+   TEXTOS DOS CARDS
+========================================= */
+
+.dica-card p {
+  max-width: 330px;
+
+  margin: 0 0 16px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  line-height: 2;
+
+  letter-spacing: 0.9px;
+
+  color: var(--marrom-suave);
+}
+
+.dica-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.dica-card strong {
+  font-weight: 600;
+
+  color: var(--marrom);
+}
+
+
+/* =========================================
+   ENDEREÇO
+========================================= */
+
+.endereco-dica {
+  margin-top: 7px !important;
+
+  line-height: 2.1 !important;
+
+  letter-spacing: 1.2px !important;
+
+  text-transform: uppercase;
+
+  color: var(--marrom) !important;
+}
+
+
+/* =========================================
+   BOTÃO WAZE
+========================================= */
+
+.botao-dica {
+  display: inline-block;
+
+  margin-top: 27px;
+
+  padding: 10px 22px;
+
+  border: 1px solid rgba(81, 62, 52, 0.4);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--marrom-suave);
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 6.5px;
+
+  line-height: 1;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.botao-dica:hover {
+  background: var(--marrom);
+
+  border-color: var(--marrom);
+
+  color: var(--creme);
+}
+
+
+/* =========================================
+   VARIAÇÃO DE FUNDO DOS CARDS
+========================================= */
+
+.dica-card:nth-child(2),
+.dica-card:nth-child(3),
+.dica-card:nth-child(5) {
+  background: #f7f0e6;
+}
+
+
+/* =========================================
+   MENSAGEM FINAL
+========================================= */
+
+.final-dicas {
+  padding: 68px 30px 72px;
+
+  background: var(--marrom);
+
+  text-align: center;
+
+  color: var(--creme);
+}
+
+.final-dicas .imagem-casa {
+  width: 125px;
+
+  margin: 0 auto 25px;
+
+  filter: brightness(0) invert(1);
+
+  opacity: 0.75;
+}
+
+.final-dicas p {
+  margin: 0 0 17px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  line-height: 2;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+
+  color: var(--creme);
+}
+
+.final-dicas strong {
+  display: block;
+
+  font-family: "Providence", cursive;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  letter-spacing: 2px;
+
+  color: var(--creme);
+}
+
+
+/* =========================================================
+   NOTEBOOK / TABLET
+========================================================= */
+
+@media (max-width: 849px) {
+
+  .dicas-intro,
+  .dicas-container,
+  .final-dicas {
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    border-left: 0;
+    border-right: 0;
+  }
+
+
+  /* =========================================
+     INTRO
+  ========================================= */
+
+  .dicas-intro {
+    padding: 52px 22px 48px;
+  }
+
+  .dicas-intro-conteudo {
+    max-width: 450px;
+  }
+
+  .titulo-dicas {
+    margin-bottom: 18px;
+
+    font-size: 21px;
+
+    letter-spacing: 4.3px;
+  }
+
+  .subtitulo-dicas {
+    margin-bottom: 19px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .texto-dicas-intro {
+    max-width: 360px;
+
+    font-size: 6px;
+
+    line-height: 1.9;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  /* =========================================
+     CARDS
+  ========================================= */
+
+  .dicas-container {
+    grid-template-columns: 1fr;
+
+    gap: 1px;
+
+    padding: 0;
+  }
+
+  .dica-card,
+  .dica-card:last-child {
+    width: 100%;
+
+    min-height: 0;
+
+    grid-column: auto;
+
+    padding: 48px 28px;
+  }
+
+
+  /* =========================================
+     ÍCONES
+  ========================================= */
+
+  .icone-dica {
+    width: 47px;
+    height: 47px;
+
+    margin-bottom: 19px;
+  }
+
+
+  /* =========================================
+     TÍTULO CARD
+  ========================================= */
+
+  .dica-card h2 {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+
+    letter-spacing: 3.4px;
+  }
+
+
+  /* =========================================
+     TEXTO CARD
+  ========================================= */
+
+  .dica-card p {
+    max-width: 390px;
+
+    margin-bottom: 14px;
+
+    font-size: 7px;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* =========================================
+     BOTÃO
+  ========================================= */
+
+  .botao-dica {
+    margin-top: 23px;
+
+    padding: 9px 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* =========================================
+     MENSAGEM FINAL
+  ========================================= */
+
+  .final-dicas {
+    padding: 52px 22px 56px;
+  }
+
+  .final-dicas .imagem-casa {
+    width: 100px;
+
+    margin-bottom: 22px;
+  }
+
+  .final-dicas p {
+    font-size: 6.3px;
+
+    line-height: 1.9;
+
+    letter-spacing: 1.15px;
+  }
+
+  .final-dicas strong {
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .dicas-intro {
+    padding: 45px 18px 42px;
+  }
+
+  .titulo-dicas {
+    font-size: 19px;
+
+    letter-spacing: 3.6px;
+  }
+
+  .subtitulo-dicas {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .texto-dicas-intro {
+    font-size: 5.7px;
+
+    letter-spacing: 0.9px;
+  }
+
+  .dica-card {
+    padding: 42px 22px;
+  }
+
+  .icone-dica {
+    width: 43px;
+    height: 43px;
+  }
+
+  .dica-card h2 {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+  }
+
+  .dica-card p {
+    font-size: 6.5px;
+
+    line-height: 1.85;
+  }
+
+  .final-dicas {
+    padding: 48px 20px;
+  }
+}
