@@ -10,10 +10,17 @@ function atualizarContagem() {
   const agora = new Date().getTime();
   const diferenca = dataCasamento - agora;
 
-  const elementoDias = document.getElementById("dias");
-  const elementoHoras = document.getElementById("horas");
-  const elementoMinutos = document.getElementById("minutos");
-  const elementoSegundos = document.getElementById("segundos");
+  const elementoDias =
+    document.getElementById("dias");
+
+  const elementoHoras =
+    document.getElementById("horas");
+
+  const elementoMinutos =
+    document.getElementById("minutos");
+
+  const elementoSegundos =
+    document.getElementById("segundos");
 
   if (
     !elementoDias ||
@@ -63,6 +70,9 @@ function atualizarContagem() {
     String(segundos).padStart(2, "0");
 }
 
+
+// INICIA A CONTAGEM
+
 atualizarContagem();
 
 setInterval(
@@ -79,8 +89,8 @@ setInterval(
 const rsvpForm =
   document.getElementById("rsvpForm");
 
-const camposConvidados =
-  document.getElementById("camposConvidados");
+const camposAcompanhante =
+  document.getElementById("camposAcompanhante");
 
 const URL_RSVP =
   "https://script.google.com/macros/s/AKfycbzdKEtzjqlpAMfF-oaKkvrWzu-ej_cA5D76eVKtHYVDEiOHZKMfFdr0_QzLOtTlWSwbfQ/exec";
@@ -88,31 +98,37 @@ const URL_RSVP =
 
 
 // ===============================
-// MOSTRA OU ESCONDE ACOMPANHANTES
+// MOSTRA OU ESCONDE ACOMPANHANTE
 // ===============================
 
-function atualizarCamposConvidados() {
+function atualizarCamposAcompanhante() {
 
   const presencaSelecionada =
     document.querySelector(
       'input[name="presenca"]:checked'
     );
 
-  if (!camposConvidados) {
+  if (!camposAcompanhante) {
     return;
   }
 
 
   // NENHUMA OPÇÃO MARCADA
+
   if (!presencaSelecionada) {
 
-    camposConvidados.style.display = "none";
+    camposAcompanhante.style.display =
+      "none";
 
-    const campoConvidados =
-      document.getElementById("convidados");
+    const campoAcompanhante =
+      rsvpForm
+        ? rsvpForm.querySelector(
+            '[name="acompanhante"]'
+          )
+        : null;
 
-    if (campoConvidados) {
-      campoConvidados.value = "";
+    if (campoAcompanhante) {
+      campoAcompanhante.value = "";
     }
 
     return;
@@ -120,23 +136,33 @@ function atualizarCamposConvidados() {
 
 
   // MARCOU SIM
-  if (presencaSelecionada.value === "sim") {
 
-    camposConvidados.style.display = "block";
+  if (
+    presencaSelecionada.value === "sim"
+  ) {
+
+    camposAcompanhante.style.display =
+      "block";
 
   }
 
 
   // MARCOU NÃO
+
   else {
 
-    camposConvidados.style.display = "none";
+    camposAcompanhante.style.display =
+      "none";
 
-    const campoConvidados =
-      document.getElementById("convidados");
+    const campoAcompanhante =
+      rsvpForm
+        ? rsvpForm.querySelector(
+            '[name="acompanhante"]'
+          )
+        : null;
 
-    if (campoConvidados) {
-      campoConvidados.value = "";
+    if (campoAcompanhante) {
+      campoAcompanhante.value = "";
     }
 
   }
@@ -158,15 +184,16 @@ radiosPresenca.forEach(
 
     radio.addEventListener(
       "change",
-      atualizarCamposConvidados
+      atualizarCamposAcompanhante
     );
 
   }
 );
 
 
-// DEFINE ESTADO INICIAL
-atualizarCamposConvidados();
+// GARANTE ESTADO CORRETO AO CARREGAR
+
+atualizarCamposAcompanhante();
 
 
 
@@ -183,26 +210,27 @@ if (rsvpForm) {
       event.preventDefault();
 
 
+      // ===============================
+      // BOTÃO
+      // ===============================
+
       const botao =
         rsvpForm.querySelector(
           "button[type='submit']"
         );
 
-      if (!botao) {
-        return;
-      }
-
       const textoOriginal =
         botao.textContent;
 
       botao.disabled = true;
+
       botao.textContent =
         "ENVIANDO...";
 
 
 
       // ===============================
-      // CAMPOS
+      // PEGA OS CAMPOS
       // ===============================
 
       const campoNome =
@@ -220,15 +248,15 @@ if (rsvpForm) {
           '[name="presenca"]:checked'
         );
 
-      const campoConvidados =
+      const campoAcompanhante =
         rsvpForm.querySelector(
-          '[name="convidados"]'
+          '[name="acompanhante"]'
         );
 
 
 
       // ===============================
-      // VALORES
+      // PEGA OS VALORES
       // ===============================
 
       const nome =
@@ -246,9 +274,9 @@ if (rsvpForm) {
           ? presencaSelecionada.value
           : "";
 
-      const listaConvidados =
-        campoConvidados
-          ? campoConvidados.value.trim()
+      const acompanhante =
+        campoAcompanhante
+          ? campoAcompanhante.value.trim()
           : "";
 
 
@@ -276,8 +304,8 @@ if (rsvpForm) {
       );
 
       dados.append(
-        "convidados",
-        listaConvidados
+        "acompanhante",
+        acompanhante
       );
 
 
@@ -285,10 +313,6 @@ if (rsvpForm) {
       // ===============================
       // TESTE NO CONSOLE
       // ===============================
-
-      console.log(
-        "DADOS DO RSVP"
-      );
 
       console.log(
         "NOME:",
@@ -306,14 +330,14 @@ if (rsvpForm) {
       );
 
       console.log(
-        "ACOMPANHANTES:",
-        listaConvidados
+        "ACOMPANHANTE:",
+        acompanhante
       );
 
 
 
       // ===============================
-      // ENVIA
+      // ENVIA PARA O GOOGLE SHEETS
       // ===============================
 
       try {
@@ -333,9 +357,14 @@ if (rsvpForm) {
         );
 
 
+        // LIMPA FORMULÁRIO
+
         rsvpForm.reset();
 
-        atualizarCamposConvidados();
+
+        // ESCONDE ACOMPANHANTE NOVAMENTE
+
+        atualizarCamposAcompanhante();
 
 
       } catch (erro) {
@@ -352,7 +381,12 @@ if (rsvpForm) {
       }
 
 
+      // ===============================
+      // RESTAURA BOTÃO
+      // ===============================
+
       botao.disabled = false;
+
       botao.textContent =
         textoOriginal;
 
@@ -384,18 +418,23 @@ if (msgForm) {
       event.preventDefault();
 
 
+      // ===============================
+      // BOTÃO
+      // ===============================
+
       const botao =
         msgForm.querySelector(
           "button[type='submit']"
         );
 
-      if (!botao) {
-        return;
-      }
-
       const textoOriginal =
         botao.textContent;
 
+
+
+      // ===============================
+      // CAMPOS
+      // ===============================
 
       const campoNome =
         document.getElementById(
@@ -420,9 +459,15 @@ if (msgForm) {
 
 
       botao.disabled = true;
+
       botao.textContent =
         "ENVIANDO...";
 
+
+
+      // ===============================
+      // MONTA OS DADOS
+      // ===============================
 
       const dados =
         new URLSearchParams();
@@ -437,6 +482,11 @@ if (msgForm) {
         mensagem
       );
 
+
+
+      // ===============================
+      // ENVIA
+      // ===============================
 
       try {
 
@@ -472,7 +522,12 @@ if (msgForm) {
       }
 
 
+      // ===============================
+      // RESTAURA BOTÃO
+      // ===============================
+
       botao.disabled = false;
+
       botao.textContent =
         textoOriginal;
 
