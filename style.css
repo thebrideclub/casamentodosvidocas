@@ -1180,7 +1180,7 @@ textarea:focus {
 
     line-height: 1;
 
-    letter-spacing: 4.5px;
+    letter-spacing: 2.5px;
 
     text-transform: uppercase;
 
@@ -1199,7 +1199,7 @@ textarea:focus {
   .titulo-contagem {
     margin-bottom: 23px;
 
-    font-size: 20px;
+    font-size: 19px;
 
     letter-spacing: 4.5px;
 
@@ -1277,17 +1277,17 @@ textarea:focus {
   .sessao-como-chegar .titulo-sessao {
     margin-bottom: 20px;
 
-    font-size: 21px;
+    font-size: 19px;
 
     letter-spacing: 4.5px;
   }
 
   .data-sessao {
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 12px;
+    font-size: 8px;
 
     line-height: 1.8;
 
@@ -1301,7 +1301,7 @@ textarea:focus {
   .imagem-casa {
     width: 105px;
 
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;
   }
 
   .local-sessao {
@@ -1309,11 +1309,12 @@ textarea:focus {
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 12px;
+    font-size: 8px;
 
     line-height: 1.8;
+  font-weight: 300;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2.5px;
 
     text-transform: uppercase;
 
@@ -1330,9 +1331,9 @@ textarea:focus {
   button {
     padding: 9px 18px;
 
-    font-size: 6px;
+    font-size: 9px;
 
-    letter-spacing: 1.15px;
+    letter-spacing: 2.15px;
   }
 
 
