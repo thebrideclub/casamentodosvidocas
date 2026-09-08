@@ -6,135 +6,213 @@
 
   <title>Home | Casamento dos Vidocas</title>
 
+  <!-- CSS PRINCIPAL -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="popup.css">
+
+  <!-- CSS DO POP-UP -->
+  <link rel="stylesheet" href="popup.css" />
+
+  <!-- ÍCONE DO SITE -->
   <link rel="icon" href="casinha.png" type="image/png" />
 </head>
 
 <body>
-<!-- POP-UP DE BOAS-VINDAS -->
-<div class="popup-overlay" id="popupOverlay">
 
-  <div class="popup-card">
 
-    <button
-      class="popup-close"
-      id="popupClose"
-      aria-label="Fechar pop-up"
-    >
-      ×
-    </button>
+  <!-- ========================================= -->
+  <!-- POP-UP DE BOAS-VINDAS -->
+  <!-- ========================================= -->
 
-    <div class="popup-icon">
-      <img
-        src="casinha.png"
-        alt="Casinha dos Vidocas"
-      />
-    </div>
+  <div class="popup-overlay" id="popupOverlay">
 
-    <p class="popup-kicker">
-      VOCÊ ESTÁ CONVIDADO PARA O NOSSO DIA ☼
-    </p>
+    <div class="popup-card">
 
-    <h2 class="popup-title">
-      FALTA POUCO
-    </h2>
+      <!-- FECHAR -->
 
-    <p class="popup-text">
-      NOSSO GRANDE DIA ESTÁ CHEGANDO!
-    </p>
+      <button
+        class="popup-close"
+        id="popupClose"
+        aria-label="Fechar pop-up"
+        type="button"
+      >
+        ×
+      </button>
 
-    <p class="popup-description">
-      PREPARAMOS ESSE CANTINHO COM MUITO CARINHO
-      PARA VOCÊ ENCONTRAR TUDO SOBRE O NOSSO DIA.
-    </p>
 
-    <!-- AVISO DE CONFIRMAÇÃO -->
-    <div class="popup-rsvp">
-      <span class="popup-rsvp-label">
-        NÃO SE ESQUEÇA
-      </span>
+      <!-- CASINHA -->
 
-      <p>
-        CONFIRME SUA PRESENÇA ATÉ
-        <strong>20.09</strong>
+      <div class="popup-icon">
+
+        <img
+          src="casinha.png"
+          alt="Casinha dos Vidocas"
+        />
+
+      </div>
+
+
+      <!-- TEXTO -->
+
+      <p class="popup-kicker">
+        VOCÊ ESTÁ CONVIDADO PARA O NOSSO DIA ☼
       </p>
+
+
+      <h2 class="popup-title">
+        FALTA POUCO
+      </h2>
+
+
+      <p class="popup-text">
+        NOSSO GRANDE DIA ESTÁ CHEGANDO!
+      </p>
+
+
+      <p class="popup-description">
+
+        PREPARAMOS ESSE CANTINHO COM MUITO CARINHO
+        PARA VOCÊ ENCONTRAR TUDO SOBRE O NOSSO DIA.
+
+      </p>
+
+
+      <!-- CONFIRMAÇÃO -->
+
+      <div class="popup-rsvp">
+
+        <span class="popup-rsvp-label">
+          NÃO SE ESQUEÇA
+        </span>
+
+        <p>
+          CONFIRME SUA PRESENÇA ATÉ
+          <strong>20.09</strong>
+        </p>
+
+      </div>
+
+
+      <!-- DATA -->
+
+      <div class="popup-date">
+        10.10.2026
+      </div>
+
+
+      <!-- ENTRAR COM MÚSICA -->
+
+      <button
+        class="popup-button"
+        id="enterSite"
+        type="button"
+      >
+        ENTRAR NO SITE ♫
+      </button>
+
+
+      <!-- ENTRAR SEM MÚSICA -->
+
+      <button
+        class="popup-secondary"
+        id="continueWithoutMusic"
+        type="button"
+      >
+        CONTINUAR SEM MÚSICA
+      </button>
+
+
+      <!-- NOMES -->
+
+      <p class="popup-names">
+        MARIA & MATHEUS
+      </p>
+
     </div>
-
-    <div class="popup-date">
-      10.10.2026
-    </div>
-
-    <button class="popup-button" id="enterSite">
-      ENTRAR NO SITE ♫
-    </button>
-
-    <button class="popup-secondary" id="continueWithoutMusic">
-      CONTINUAR SEM MÚSICA
-    </button>
-
-    <p class="popup-names">
-      MARIA & MATHEUS
-    </p>
 
   </div>
 
-</div>
 
-<!-- ÁUDIO -->
-<audio id="siteMusic" loop preload="auto">
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-  
-  <!-- ============================= -->
+  <!-- ========================================= -->
+  <!-- MÚSICA DO SITE -->
+  <!-- ========================================= -->
+
+  <audio id="siteMusic" loop preload="auto">
+
+    <source
+      src="musica.mp3"
+      type="audio/mpeg"
+    />
+
+  </audio>
+
+
+
+  <!-- ========================================= -->
   <!-- CABEÇALHO -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <header class="menu">
 
     <div class="logo-container">
+
       <img
         src="casinha.png"
         alt="Logo"
         class="logo"
       />
+
     </div>
+
 
     <nav class="nav-container">
 
       <ul class="menu-list">
 
         <li>
+
           <a href="index.html">
             NOSSO DIA
           </a>
+
         </li>
 
+
         <li>
+
           <a
             href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
             target="_blank"
           >
             COMO CHEGAR
           </a>
+
         </li>
 
+
         <li>
+
           <a href="dicas.html">
             DICAS
           </a>
+
         </li>
 
+
         <li>
+
           <a href="#rsvp">
             R.S.V.P
           </a>
+
         </li>
 
+
         <li>
+
           <a href="#lista-presentes">
             PRESENTES
           </a>
+
         </li>
 
       </ul>
@@ -144,9 +222,10 @@
   </header>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- IMAGEM PRINCIPAL -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <img
     src="aquarela.png"
@@ -155,17 +234,25 @@
   />
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- NOMES -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <div class="convite">
 
     <h1 class="nomes">
+
       Matheus
-      <span class="ampersand">&</span>
+
+      <span class="ampersand">
+        &
+      </span>
+
       Maria
+
     </h1>
+
 
     <p class="vidoca">
       OS VIDOCAS VÃO SE CASAR!
@@ -174,9 +261,10 @@
   </div>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- BOAS-VINDAS -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section class="texto-boas-vindas">
 
@@ -184,24 +272,36 @@
 
       <p>
 
-        AMIGOS E FAMILIARES,<br><br>
+        AMIGOS E FAMILIARES,
 
-        A PARTIR DE AGORA, O NOSSO GRANDE DIA JÁ COMEÇOU.<br><br>
+        <br><br>
+
+        A PARTIR DE AGORA, O NOSSO GRANDE DIA JÁ COMEÇOU.
+
+        <br><br>
 
         CRIAMOS ESTE SITE PARA COMPARTILHAR ALGUMAS INFORMAÇÕES
         SOBRE O NOSSO CASAMENTO PARA FACILITAR A IDA DE TODOS VOCÊS.
+
         <br><br>
 
         ESPERAMOS QUE VOCÊS APROVEITEM E QUE ESSE DIA SEJA
-        INESQUECÍVEL PARA TODOS NÓS.<br>
+        INESQUECÍVEL PARA TODOS NÓS.
 
-        VOCÊS FAZEM PARTE DO NOSSO SONHO!<br><br>
+        <br>
 
-        ESPERAMOS VOCÊS COM MUITO AMOR,<br>
-        PARA JUNTOS PARTILHARMOS MAIS UM MOMENTO DA VIDA JUNTOS.
+        VOCÊS FAZEM PARTE DO NOSSO SONHO!
+
         <br><br>
 
-        COM CARINHO,<br>
+        ESPERAMOS VOCÊS COM MUITO AMOR,
+        <br>
+        PARA JUNTOS PARTILHARMOS MAIS UM MOMENTO DA VIDA JUNTOS.
+
+        <br><br>
+
+        COM CARINHO,
+        <br>
         VIDOCAS.
 
       </p>
@@ -211,9 +311,10 @@
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- CONTAGEM REGRESSIVA -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section class="contagem-regressiva">
 
@@ -221,32 +322,82 @@
       Contagem regressiva
     </h2>
 
+
     <div class="contador">
 
+
+      <!-- DIAS -->
+
       <div class="bloco">
-        <span id="dias">--</span>
-        <p>dias</p>
+
+        <span id="dias">
+          --
+        </span>
+
+        <p>
+          dias
+        </p>
+
       </div>
 
-      <span class="dois-pontos">:</span>
+
+      <span class="dois-pontos">
+        :
+      </span>
+
+
+      <!-- HORAS -->
 
       <div class="bloco">
-        <span id="horas">--</span>
-        <p>horas</p>
+
+        <span id="horas">
+          --
+        </span>
+
+        <p>
+          horas
+        </p>
+
       </div>
 
-      <span class="dois-pontos">:</span>
+
+      <span class="dois-pontos">
+        :
+      </span>
+
+
+      <!-- MINUTOS -->
 
       <div class="bloco">
-        <span id="minutos">--</span>
-        <p>mins.</p>
+
+        <span id="minutos">
+          --
+        </span>
+
+        <p>
+          mins.
+        </p>
+
       </div>
 
-      <span class="dois-pontos">:</span>
+
+      <span class="dois-pontos">
+        :
+      </span>
+
+
+      <!-- SEGUNDOS -->
 
       <div class="bloco">
-        <span id="segundos">--</span>
-        <p>segs.</p>
+
+        <span id="segundos">
+          --
+        </span>
+
+        <p>
+          segs.
+        </p>
+
       </div>
 
     </div>
@@ -254,9 +405,10 @@
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- NOSSO DIA -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section
     class="sessao-como-chegar"
@@ -267,15 +419,21 @@
       NOSSO DIA
     </h2>
 
+
     <p class="data-sessao">
 
-      CELEBRAREMOS JUNTINHOS,<br>
+      CELEBRAREMOS JUNTINHOS,
 
-      NO DIA 10 DE OUTUBRO DE 2026<br>
+      <br>
+
+      NO DIA 10 DE OUTUBRO DE 2026
+
+      <br>
 
       A PARTIR DAS 15H00
 
     </p>
+
 
     <img
       src="casaquarela.png"
@@ -283,32 +441,37 @@
       class="imagem-casa"
     />
 
+
     <p class="local-sessao">
 
-      MIRANTE JURUÁ<br>
+      MIRANTE JURUÁ
 
-      R. BENEDITO FONTANA, 305<br>
+      <br>
+
+      R. BENEDITO FONTANA, 305
+
+      <br>
 
       PARQUE SUÍÇO, MAIRIPORÃ/SP
 
     </p>
+
 
     <a
       class="botao-como-chegar"
       href="https://ul.waze.com/ul?place=ChIJYUkoGwvzzpQR2auoo1DaEx8&ll=-23.35016500%2C-46.54824590&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
       target="_blank"
     >
-
       COMO CHEGAR
-
     </a>
 
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- RSVP -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section
     class="rsvp-section"
@@ -321,6 +484,7 @@
         Confirme sua presença
       </h2>
 
+
       <form
         id="rsvpForm"
         autocomplete="off"
@@ -332,6 +496,7 @@
         <label for="nome-rsvp">
           Seu nome completo
         </label>
+
 
         <input
           type="text"
@@ -348,6 +513,7 @@
           Whatsapp (DDD) + NÚMERO
         </label>
 
+
         <input
           type="tel"
           id="whatsapp-rsvp"
@@ -362,6 +528,7 @@
         <label>
           Confirma presença?
         </label>
+
 
         <div class="radio-group">
 
@@ -394,10 +561,10 @@
         </div>
 
 
-        <!-- ============================= -->
+
+        <!-- ========================================= -->
         <!-- ACOMPANHANTES -->
-        <!-- aparece somente quando SIM -->
-        <!-- ============================= -->
+        <!-- ========================================= -->
 
         <div
           id="camposConvidados"
@@ -408,15 +575,22 @@
             Nome completo dos acompanhantes
           </label>
 
+
           <textarea
             name="convidados"
             id="convidados"
             placeholder="Digite um acompanhante por linha"
           ></textarea>
 
+
           <small>
-            Se tiver mais de um acompanhante, coloque um nome por linha.
-            Os noivos podem entrar em contato caso o acompanhante não esteja na lista.
+
+            Se tiver mais de um acompanhante,
+            coloque um nome por linha.
+
+            Os noivos podem entrar em contato
+            caso o acompanhante não esteja na lista.
+
           </small>
 
         </div>
@@ -435,9 +609,10 @@
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- LISTA DE PRESENTES -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section
     class="lista-presentes"
@@ -448,6 +623,7 @@
       Lista de Presentes
     </h2>
 
+
     <img
       src="presente.png"
       alt="Presente"
@@ -457,6 +633,9 @@
 
     <div class="botoes-container">
 
+
+      <!-- LISTA VIRTUAL -->
+
       <a
         href="https://noivos.casar.com/luisaelucas25?#/one-page/_start"
         class="botao"
@@ -465,6 +644,8 @@
         Lista virtual
       </a>
 
+
+      <!-- PIX -->
 
       <a
         href="#"
@@ -479,9 +660,10 @@
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- MENSAGEM AOS NOIVOS -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <div
     class="msg-section"
@@ -490,17 +672,21 @@
 
     <div class="retangulo_msg">
 
+
       <img
         src="mensagem.png"
         alt="Mensagem"
         class="mensagem-img"
       />
 
+
       <h2>
         Mensagem aos noivos
       </h2>
 
+
       <form id="msgForm">
+
 
         <input
           type="text"
@@ -510,12 +696,14 @@
           required
         />
 
+
         <textarea
           id="msg-noivos"
           name="mensagem"
           placeholder="Escreva sua mensagem"
           required
         ></textarea>
+
 
         <button type="submit">
           Enviar
@@ -528,9 +716,10 @@
   </div>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- CONTATO -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section
     class="contato-section"
@@ -541,9 +730,12 @@
       CONTATO
     </h2>
 
+
     <p class="texto-contato">
 
-      CASO TENHAM QUALQUER DÚVIDA OU PRECISEM DE AJUDA,<br>
+      CASO TENHAM QUALQUER DÚVIDA OU PRECISEM DE AJUDA,
+
+      <br>
 
       ENTREM EM CONTATO COM A ASSESSORIA DO CASAMENTO
 
@@ -577,56 +769,108 @@
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- SLIDER -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <section class="slider">
 
     <div class="slider-track">
 
-      <div class="slide">
-        <img src="foto1.jpg" alt="Foto 1" />
-      </div>
 
       <div class="slide">
-        <img src="foto2.jpg" alt="Foto 2" />
+
+        <img
+          src="foto1.jpg"
+          alt="Foto 1"
+        />
+
       </div>
+
 
       <div class="slide">
-        <img src="foto3.jpg" alt="Foto 3" />
-      </div>
- <div class="slide">
-        <img src="foto4.jpg" alt="Foto 4" />
+
+        <img
+          src="foto2.jpg"
+          alt="Foto 2"
+        />
+
       </div>
 
-
-      <!-- repetição para efeito contínuo -->
-
-      <div class="slide">
-        <img src="foto1.jpg" alt="Foto 1" />
-      </div>
 
       <div class="slide">
-        <img src="foto2.jpg" alt="Foto 2" />
+
+        <img
+          src="foto3.jpg"
+          alt="Foto 3"
+        />
+
       </div>
+
 
       <div class="slide">
-        <img src="foto3.jpg" alt="Foto 3" />
-      </div>
-         <div class="slide">
-        <img src="foto4.jpg" alt="Foto 4" />
+
+        <img
+          src="foto4.jpg"
+          alt="Foto 4"
+        />
+
       </div>
 
+
+
+      <!-- REPETIÇÃO PARA EFEITO CONTÍNUO -->
+
+
+      <div class="slide">
+
+        <img
+          src="foto1.jpg"
+          alt="Foto 1"
+        />
+
+      </div>
+
+
+      <div class="slide">
+
+        <img
+          src="foto2.jpg"
+          alt="Foto 2"
+        />
+
+      </div>
+
+
+      <div class="slide">
+
+        <img
+          src="foto3.jpg"
+          alt="Foto 3"
+        />
+
+      </div>
+
+
+      <div class="slide">
+
+        <img
+          src="foto4.jpg"
+          alt="Foto 4"
+        />
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
   <!-- RODAPÉ -->
-  <!-- ============================= -->
+  <!-- ========================================= -->
 
   <footer class="rodape-site">
 
@@ -640,14 +884,25 @@
   </footer>
 
 
-  <!-- ============================= -->
-  <!-- JAVASCRIPT -->
-  <!-- ============================= -->
+
+  <!-- ========================================= -->
+  <!-- JAVASCRIPT PRINCIPAL -->
+  <!-- ========================================= -->
 
   <script src="script.js"></script>
 
 
+  <!-- ========================================= -->
+  <!-- JAVASCRIPT DO POP-UP -->
+  <!-- ========================================= -->
+
+  <script src="popup.js"></script>
+
+
+
+  <!-- ========================================= -->
   <!-- PIX -->
+  <!-- ========================================= -->
 
   <script>
 
@@ -677,6 +932,7 @@
     }
 
   </script>
+
 
 </body>
 </html>
