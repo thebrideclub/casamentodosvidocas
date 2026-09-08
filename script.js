@@ -93,7 +93,7 @@ const camposAcompanhante =
   document.getElementById("camposAcompanhante");
 
 const URL_RSVP =
-https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec;
+"https://script.google.com/macros/s/AKfycbx9Tmo_UrEm_8oc0YvwZ6X1VvdN75KNVG-7O1MsuhkiVvitQ4_Nqi_n6sda9phVYU9Y/exec";
 
 
 // ===============================
