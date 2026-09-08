@@ -285,31 +285,13 @@ if (rsvpForm) {
       // MONTA OS DADOS
       // ===============================
 
-      const dados =
-        new URLSearchParams();
+      const dados = new FormData();
 
-      dados.append(
-        "nome",
-        nome
-      );
-
-      dados.append(
-        "whatsapp",
-        whatsapp
-      );
-
-      dados.append(
-        "presenca",
-        presenca
-      );
-
-      dados.append(
-        "acompanhante",
-        acompanhante
-      );
-
-
-
+dados.append("nome", nome);
+dados.append("whatsapp", whatsapp);
+dados.append("presenca", presenca);
+dados.append("acompanhante", acompanhante);
+      
       // ===============================
       // TESTE NO CONSOLE
       // ===============================
@@ -333,7 +315,10 @@ if (rsvpForm) {
         "ACOMPANHANTE:",
         acompanhante
       );
-
+console.log(
+  "FORMDATA ACOMPANHANTE:",
+  dados.get("acompanhante")
+);
 
 
       // ===============================
