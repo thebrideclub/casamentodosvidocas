@@ -1235,7 +1235,7 @@ textarea:focus {
 
   font-weight: 400;
 
-  line-height: 0.68;
+  line-height: 1.00;
 
   letter-spacing: 3px;
 
@@ -2071,9 +2071,9 @@ textarea:focus {
   .atalho-home h2 {
     margin-bottom: 14px;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    line-height: 1.08;
+    line-height: 1.00;
 
     letter-spacing: 2.3px;
   }
