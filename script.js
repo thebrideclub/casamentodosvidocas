@@ -426,7 +426,7 @@ const msgForm =
     "msgForm"
   );
 const URL_MENSAGEM =
-  "https://script.google.com/macros/s/AKfycbz4mtIX4VMlPcvRNVu4LS9WhkfOW8DP0oU9IOgZlzqPpT-JJCit1hBBkiFKvFJtawFz/exec";
+  "https://script.google.com/macros/s/AKfycbz4wCLT8IAKKKVp0eLkmyR8uycaxoIJ8r1vUD-_qXt2E1sXQ-1RN_n8YFTH6DYrODiK/exec";
 if (msgForm) {
   msgForm.addEventListener(
     "submit",
